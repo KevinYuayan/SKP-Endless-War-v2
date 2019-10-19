@@ -99,8 +99,11 @@ public class GameController : MonoBehaviour
                 break;
         }
 
-        Lives = 5;
-        Score = 0;
+        if(SceneManager.GetActiveScene().name == "main")
+        {
+            Lives = 5;
+            Score = 0;
+        }
         if ((activeSoundClip != SoundClip.NONE) && (activeSoundClip != SoundClip.NUM_OF_CLIPS))
         {
             AudioSource activeSoundSource = audioSources[(int)activeSoundClip];
@@ -114,6 +117,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        scoreLabel.text = "Score: " + _score.ToString();
         livesLabel.text = "Lives: " + _lives.ToString();
         //Setting delay of spawning enemy. time % nf means n 
         time += Time.deltaTime;
