@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss1Controller : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class Boss1Controller : MonoBehaviour
                 {
                     Destroy(this.gameObject);
                     gc.Score += 1000;
+                SceneManager.LoadScene("Level2");
                 }
             }
 
