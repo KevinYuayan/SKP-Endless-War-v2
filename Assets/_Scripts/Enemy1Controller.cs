@@ -13,6 +13,9 @@ using Util;
 /// </summary>
 public class Enemy1Controller : CollidableObject
 {
+    private GameController gc;
+    private AudioSource explosionSound;
+
     [Header("Speed Values")]
     [SerializeField]
     public Speed horizontalSpeedRange;
@@ -45,6 +48,10 @@ public class Enemy1Controller : CollidableObject
     // Start is called before the first frame update
     void Start()
     {
+        GameObject gco = GameObject.FindWithTag("GameController");
+        gc = gco.GetComponent<GameController>();
+        explosionSound = gc.audioSources[(int)SoundClip.EXPLOSION];
+
         Reset();
     }
 
@@ -96,6 +103,17 @@ public class Enemy1Controller : CollidableObject
         if (transform.position.x <= boundary.Left)
         {
             Reset();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Bullet")
+        {
+            Destroy(this.gameObject);
+            Destroy(col.gameObject);
+            gc.Score += 50;
+            explosionSound.volume = 0.3f;
+            explosionSound.Play();
         }
     }
 }

@@ -9,10 +9,19 @@ using Util;
 /// Last Modified by: Kevin Yuayan
 /// Date Last Modified: Oct. 2, 2019
 /// Description: Controller for the Enemy_2 prefab
-/// Revision History:
+/// Revision History: Oct.18th Hyungseok moved codes for destroy enemy to this script.
 /// </summary>
 public class Enemy2Controller : CollidableObject
 {
+    private GameController gc;
+    public GameObject powerUp;
+    public GameObject bonusLife;
+    Vector3 position;
+    private AudioSource explosionSound;
+    private int itemChance;
+    public int powerUpChancePercentage;
+    public int bonusChancePercentage;
+
     public float verticalSpeed;
     public float horizontalSpeed;
 
@@ -42,6 +51,10 @@ public class Enemy2Controller : CollidableObject
     // Start is called before the first frame update
     void Start()
     {
+        GameObject gco = GameObject.FindWithTag("GameController");
+        gc = gco.GetComponent<GameController>();
+        explosionSound = gc.audioSources[(int)SoundClip.EXPLOSION];
+
         Reset();
     }
 
@@ -101,6 +114,27 @@ public class Enemy2Controller : CollidableObject
         if (transform.position.x <= boundary.Left)
         {
             Reset();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Bullet")
+        {
+            position = this.gameObject.transform.position;
+            Destroy(this.gameObject);
+            Destroy(col.gameObject);
+            gc.Score += 100;
+            explosionSound.volume = 0.3f;
+            explosionSound.Play();
+            itemChance = Random.Range(0, 101);
+            if (itemChance >= 0 && itemChance <= powerUpChancePercentage)
+            {
+                Instantiate(powerUp, position, Quaternion.identity);
+            }
+            if (itemChance >= 0 && itemChance <= bonusChancePercentage)
+            {
+                Instantiate(bonusLife, position, Quaternion.identity);
+            }
         }
     }
 }
