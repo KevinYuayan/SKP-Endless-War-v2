@@ -671,7 +671,7 @@ PrefabInstance:
     - target: {fileID: 5473259080668282425, guid: 7be1d15077c896541aaef127baa794a6,
         type: 3}
       propertyPath: stageTime
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5473259080668282425, guid: 7be1d15077c896541aaef127baa794a6,
         type: 3}

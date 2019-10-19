@@ -46,7 +46,7 @@ public class ItemController : MonoBehaviour
             Destroy(this.gameObject);
             gC.Lives += 1;
         }
-        if(col.gameObject.tag == "Player" && this.gameObject.tag =="PowerUp" && pC.poweredUp <= 3)
+        if(col.gameObject.tag == "Player" && this.gameObject.tag =="PowerUp" && pC.poweredUp <= 1)
         {
             Destroy(this.gameObject);
             pC.poweredUp += 1;

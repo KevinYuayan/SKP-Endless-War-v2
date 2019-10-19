@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss1Controller : MonoBehaviour
 {
     [SerializeField]
-    private int bosSHP;
+    private int bossHP;
 
     private GameController gc;
     private AudioSource explosionSound;
@@ -17,10 +17,7 @@ public class Boss1Controller : MonoBehaviour
         GameObject gco = GameObject.FindWithTag("GameController");
         gc = gco.GetComponent<GameController>();
         explosionSound = gc.audioSources[(int)SoundClip.EXPLOSION];
-        // Start is called before the first frame update
-        void Start()
-        {
-        }
+    }
         // Update is called once per frame
         void Update()
         {
@@ -32,11 +29,11 @@ public class Boss1Controller : MonoBehaviour
                 Destroy(col.gameObject);
                 explosionSound.volume = 0.3f;
                 explosionSound.Play();
-                if (bosSHP != 0)
+                if (bossHP > 0)
                 {
-                    bosSHP -= 1;
+                    bossHP -= 1;
                 }
-                if (bosSHP <= 0)
+                if (bossHP <= 0)
                 {
                     Destroy(this.gameObject);
                     gc.Score += 1000;
@@ -44,5 +41,5 @@ public class Boss1Controller : MonoBehaviour
             }
 
         }
-    }
-}
+ }
+
