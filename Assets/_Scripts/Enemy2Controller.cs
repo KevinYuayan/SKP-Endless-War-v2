@@ -13,6 +13,15 @@ using Util;
 /// </summary>
 public class Enemy2Controller : CollidableObject
 {
+    private GameController gc;
+    private AudioSource explosionSound;
+
+    [SerializeField]
+    public GameObject bonus;
+    private Vector3 position;
+    private int itemChance;
+    public int chancePercentage;
+
     public float verticalSpeed;
     public float horizontalSpeed;
 
@@ -42,6 +51,9 @@ public class Enemy2Controller : CollidableObject
     // Start is called before the first frame update
     void Start()
     {
+        GameObject gco = GameObject.FindWithTag("GameController");
+        gc = gco.GetComponent<GameController>();
+        explosionSound = gc.audioSources[(int)SoundClip.EXPLOSION];
         Reset();
     }
 
@@ -101,6 +113,25 @@ public class Enemy2Controller : CollidableObject
         if (transform.position.x <= boundary.Left)
         {
             Reset();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Bullet")
+        {
+            position = this.gameObject.transform.position;
+            Destroy(this.gameObject);
+            Destroy(col.gameObject);
+            gc.Score += 100;
+            explosionSound.volume = 0.3f;
+            explosionSound.Play();
+            itemChance = Random.Range(0, 101);
+            if (itemChance >= 0 && itemChance <= chancePercentage)
+            {
+                Instantiate(bonus, position, Quaternion.identity);
+                Debug.Log("Bonus spawned");
+            }
         }
     }
 }

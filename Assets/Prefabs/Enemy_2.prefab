@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a263d1b72445c0b478461f488f13e911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonus: {fileID: 1830573422138198335, guid: 417dc5ddf54aaef4db0c520b98a00327, type: 3}
+  chancePercentage: 100
   verticalSpeed: 0
   horizontalSpeed: 0
   boundary:
