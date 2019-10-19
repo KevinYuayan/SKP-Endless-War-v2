@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss1Controller : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class Boss1Controller : MonoBehaviour
 
     private GameController gc;
     private AudioSource explosionSound;
-
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +37,7 @@ public class Boss1Controller : MonoBehaviour
                 {
                     Destroy(this.gameObject);
                     gc.Score += 1000;
+                SceneManager.LoadScene(2);
                 }
             }
 

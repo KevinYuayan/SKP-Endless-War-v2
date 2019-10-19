@@ -23,14 +23,16 @@ public class PlayerController : MonoBehaviour
     public float fireRate = 0.5f;
     private float myTime = 0.0f;
     public int poweredUp = 0;
-    public GameController gameController;
+
+    private GameController gc;
     private AudioSource fireSound;
 
     // Start is called before the first frame update
     void Start()
     {
-        Move();
-        fireSound = gameController.audioSources[(int)SoundClip.PLAYER_FIRE];
+        GameObject gco = GameObject.FindWithTag("GameController");
+        gc = gco.GetComponent<GameController>();
+        fireSound = gc.audioSources[(int)SoundClip.PLAYER_FIRE];
     }
 
     // Update is called once per frame
@@ -106,12 +108,12 @@ public class PlayerController : MonoBehaviour
     {
         if(col.gameObject.tag=="Enemy1" || col.gameObject.tag=="Enemy2")
         {
-            gameController.Lives -= 1;
-            Debug.Log("Life decreased: " + gameController.Lives);
-            if(gameController.Lives == 0)
+            gc.Lives -= 1;
+            Debug.Log("Life decreased: " + gc.Lives);
+            if(gc.Lives == 0)
             {
                 Destroy(this.gameObject);
-                gameController.GameOver();
+                gc.GameOver();
             }
         }
     }
