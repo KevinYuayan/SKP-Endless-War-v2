@@ -17,35 +17,32 @@ public class Boss1Controller : MonoBehaviour
         GameObject gco = GameObject.FindWithTag("GameController");
         gc = gco.GetComponent<GameController>();
         explosionSound = gc.audioSources[(int)SoundClip.EXPLOSION];
-=======
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.tag == "Bullet")
+        // Start is called before the first frame update
+        void Start()
         {
-            Destroy(col.gameObject);
-            explosionSound.volume = 0.3f;
-            explosionSound.Play();
-            if (bosSHP != 0)
-            {
-                bosSHP -= 1;
-            }
-            if (bosSHP <= 0)
-            {
-                Destroy(this.gameObject);
-                gc.Score += 1000;
-            }
         }
+        // Update is called once per frame
+        void Update()
+        {
+        }
+        void OnTriggerEnter2D(Collider2D col)
+        {
+            if (col.gameObject.tag == "Bullet")
+            {
+                Destroy(col.gameObject);
+                explosionSound.volume = 0.3f;
+                explosionSound.Play();
+                if (bosSHP != 0)
+                {
+                    bosSHP -= 1;
+                }
+                if (bosSHP <= 0)
+                {
+                    Destroy(this.gameObject);
+                    gc.Score += 1000;
+                }
+            }
 
-=======
-        
+        }
     }
 }

@@ -96,16 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a263d1b72445c0b478461f488f13e911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  powerUp: {fileID: 7379716281020024665, guid: 08b5c63c88183b34c982d760b1d9b6fa, type: 3}
-  bonusLife: {fileID: 1830573422138198335, guid: 417dc5ddf54aaef4db0c520b98a00327,
-    type: 3}
-  powerUpChancePercentage: 50
-  bonusChancePercentage: 10
-=======
   bonus: {fileID: 1830573422138198335, guid: 417dc5ddf54aaef4db0c520b98a00327, type: 3}
   chancePercentage: 100
->>>>>>> 27e440ce6c7fec1718fac470527e5dd10d08f54d
   verticalSpeed: 0
   horizontalSpeed: 0
   boundary:
