@@ -17,12 +17,15 @@ public class Boss1Controller : MonoBehaviour
         GameObject gco = GameObject.FindWithTag("GameController");
         gc = gco.GetComponent<GameController>();
         explosionSound = gc.audioSources[(int)SoundClip.EXPLOSION];
+=======
+    // Start is called before the first frame update
+    void Start()
+    {
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -42,5 +45,7 @@ public class Boss1Controller : MonoBehaviour
             }
         }
 
+=======
+        
     }
 }
