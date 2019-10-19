@@ -17,10 +17,12 @@ public class Enemy2Controller : CollidableObject
     private AudioSource explosionSound;
 
     [SerializeField]
-    public GameObject bonus;
+    public GameObject powerUp;
+    public GameObject bonusLife;
     private Vector3 position;
     private int itemChance;
-    public int chancePercentage;
+    public int powerUpChancePercentage;
+    public int bonusChancePercentage;
 
     public float verticalSpeed;
     public float horizontalSpeed;
@@ -127,9 +129,14 @@ public class Enemy2Controller : CollidableObject
             explosionSound.volume = 0.3f;
             explosionSound.Play();
             itemChance = Random.Range(0, 101);
-            if (itemChance >= 0 && itemChance <= chancePercentage)
+            if (itemChance >= 0 && itemChance <= powerUpChancePercentage)
             {
-                Instantiate(bonus, position, Quaternion.identity);
+                Instantiate(powerUp, position, Quaternion.identity);
+                Debug.Log("Power-Up spawned");
+            }
+            if (itemChance >= 0 && itemChance <= bonusChancePercentage)
+            {
+                Instantiate(bonusLife, position, Quaternion.identity);
                 Debug.Log("Bonus spawned");
             }
         }
