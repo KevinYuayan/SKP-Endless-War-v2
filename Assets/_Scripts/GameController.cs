@@ -142,7 +142,7 @@ public class GameController : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
-
+        //Ading bonus life per a specific score value.
         if(_score >= bonusSCore + (bonusStack * bonusSCore) && gotBonus == false)
         {
             addBonus();
