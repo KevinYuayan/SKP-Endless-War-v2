@@ -51,6 +51,10 @@ public class Enemy1Controller : CollidableObject
         GameObject gco = GameObject.FindWithTag("GameController");
         gc = gco.GetComponent<GameController>();
         explosionSound = gc.audioSources[(int)SoundClip.EXPLOSION];
+<<<<<<< HEAD
+
+=======
+>>>>>>> 27e440ce6c7fec1718fac470527e5dd10d08f54d
         Reset();
     }
 

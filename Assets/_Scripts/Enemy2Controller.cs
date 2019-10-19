@@ -9,11 +9,20 @@ using Util;
 /// Last Modified by: Kevin Yuayan
 /// Date Last Modified: Oct. 2, 2019
 /// Description: Controller for the Enemy_2 prefab
-/// Revision History:
+/// Revision History: Oct.18th Hyungseok moved codes for destroy enemy to this script.
 /// </summary>
 public class Enemy2Controller : CollidableObject
 {
     private GameController gc;
+<<<<<<< HEAD
+    public GameObject powerUp;
+    public GameObject bonusLife;
+    Vector3 position;
+    private AudioSource explosionSound;
+    private int itemChance;
+    public int powerUpChancePercentage;
+    public int bonusChancePercentage;
+=======
     private AudioSource explosionSound;
 
     [SerializeField]
@@ -21,6 +30,7 @@ public class Enemy2Controller : CollidableObject
     private Vector3 position;
     private int itemChance;
     public int chancePercentage;
+>>>>>>> 27e440ce6c7fec1718fac470527e5dd10d08f54d
 
     public float verticalSpeed;
     public float horizontalSpeed;
@@ -54,6 +64,10 @@ public class Enemy2Controller : CollidableObject
         GameObject gco = GameObject.FindWithTag("GameController");
         gc = gco.GetComponent<GameController>();
         explosionSound = gc.audioSources[(int)SoundClip.EXPLOSION];
+<<<<<<< HEAD
+
+=======
+>>>>>>> 27e440ce6c7fec1718fac470527e5dd10d08f54d
         Reset();
     }
 
@@ -115,7 +129,10 @@ public class Enemy2Controller : CollidableObject
             Reset();
         }
     }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 27e440ce6c7fec1718fac470527e5dd10d08f54d
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Bullet")
@@ -127,10 +144,20 @@ public class Enemy2Controller : CollidableObject
             explosionSound.volume = 0.3f;
             explosionSound.Play();
             itemChance = Random.Range(0, 101);
+<<<<<<< HEAD
+            if (itemChance >= 0 && itemChance <= powerUpChancePercentage)
+            {
+                Instantiate(powerUp, position, Quaternion.identity);
+            }
+            if (itemChance >= 0 && itemChance <= bonusChancePercentage)
+            {
+                Instantiate(bonusLife, position, Quaternion.identity);
+=======
             if (itemChance >= 0 && itemChance <= chancePercentage)
             {
                 Instantiate(bonus, position, Quaternion.identity);
                 Debug.Log("Bonus spawned");
+>>>>>>> 27e440ce6c7fec1718fac470527e5dd10d08f54d
             }
         }
     }

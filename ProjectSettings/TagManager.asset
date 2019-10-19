@@ -9,6 +9,7 @@ TagManager:
   - BonusLife
   - Enemy1
   - Enemy2
+  - PowerUp
   layers:
   - Default
   - TransparentFX
