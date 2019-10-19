@@ -17,9 +17,12 @@ public class PlayerController : MonoBehaviour
     public Boundary boundary;
     [Header("Attack Settings")]
     public GameObject fire;
-    public GameObject fireSpawn;
+    public GameObject fireSpawn1;
+    public GameObject fireSpawn2;
+    public GameObject fireSpawn3;
     public float fireRate = 0.5f;
     private float myTime = 0.0f;
+    public int poweredUp = 0;
     public GameController gameController;
     private AudioSource fireSound;
 
@@ -85,7 +88,15 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButton("Fire1") && myTime > fireRate)
         {
-            Instantiate(fire, fireSpawn.transform.position, fireSpawn.transform.rotation);
+            Instantiate(fire, fireSpawn1.transform.position, fireSpawn1.transform.rotation);
+            if(poweredUp >= 1)
+            {
+                Instantiate(fire, fireSpawn2.transform.position, fireSpawn2.transform.rotation);
+            }
+            if(poweredUp == 2)
+            {
+                Instantiate(fire, fireSpawn3.transform.position, fireSpawn3.transform.rotation);
+            }
             myTime = 0.0f;
             fireSound.volume = 0.3f;
             fireSound.Play();

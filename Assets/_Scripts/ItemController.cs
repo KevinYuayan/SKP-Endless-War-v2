@@ -17,10 +17,15 @@ public class ItemController : MonoBehaviour
     [SerializeField]
     public float horizontalSpeed;
     private GameController gC;
+    private PlayerController pC;
     void Start()
     {
         GameObject gCO = GameObject.FindWithTag("GameController");
         gC = gCO.GetComponent<GameController>();
+        GameObject pCO = GameObject.FindWithTag("Player");
+        pC = pCO.GetComponent<PlayerController>();
+        Debug.Log("Power up level: " + pC.poweredUp);
+  
     }
     void Update()
     {
@@ -36,10 +41,16 @@ public class ItemController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Player")
+        if(col.gameObject.tag == "Player" && this.gameObject.tag == "BonusLife")
         {
             Destroy(this.gameObject);
             gC.Lives += 1;
+        }
+        if(col.gameObject.tag == "Player" && this.gameObject.tag =="PowerUp" && pC.poweredUp <= 3)
+        {
+            Destroy(this.gameObject);
+            pC.poweredUp += 1;
+
         }
     }
 }
