@@ -19,6 +19,9 @@ public class Boss2Controller : MonoBehaviour
     public GameObject fireSpawn1;
     public GameObject fireSpawn2;
     public GameObject fireSpawn3;
+    public GameObject fireSpawn4;
+    public GameObject fireSpawn5;
+    public GameObject fireSpawn6;
     public GameObject fire;
     public float fireRate;
     private float myTime = 0.0f;
@@ -66,6 +69,12 @@ public class Boss2Controller : MonoBehaviour
             fireObj = Instantiate(fire, fireSpawn2.transform.position, fireSpawn2.transform.rotation);
             fireObj.GetComponent<FireController>().IsEnemyBullet = true;
             fireObj = Instantiate(fire, fireSpawn3.transform.position, fireSpawn3.transform.rotation);
+            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
+            fireObj = Instantiate(fire, fireSpawn4.transform.position, fireSpawn4.transform.rotation);
+            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
+            fireObj = Instantiate(fire, fireSpawn5.transform.position, fireSpawn5.transform.rotation);
+            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
+            fireObj = Instantiate(fire, fireSpawn6.transform.position, fireSpawn6.transform.rotation);
             fireObj.GetComponent<FireController>().IsEnemyBullet = true;
             myTime = 0.0f;
             //fireSound.volume = 0.3f;
