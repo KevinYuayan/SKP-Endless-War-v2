@@ -35,6 +35,7 @@ public class GameController : MonoBehaviour
     private int _score;
     public Text livesLabel;
     public Text scoreLabel;
+    public Text timeLabel;
     public Text gameOverLabel;
     public Text restartLabel;
 
@@ -94,23 +95,29 @@ public class GameController : MonoBehaviour
             case "Start":
                 scoreLabel.enabled = false;
                 livesLabel.enabled = false;
+                timeLabel.enabled = false;
                 break;
-            case "main":
+            case "Main":
                 StartLabel.SetActive(false);
                 StartButton.SetActive(false);
                 break;
             case "End":
                 scoreLabel.enabled = false;
                 livesLabel.enabled = false;
+                timeLabel.enabled = false;
                 StartLabel.SetActive(false);
                 StartButton.SetActive(false);
                 break;
             case "Level2":
+                StartLabel.SetActive(false);
+                StartButton.SetActive(false);
                 Lives = storage.GetComponent<Storage>().lives;
                 Score = storage.GetComponent<Storage>().score;
                 break;
 
             case "Level3":
+                StartLabel.SetActive(false);
+                StartButton.SetActive(false);
                 Lives = storage.GetComponent<Storage>().lives;
                 Score = storage.GetComponent<Storage>().score;
                 break;
@@ -137,6 +144,14 @@ public class GameController : MonoBehaviour
     {
         scoreLabel.text = "Score: " + _score.ToString();
         livesLabel.text = "Lives: " + _lives.ToString();
+        if (stageTime - seconds > 0)
+        {
+            timeLabel.text = "Time: " + (stageTime - seconds);
+        }
+        else if (stageTime - seconds <= 0)
+        {
+            timeLabel.text = "Boss spawned!";
+        }
         //Setting delay of spawning enemy. time % nf means n 
         time += Time.deltaTime;
         timeCounter += Time.deltaTime;

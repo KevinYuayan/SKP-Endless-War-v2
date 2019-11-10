@@ -50,16 +50,20 @@ MonoBehaviour:
   gc: {fileID: 0}
   gameOver: 0
   restart: 0
-  numberOfEnemy1: 5
-  numberOfEnemy2: 5
+  numberOfEnemy1: 1
+  numberOfEnemy2: 1
   enemy1: {fileID: 279471036071834219, guid: d2280f1c2d0222e49a908caafb494b88, type: 3}
   enemy2: {fileID: 6359590337577874136, guid: 1a9eed1092df46d469cb8a7fe0d8f510, type: 3}
   enemy1s: []
   enemy2s: []
+  spawningDelay: 10
+  bossEnemy: {fileID: 0}
+  stageTime: 0
   _lives: 5
   _score: 0
   livesLabel: {fileID: 0}
   scoreLabel: {fileID: 0}
+  timeLabel: {fileID: 0}
   gameOverLabel: {fileID: 0}
   restartLabel: {fileID: 0}
   activeSoundClip: 0
@@ -68,6 +72,10 @@ MonoBehaviour:
   - {fileID: 4633634427531086367}
   - {fileID: 4633634427531086360}
   - {fileID: 4633634427531086361}
+  StartLabel: {fileID: 0}
+  StartButton: {fileID: 0}
+  bonusSCore: 0
+  storage: {fileID: 0}
 --- !u!82 &4633634427531086366
 AudioSource:
   m_ObjectHideFlags: 0
