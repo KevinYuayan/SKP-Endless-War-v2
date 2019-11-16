@@ -215,6 +215,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &784015535 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 748921634699566033, guid: b5589df82b4c44646bf7557837800f7d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1869623683949556035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &824684304 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7352198655033733192, guid: b5589df82b4c44646bf7557837800f7d,
@@ -653,15 +665,15 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 1869623684052477861, guid: b5589df82b4c44646bf7557837800f7d,
-        type: 3}
-      propertyPath: m_Name
-      value: ScoreLabel
-      objectReference: {fileID: 0}
     - target: {fileID: 1869623684108037110, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869623684052477861, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_Name
+      value: ScoreLabel
       objectReference: {fileID: 0}
     - target: {fileID: 5327974860192383770, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
@@ -692,6 +704,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5586577790121882669, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_Name
+      value: HPLabel
       objectReference: {fileID: 0}
     - target: {fileID: 709560999, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -751,6 +768,21 @@ PrefabInstance:
       propertyPath: StartButton
       value: 
       objectReference: {fileID: 1064657374}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: _lives
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: bonusSCore
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: hpLabel
+      value: 
+      objectReference: {fileID: 784015535}
     - target: {fileID: 177786579685343100, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
       propertyPath: m_LocalPosition.x

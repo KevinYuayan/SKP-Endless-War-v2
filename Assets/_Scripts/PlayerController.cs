@@ -112,13 +112,13 @@ public class PlayerController : MonoBehaviour
                 if (col.gameObject.GetComponent<FireController>().IsEnemyBullet)
                 {
                     Destroy(col.gameObject);
-                    Hit();
+                    HitbyBullet();
                 }
                 break;
             case "Enemy1":
             case "Enemy2":
             case "Boss1":
-                Hit();
+                HitbyCollision();
                 break;
         }
 
@@ -126,14 +126,24 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-    private void Hit()
+    private void HitbyCollision()
     {
-        gc.Lives -= 1;
-        Debug.Log("Life decreased: " + gc.Lives);
-        if (gc.Lives == 0)
+        gc.HP -= 10;
+        Debug.Log("Hit by collision: " + gc.HP);
+        if (gc.HP <= 0)
         {
             Destroy(this.gameObject);
-            gc.GameOver();
+            gc.PlayerDied();
+        }
+    }
+    private void HitbyBullet()
+    {
+        gc.HP -= 20;
+        Debug.Log("Hit by bullet: " + gc.HP);
+        if (gc.HP <= 0)
+        {
+            Destroy(this.gameObject);
+            gc.PlayerDied();
         }
     }
 }

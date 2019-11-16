@@ -7,7 +7,6 @@ using System;
 
 public class GameController : MonoBehaviour
 {
-    public GameController gc;
     public bool gameOver;
     public bool restart;
     [Header("Enemies")]
@@ -36,6 +35,9 @@ public class GameController : MonoBehaviour
     private int _lives;
     [SerializeField]
     private int _score;
+    [SerializeField]
+    private int _HP;
+    public Text hpLabel;
     public Text livesLabel;
     public Text scoreLabel;
     public Text highscoreLabel;
@@ -52,16 +54,29 @@ public class GameController : MonoBehaviour
     public GameObject StartButton;
 
     [Header("Bonus")]
-    public int bonusSCore;
+    public int bonusSCore = 10000;
     private int bonusStack = 0;
     private bool gotBonus = false;
 
     [Header("GameSetting")]
     public Storage storage;
 
-    public int Lives
+    public int HP
     {
 
+        get
+        {
+            return _HP;
+        }
+        set
+        {
+            _HP = value;
+            storage.hp = _HP;
+            hpLabel.text = "HP: " + _HP.ToString();
+        }
+    }
+    public int Lives
+    {
         get
         {
             return _lives;
@@ -100,16 +115,32 @@ public class GameController : MonoBehaviour
     {
         highscoreLabel.text = "High Score: " + storage.highscore;
 
+        if ((activeSoundClip != SoundClip.NONE) && (activeSoundClip != SoundClip.NUM_OF_CLIPS))
+        {
+            AudioSource activeSoundSource = audioSources[(int)activeSoundClip];
+            activeSoundSource.playOnAwake = true;
+            activeSoundSource.loop = true;
+            activeSoundSource.volume = 0.5f;
+            activeSoundSource.Play();
+        }
+
         switch (SceneManager.GetActiveScene().name)
         {
             case "Start":
                 scoreLabel.enabled = false;
                 livesLabel.enabled = false;
                 timeLabel.enabled = false;
+                hpLabel.enabled = false;
+                HP = 100;
+                Lives = 5;
+                Score = 0;
                 break;
             case "Main":
                 StartLabel.SetActive(false);
                 StartButton.SetActive(false);
+                Lives = storage.lives;
+                Score = storage.score;
+                HP = 100;
                 break;
             case "End":
                 scoreLabel.enabled = false;
@@ -123,6 +154,7 @@ public class GameController : MonoBehaviour
                 StartButton.SetActive(false);
                 Lives = storage.lives;
                 Score = storage.score;
+                HP = 100;
                 break;
 
             case "Level3":
@@ -130,22 +162,9 @@ public class GameController : MonoBehaviour
                 StartButton.SetActive(false);
                 Lives = storage.lives;
                 Score = storage.score;
+                HP = 100;
                 break;
 
-        }
-
-        if(SceneManager.GetActiveScene().name == "main")
-        {
-            Lives = 5;
-            Score = 0;
-        }
-        if ((activeSoundClip != SoundClip.NONE) && (activeSoundClip != SoundClip.NUM_OF_CLIPS))
-        {
-            AudioSource activeSoundSource = audioSources[(int)activeSoundClip];
-            activeSoundSource.playOnAwake = true;
-            activeSoundSource.loop = true;
-            activeSoundSource.volume = 0.5f;
-            activeSoundSource.Play();
         }
     }
 
@@ -154,6 +173,8 @@ public class GameController : MonoBehaviour
     {
         scoreLabel.text = "Score: " + _score.ToString();
         livesLabel.text = "Lives: " + _lives.ToString();
+        hpLabel.text = "HP: " + _HP.ToString();
+
         if (stageTime - seconds > 0)
         {
             timeLabel.text = "Time: " + (stageTime - seconds);
@@ -188,6 +209,9 @@ public class GameController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
+                HP = 100;
+                Lives = 5;
+                Score = 0;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
@@ -229,6 +253,23 @@ public class GameController : MonoBehaviour
         bonusStack += 1;
         Debug.Log("Got bonus by gathering score over bonus score condition.");
     }
+
+    public void PlayerDied()
+    {
+        if (_lives > 0)
+        {
+            HP = 1000;
+            Lives -= 1;
+            Debug.Log("Player died");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        if( _lives <= 0)
+        {
+            HP = 1000;
+            GameOver();
+        }
+    }
+
     void BossSpawn()
     {
         Instantiate(bossEnemy);

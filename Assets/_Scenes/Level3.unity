@@ -374,7 +374,17 @@ PrefabInstance:
     - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
       propertyPath: stageTime
-      value: 60
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: hpLabel
+      value: 
+      objectReference: {fileID: 1824366201}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: _HP
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 177786579685343100, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
@@ -797,6 +807,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreLabel
       objectReference: {fileID: 0}
+    - target: {fileID: 5586577790121882669, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_Name
+      value: HPLabel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
 --- !u!114 &1824366199 stripped
@@ -817,6 +832,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1824366198}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1824366201 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 748921634699566033, guid: b5589df82b4c44646bf7557837800f7d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1824366198}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1824366202 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1869623683420342764, guid: b5589df82b4c44646bf7557837800f7d,
@@ -942,12 +969,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7422268988841677372, guid: 71dd1a278d3b7b042a695c0935e7aa63,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: b148281fc3175f6438bf2c77b6140ed6,
-        type: 3}
     - target: {fileID: 7422268988841677374, guid: 71dd1a278d3b7b042a695c0935e7aa63,
         type: 3}
       propertyPath: resetPostion
@@ -963,5 +984,11 @@ PrefabInstance:
       propertyPath: horizontalSpeed
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7422268988841677372, guid: 71dd1a278d3b7b042a695c0935e7aa63,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b148281fc3175f6438bf2c77b6140ed6,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71dd1a278d3b7b042a695c0935e7aa63, type: 3}

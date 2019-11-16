@@ -6,6 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class Storage : ScriptableObject
 {
+    public int hp;
     public int lives;
     public int score;
     public int highscore;
