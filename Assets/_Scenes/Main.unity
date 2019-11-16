@@ -764,6 +764,17 @@ PrefabInstance:
       propertyPath: StartButton
       value: 
       objectReference: {fileID: 173227407}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: bossEnemy
+      value: 
+      objectReference: {fileID: 1077780729872408355, guid: 4151b179d03bdfe41ab33dc9ba5759da,
+        type: 3}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: highscoreLabel
+      value: 
+      objectReference: {fileID: 1872811766}
     - target: {fileID: 177786579685343100, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
       propertyPath: m_LocalPosition.x

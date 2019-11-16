@@ -63,7 +63,7 @@ MonoBehaviour:
   _score: 0
   livesLabel: {fileID: 0}
   scoreLabel: {fileID: 0}
-  HighscoreLabel: {fileID: 0}
+  highscoreLabel: {fileID: 0}
   timeLabel: {fileID: 0}
   gameOverLabel: {fileID: 0}
   restartLabel: {fileID: 0}

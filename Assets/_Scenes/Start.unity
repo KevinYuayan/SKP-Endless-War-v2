@@ -658,10 +658,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreLabel
       objectReference: {fileID: 0}
-    - target: {fileID: 709560999, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1869623684108037110, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_Enabled
@@ -697,6 +693,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 709560999, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
 --- !u!1001 &3122459322233585381
@@ -723,7 +723,7 @@ PrefabInstance:
       objectReference: {fileID: 667210875}
     - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
-      propertyPath: HighscoreLabel
+      propertyPath: highscoreLabel
       value: 
       objectReference: {fileID: 824684304}
     - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,

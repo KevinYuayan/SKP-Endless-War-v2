@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour
     private int _score;
     public Text livesLabel;
     public Text scoreLabel;
-    public Text HighscoreLabel;
+    public Text highscoreLabel;
     public Text timeLabel;
     public Text gameOverLabel;
     public Text restartLabel;
@@ -81,6 +81,12 @@ public class GameController : MonoBehaviour
         {
             _score = value;
             storage.score = _score;
+
+            if(storage.highscore < _score)
+            {
+                storage.highscore = _score;
+            }
+
             scoreLabel.text = "Score : " + _score.ToString();
         }
     }
@@ -89,8 +95,9 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        highscoreLabel.text = "High Score: " + storage.highscore;
 
-        switch(SceneManager.GetActiveScene().name)
+        switch (SceneManager.GetActiveScene().name)
         {
             case "Start":
                 scoreLabel.enabled = false;
