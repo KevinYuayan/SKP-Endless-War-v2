@@ -360,6 +360,22 @@ PrefabInstance:
       propertyPath: StartLabel
       value: 
       objectReference: {fileID: 1824366200}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: enemy3
+      value: 
+      objectReference: {fileID: 3165103455658131135, guid: e438e368d85991742bc27d72141764bf,
+        type: 3}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: numberOfEnemy3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: stageTime
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 177786579685343100, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -52,6 +52,11 @@ public class ItemController : MonoBehaviour
             pC.poweredUp += 1;
 
         }
+        if(col.gameObject.tag == "Player" && this.gameObject.tag == "PowerUp" && pC.poweredUp > 2)
+        {
+            Destroy(this.gameObject);
+            gC.Score += 100;
+        }
     }
 }
 

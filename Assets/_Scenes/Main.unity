@@ -775,6 +775,23 @@ PrefabInstance:
       propertyPath: highscoreLabel
       value: 
       objectReference: {fileID: 1872811766}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: stageTime
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: enemy1
+      value: 
+      objectReference: {fileID: 279471036071834219, guid: d2280f1c2d0222e49a908caafb494b88,
+        type: 3}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: enemy2
+      value: 
+      objectReference: {fileID: 6359590337577874136, guid: 1a9eed1092df46d469cb8a7fe0d8f510,
+        type: 3}
     - target: {fileID: 177786579685343100, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
       propertyPath: m_LocalPosition.x
