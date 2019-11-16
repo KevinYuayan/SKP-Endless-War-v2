@@ -47,23 +47,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56f792f45c0f8c94aa573e2d8d3349ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gc: {fileID: 0}
+  gc: {fileID: 177786579685343101}
   gameOver: 0
   restart: 0
-  numberOfEnemy1: 2
+  numberOfEnemy1: 3
   numberOfEnemy2: 2
-  enemy1: {fileID: 279471036071834219, guid: d2280f1c2d0222e49a908caafb494b88, type: 3}
-  enemy2: {fileID: 6359590337577874136, guid: 1a9eed1092df46d469cb8a7fe0d8f510, type: 3}
+  enemy1: {fileID: 0}
+  enemy2: {fileID: 0}
   enemy1s: []
   enemy2s: []
   spawningDelay: 3
-  bossEnemy: {fileID: 1077780729872408355, guid: 4151b179d03bdfe41ab33dc9ba5759da,
-    type: 3}
+  bossEnemy: {fileID: 0}
   stageTime: 0
   _lives: 5
   _score: 0
   livesLabel: {fileID: 0}
   scoreLabel: {fileID: 0}
+  HighscoreLabel: {fileID: 0}
+  timeLabel: {fileID: 0}
   gameOverLabel: {fileID: 0}
   restartLabel: {fileID: 0}
   activeSoundClip: 0
@@ -75,6 +76,7 @@ MonoBehaviour:
   StartLabel: {fileID: 0}
   StartButton: {fileID: 0}
   bonusSCore: 100
+  storage: {fileID: 11400000, guid: d496f5ea2b345984a9e794466cf1fa9f, type: 2}
 --- !u!82 &177786579685343097
 AudioSource:
   m_ObjectHideFlags: 0

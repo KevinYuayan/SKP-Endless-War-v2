@@ -100,7 +100,7 @@ public class Boss2Controller : MonoBehaviour
                 {
                     Destroy(this.gameObject);
                     gc.Score += 3000;
-                    gc.Boss1Defeated();
+                    gc.Boss2Defeated();
                 }
             }
         }

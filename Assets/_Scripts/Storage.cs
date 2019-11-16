@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Storage", menuName = "Game/Storage")]
 [System.Serializable]
-public class Storage : MonoBehaviour
+public class Storage : ScriptableObject
 {
     public int lives;
     public int score;
+    public int highscore;
 }

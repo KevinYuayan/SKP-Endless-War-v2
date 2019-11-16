@@ -35,6 +35,7 @@ public class GameController : MonoBehaviour
     private int _score;
     public Text livesLabel;
     public Text scoreLabel;
+    public Text HighscoreLabel;
     public Text timeLabel;
     public Text gameOverLabel;
     public Text restartLabel;
@@ -52,8 +53,8 @@ public class GameController : MonoBehaviour
     private int bonusStack = 0;
     private bool gotBonus = false;
 
-    [Header("Storage")]
-    public GameObject storage;
+    [Header("GameSetting")]
+    public Storage storage;
 
     public int Lives
     {
@@ -65,7 +66,7 @@ public class GameController : MonoBehaviour
         set
         {
             _lives = value;
-            storage.GetComponent<Storage>().lives = _lives;
+            storage.lives = _lives;
             livesLabel.text = "Lives: " + _lives.ToString();
         }
     }
@@ -79,7 +80,7 @@ public class GameController : MonoBehaviour
         set
         {
             _score = value;
-            storage.GetComponent<Storage>().score = _score;
+            storage.score = _score;
             scoreLabel.text = "Score : " + _score.ToString();
         }
     }
@@ -88,7 +89,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        storage = GameObject.Find("Storage");
 
         switch(SceneManager.GetActiveScene().name)
         {
@@ -111,15 +111,15 @@ public class GameController : MonoBehaviour
             case "Level2":
                 StartLabel.SetActive(false);
                 StartButton.SetActive(false);
-                Lives = storage.GetComponent<Storage>().lives;
-                Score = storage.GetComponent<Storage>().score;
+                Lives = storage.lives;
+                Score = storage.score;
                 break;
 
             case "Level3":
                 StartLabel.SetActive(false);
                 StartButton.SetActive(false);
-                Lives = storage.GetComponent<Storage>().lives;
-                Score = storage.GetComponent<Storage>().score;
+                Lives = storage.lives;
+                Score = storage.score;
                 break;
 
         }
@@ -168,7 +168,8 @@ public class GameController : MonoBehaviour
             }
         }
 
-        if (seconds == stageTime && bossSpawned == false)
+        if (seconds == stageTime && bossSpawned == false
+            && SceneManager.GetActiveScene().name != "Start")
         {
             BossSpawn();
         }
@@ -231,12 +232,14 @@ public class GameController : MonoBehaviour
     }
     public void OnStartButtonClick()
     {
-        DontDestroyOnLoad(storage);
         SceneManager.LoadScene("Main");
     }
     public void Boss1Defeated()
     {
-        DontDestroyOnLoad(storage);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Level2");
+    }
+    public void Boss2Defeated()
+    {
+        SceneManager.LoadScene("Level3");
     }
 }
