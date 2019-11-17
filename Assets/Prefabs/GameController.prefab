@@ -71,6 +71,7 @@ MonoBehaviour:
   timeLabel: {fileID: 0}
   gameOverLabel: {fileID: 0}
   restartLabel: {fileID: 0}
+  ManualLabel: {fileID: 0}
   activeSoundClip: 0
   audioSources:
   - {fileID: 177786579685343097}
@@ -79,7 +80,7 @@ MonoBehaviour:
   - {fileID: 177786579685343102}
   StartLabel: {fileID: 0}
   StartButton: {fileID: 0}
-  bonusSCore: 10000
+  bonusSCore: 5000
   storage: {fileID: 11400000, guid: d496f5ea2b345984a9e794466cf1fa9f, type: 2}
 --- !u!82 &177786579685343097
 AudioSource:

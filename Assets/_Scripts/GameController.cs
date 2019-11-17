@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour
     public Text timeLabel;
     public Text gameOverLabel;
     public Text restartLabel;
+    public Text manualLabel;
 
     [Header("Audio Sources")]
     public SoundClip activeSoundClip;
@@ -131,6 +132,7 @@ public class GameController : MonoBehaviour
                 livesLabel.enabled = false;
                 timeLabel.enabled = false;
                 hpLabel.enabled = false;
+                manualLabel.enabled = true;
                 HP = 100;
                 Lives = 5;
                 Score = 0;
@@ -140,6 +142,8 @@ public class GameController : MonoBehaviour
                 StartButton.SetActive(false);
                 Lives = storage.lives;
                 Score = storage.score;
+                manualLabel.enabled = false;
+                
                 HP = 100;
                 break;
             case "End":
@@ -148,12 +152,14 @@ public class GameController : MonoBehaviour
                 timeLabel.enabled = false;
                 StartLabel.SetActive(false);
                 StartButton.SetActive(false);
+                manualLabel.enabled = false;
                 break;
             case "Level2":
                 StartLabel.SetActive(false);
                 StartButton.SetActive(false);
                 Lives = storage.lives;
                 Score = storage.score;
+                manualLabel.enabled = false;
                 HP = 100;
                 break;
 
@@ -162,6 +168,7 @@ public class GameController : MonoBehaviour
                 StartButton.SetActive(false);
                 Lives = storage.lives;
                 Score = storage.score;
+                manualLabel.enabled = false;
                 HP = 100;
                 break;
 

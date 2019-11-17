@@ -52,7 +52,7 @@ public class ItemController : MonoBehaviour
             pC.poweredUp += 1;
 
         }
-        if(col.gameObject.tag == "Player" && this.gameObject.tag == "PowerUp" && pC.poweredUp > 2)
+        if(col.gameObject.tag == "Player" && this.gameObject.tag == "PowerUp" && pC.poweredUp >= 2)
         {
             Destroy(this.gameObject);
             gC.Score += 100;
@@ -61,7 +61,14 @@ public class ItemController : MonoBehaviour
         if(col.gameObject.tag == "Player" && this.gameObject.tag == "HPUP")
         {
             Destroy(this.gameObject);
-            gC.HP += 50;
+            if(gC.HP <= 50)
+            {
+                gC.HP += 50;
+            }
+            if(gC.HP >= 50)
+            {
+                gC.HP = 100;
+            }
         }
     }
 }
