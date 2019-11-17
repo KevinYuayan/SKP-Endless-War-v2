@@ -263,7 +263,7 @@ public class GameController : MonoBehaviour
             Debug.Log("Player died");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        if( _lives <= 0)
+        if( _lives == 0)
         {
             HP = 1000;
             GameOver();
