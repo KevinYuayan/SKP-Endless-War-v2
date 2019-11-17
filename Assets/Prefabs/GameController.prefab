@@ -47,20 +47,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56f792f45c0f8c94aa573e2d8d3349ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gc: {fileID: 177786579685343101}
   gameOver: 0
   restart: 0
   numberOfEnemy1: 3
   numberOfEnemy2: 2
+  numberOfEnemy3: 0
   enemy1: {fileID: 0}
   enemy2: {fileID: 0}
+  enemy3: {fileID: 0}
   enemy1s: []
   enemy2s: []
+  enemy3s: []
   spawningDelay: 3
   bossEnemy: {fileID: 0}
   stageTime: 0
   _lives: 5
   _score: 0
+  _HP: 0
+  hpLabel: {fileID: 0}
   livesLabel: {fileID: 0}
   scoreLabel: {fileID: 0}
   highscoreLabel: {fileID: 0}
@@ -75,7 +79,7 @@ MonoBehaviour:
   - {fileID: 177786579685343102}
   StartLabel: {fileID: 0}
   StartButton: {fileID: 0}
-  bonusSCore: 100
+  bonusSCore: 10000
   storage: {fileID: 11400000, guid: d496f5ea2b345984a9e794466cf1fa9f, type: 2}
 --- !u!82 &177786579685343097
 AudioSource:

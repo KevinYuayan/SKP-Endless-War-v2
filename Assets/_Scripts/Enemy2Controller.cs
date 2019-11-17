@@ -128,7 +128,7 @@ public class Enemy2Controller : CollidableObject
             gc.Score += 100;
             explosionSound.volume = 0.3f;
             explosionSound.Play();
-            itemChance = Random.Range(0, 101);
+            itemChance = Random.Range(0, 100);
             if (itemChance >= 0 && itemChance <= powerUpChancePercentage)
             {
                 Instantiate(powerUp, position, Quaternion.identity);

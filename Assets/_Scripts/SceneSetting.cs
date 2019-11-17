@@ -14,14 +14,13 @@ public class SceneSetting : ScriptableObject
     public bool scoreLabelEnabled;
     public bool livesLabelEnabled;
     public bool highScoreLabelEnabled;
+    public bool HpLabelEnabled;
 
     [Header("Scene Labels")]
     public bool startLabelActive;
-    public bool endLabelSetActive;
 
 
     [Header("Scene buttons")]
     public bool startButtonActive;
-    public bool restartButtonActive;
 
 }

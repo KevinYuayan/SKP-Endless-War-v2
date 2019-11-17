@@ -36,6 +36,14 @@ public class BomberController : CollidableObject
     public float fireRate;
     private float myTime = 0.0f;
 
+    [Header("Itm spawning")]
+    private Vector3 position;
+    private int itemChance;
+    public GameObject bonusLife;
+    public GameObject hpUp;
+    public int bonusChancePercentage;
+    public int hpUpPercentage;
+
     // public properties
     public override bool HasCollided
     {
@@ -155,6 +163,20 @@ public class BomberController : CollidableObject
                 gc.Score += 100;
                 explosionSound.volume = 0.3f;
                 explosionSound.Play();
+
+                //item spawning by enemy dead
+                position = this.gameObject.transform.position;
+                itemChance = Random.Range(0, 100);
+                if (itemChance >= 0 && itemChance <= hpUpPercentage)
+                {
+                    Instantiate(hpUp, position, Quaternion.identity);
+                    Debug.Log("Hp-Up spawned");
+                }
+                if (itemChance >= 0 && itemChance <= bonusChancePercentage)
+                {
+                    Instantiate(bonusLife, position, Quaternion.identity);
+                    Debug.Log("Bonus spawned");
+                }
             }
         }
     }

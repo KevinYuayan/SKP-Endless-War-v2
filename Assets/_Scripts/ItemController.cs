@@ -57,6 +57,12 @@ public class ItemController : MonoBehaviour
             Destroy(this.gameObject);
             gC.Score += 100;
         }
+
+        if(col.gameObject.tag == "Player" && this.gameObject.tag == "HPUP")
+        {
+            Destroy(this.gameObject);
+            gC.HP += 50;
+        }
     }
 }
 
