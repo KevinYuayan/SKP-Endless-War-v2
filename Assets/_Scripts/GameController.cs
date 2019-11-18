@@ -16,12 +16,15 @@ public class GameController : MonoBehaviour
     public int numberOfEnemy1;
     public int numberOfEnemy2;
     public int numberOfEnemy3;
+    public int numberOfEnemy4;
     public GameObject enemy1;
     public GameObject enemy2;
     public GameObject enemy3;
+    public GameObject enemy4;
     public List<GameObject> enemy1s;
     public List<GameObject> enemy2s;
     public List<GameObject> enemy3s;
+    public List<GameObject> enemy4s;
     public float spawningDelay;
     [Header("BossEnemy")]
     public GameObject bossEnemy;
@@ -241,6 +244,7 @@ public class GameController : MonoBehaviour
         enemy1s = new List<GameObject>();
         enemy2s = new List<GameObject>();
         enemy3s = new List<GameObject>();
+        enemy4s = new List<GameObject>();
 
         for (int enemy1Num = 0;enemy1Num < numberOfEnemy1; enemy1Num++)
         {
@@ -255,6 +259,10 @@ public class GameController : MonoBehaviour
         for(int enemy3Num = 0; enemy3Num < numberOfEnemy3; enemy3Num++)
         {
             enemy3s.Add(Instantiate(enemy3));
+        }
+        for (int enemy4Num = 0; enemy4Num < numberOfEnemy4; enemy4Num++)
+        {
+            enemy3s.Add(Instantiate(enemy4));
         }
     }
     void addBonus()
