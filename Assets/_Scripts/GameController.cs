@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using System.Linq;
 
 public class GameController : MonoBehaviour
 {
-    private int startingLives = 1;
+    private int startingLives = 5;
 
     public bool gameOver;
     public bool restart;
@@ -42,7 +43,7 @@ public class GameController : MonoBehaviour
     public Text hpLabel;
     public Text livesLabel;
     public Text scoreLabel;
-    public Text highscoreLabel;
+    public Text highScoreLabel;
     public Text timeLabel;
     public Text gameOverLabel;
     public Text restartLabel;
@@ -53,16 +54,20 @@ public class GameController : MonoBehaviour
     public AudioSource[] audioSources;
 
     [Header("UI Control")]
-    public GameObject StartLabel;
-    public GameObject StartButton;
+    public GameObject startLabel;
+    public GameObject startButton;
 
     [Header("Bonus")]
     public int bonusSCore = 10000;
     private int bonusStack = 0;
     private bool gotBonus = false;
 
-    [Header("GameSetting")]
+    [Header("Game Setting")]
     public Storage storage;
+
+    [Header("Scene Settings")]
+    public SceneSettings activeSceneSettings;
+    public List<SceneSettings> sceneSettings;
 
     public int HP
     {
@@ -112,11 +117,38 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public
+
     // Start is called before the first frame update
     void Start()
     {
-        highscoreLabel.text = "High Score: " + storage.highscore;
+        highScoreLabel.text = "High Score: " + storage.highscore;
+
+        var query = from settings in sceneSettings
+                    where settings.scene == (Scene)Enum.Parse(typeof(Scene), SceneManager.GetActiveScene().name.ToUpper())
+                    select settings;
+
+        activeSceneSettings = query.ToList().First();
+
+        startLabel.SetActive(activeSceneSettings.startLabelEnabled);
+        manualLabel.enabled = activeSceneSettings.manualLabelEnabled;
+        highScoreLabel.enabled = activeSceneSettings.highScoreLabelEnabled;
+        scoreLabel.enabled = activeSceneSettings.scoreLabelEnabled;
+        livesLabel.enabled = activeSceneSettings.livesLabelEnabled;
+        timeLabel.enabled = activeSceneSettings.timeLabelEnabled;
+        hpLabel.enabled = activeSceneSettings.hpLabelEnabled;
+        startButton.SetActive(activeSceneSettings.StartButtonEnabled);
+
+        HP = 100;
+        if (SceneManager.GetActiveScene().name == "Start")
+        {
+            Lives = startingLives;
+            Score = 0;
+        }
+        else
+        {
+            Lives = storage.lives;
+            Score = storage.score;
+        }
 
         if ((activeSoundClip != SoundClip.NONE) && (activeSoundClip != SoundClip.NUM_OF_CLIPS))
         {
@@ -125,55 +157,6 @@ public class GameController : MonoBehaviour
             activeSoundSource.loop = true;
             activeSoundSource.volume = 0.5f;
             activeSoundSource.Play();
-        }
-
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "Start":
-                scoreLabel.enabled = false;
-                livesLabel.enabled = false;
-                timeLabel.enabled = false;
-                hpLabel.enabled = false;
-                manualLabel.enabled = true;
-                HP = 100;
-                Lives = startingLives;
-                Score = 0;
-                break;
-            case "Main":
-                StartLabel.SetActive(false);
-                StartButton.SetActive(false);
-                Lives = storage.lives;
-                Score = storage.score;
-                manualLabel.enabled = false;
-                
-                HP = 100;
-                break;
-            case "End":
-                scoreLabel.enabled = false;
-                livesLabel.enabled = false;
-                timeLabel.enabled = false;
-                StartLabel.SetActive(false);
-                StartButton.SetActive(false);
-                manualLabel.enabled = false;
-                break;
-            case "Level2":
-                StartLabel.SetActive(false);
-                StartButton.SetActive(false);
-                Lives = storage.lives;
-                Score = storage.score;
-                manualLabel.enabled = false;
-                HP = 100;
-                break;
-
-            case "Level3":
-                StartLabel.SetActive(false);
-                StartButton.SetActive(false);
-                Lives = storage.lives;
-                Score = storage.score;
-                manualLabel.enabled = false;
-                HP = 100;
-                break;
-
         }
     }
 

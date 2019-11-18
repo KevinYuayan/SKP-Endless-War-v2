@@ -8,5 +8,6 @@ public enum Scene
     START,
     MAIN,
     LEVEL2,
-    LEVEL3
+    LEVEL3,
+    NUM_OF_SCENES
 }
