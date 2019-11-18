@@ -7,6 +7,8 @@ using System;
 
 public class GameController : MonoBehaviour
 {
+    private int startingLives = 1;
+
     public bool gameOver;
     public bool restart;
     [Header("Enemies")]
@@ -134,7 +136,7 @@ public class GameController : MonoBehaviour
                 hpLabel.enabled = false;
                 manualLabel.enabled = true;
                 HP = 100;
-                Lives = 5;
+                Lives = startingLives;
                 Score = 0;
                 break;
             case "Main":
@@ -178,10 +180,6 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreLabel.text = "Score: " + _score.ToString();
-        livesLabel.text = "Lives: " + _lives.ToString();
-        hpLabel.text = "HP: " + _HP.ToString();
-
         if (stageTime - seconds > 0)
         {
             timeLabel.text = "Time: " + (stageTime - seconds);
@@ -198,7 +196,6 @@ public class GameController : MonoBehaviour
         {
             if (time >= spawningDelay && gameOver != true)
             {
-
                 time = time % 1f;
                 Spawn();
                 Debug.Log("Enemies spawned");
@@ -217,8 +214,9 @@ public class GameController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 HP = 100;
-                Lives = 5;
+                Lives = startingLives;
                 Score = 0;
+                restart = false;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
@@ -232,6 +230,7 @@ public class GameController : MonoBehaviour
             gotBonus = false;
         }
     }
+    // Spawns small enemies
     void Spawn()
     {
         enemy1s = new List<GameObject>();
@@ -255,34 +254,38 @@ public class GameController : MonoBehaviour
     }
     void addBonus()
     {
-        _lives += 1;
+        Lives += 1;
         gotBonus = true;
         bonusStack += 1;
         Debug.Log("Got bonus by gathering score over bonus score condition.");
     }
 
+    // Called when player's hp hits 0
     public void PlayerDied()
     {
-        if (_lives > 0)
+        if (_lives > 1)
         {
-            HP = 1000;
+            HP = 100;
             Lives -= 1;
             Debug.Log("Player died");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        if( _lives == 0)
+        if( _lives <= 1)
         {
-            HP = 1000;
+            HP = 100;
             GameOver();
         }
     }
 
+    // Spawns boss when timer hits 0
     void BossSpawn()
     {
         Instantiate(bossEnemy);
         bossSpawned = true;
         Debug.Log("Boss spawned");
     }
+
+    // Called when player's lives hits 0
     public void GameOver()
     {
         gameOver = true;

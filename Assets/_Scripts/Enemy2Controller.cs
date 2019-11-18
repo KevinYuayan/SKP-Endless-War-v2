@@ -90,7 +90,7 @@ public class Enemy2Controller : CollidableObject
         transform.position = startPosition;
 
         // Sets the speeds based on the position of the player
-        target = GameObject.Find("Player").transform.position;
+        target = GameObject.FindGameObjectWithTag("Player").transform.position;
         horizontalSpeed = (transform.position.x - target.x) / 70;
         verticalSpeed = (transform.position.y - target.y) / 70;
 

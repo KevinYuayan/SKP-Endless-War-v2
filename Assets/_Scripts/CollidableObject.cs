@@ -13,17 +13,6 @@ public abstract class CollidableObject : MonoBehaviour
 {
     protected bool _hasCollided;
     public virtual bool HasCollided { get; set; }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public virtual void Reset()
     {
         HasCollided = false;

@@ -11,7 +11,7 @@ using Util;
 /// Description: Controller for the Player prefab
 /// Revision History:
 /// </summary>
-public class PlayerController : MonoBehaviour
+public class PlayerController : CollidableObject
 {
     public Speed speed;
     public Boundary boundary;
@@ -24,15 +24,44 @@ public class PlayerController : MonoBehaviour
     private float myTime = 0.0f;
     public int poweredUp = 0;
 
+    // private instance variables
+    private int _invincibilityTime = 1;
+    private float _invincibleOpacity = 0.5f;
     private GameController gc;
     private AudioSource fireSound;
 
+    // Properties
+    public override bool HasCollided
+    {
+        get
+        {
+            return _hasCollided;
+        }
+        set
+        {
+            _hasCollided = value;
+            if (value == true)
+            {
+                StartCoroutine(ITime());
+            }
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
         GameObject gco = GameObject.FindWithTag("GameController");
         gc = gco.GetComponent<GameController>();
         fireSound = gc.audioSources[(int)SoundClip.PLAYER_FIRE];
+    }
+    // Method called when player is hit and becomes invincible
+    private IEnumerator ITime()
+    {
+        this.gameObject.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, _invincibleOpacity);
+        Debug.Log("Invincible");
+        yield return new WaitForSeconds(_invincibilityTime);
+        Debug.Log("before Invincible turned off");
+        HasCollided = false;
+        this.gameObject.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
     }
 
     // Update is called once per frame
@@ -62,8 +91,8 @@ public class PlayerController : MonoBehaviour
             newPosition += new Vector2(speed.min, 0.0f);
         }
         transform.position = newPosition;
-
     }
+
     public void CheckBounds()
     {
         if (transform.position.x < boundary.Left)
@@ -84,6 +113,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, boundary.Bottom);
         }
     }
+    // Fires bullets based on player's power
     void Fire()
     {
         myTime += Time.deltaTime;
@@ -111,14 +141,25 @@ public class PlayerController : MonoBehaviour
             case "Bullet":
                 if (col.gameObject.GetComponent<FireController>().IsEnemyBullet)
                 {
-                    Destroy(col.gameObject);
-                    HitbyBullet();
+                    if (!HasCollided)
+                    {
+                        Destroy(col.gameObject);
+                        HitbyBullet();
+                        HasCollided = true;
+                    }
                 }
                 break;
             case "Enemy1":
             case "Enemy2":
+            case "Bomber":
             case "Boss1":
-                HitbyCollision();
+            case "Boss2":
+            case "Boss3":
+                if(!HasCollided)
+                {
+                    HitbyCollision();
+                    HasCollided = true;
+                }
                 break;
         }
 
@@ -126,6 +167,7 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+    // Methods that handles the player hit by an enemy object
     private void HitbyCollision()
     {
         gc.HP -= 10;
