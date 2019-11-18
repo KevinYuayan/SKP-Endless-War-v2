@@ -108,11 +108,15 @@ public class Enemy1Controller : CollidableObject
     {
         if (col.gameObject.tag == "Bullet")
         {
-            Destroy(this.gameObject);
-            Destroy(col.gameObject);
-            gc.Score += 50;
-            explosionSound.volume = 0.3f;
-            explosionSound.Play();
+            // Checks if bullet is from player
+            if (!col.GetComponent<FireController>().IsEnemyBullet)
+            {
+                Destroy(this.gameObject);
+                Destroy(col.gameObject);
+                gc.Score += 50;
+                explosionSound.volume = 0.3f;
+                explosionSound.Play();
+            }
         }
     }
 }

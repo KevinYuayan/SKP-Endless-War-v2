@@ -475,6 +475,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1608161137 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1869623683949556035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1620534159
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +659,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2189820957192455367, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Game manual
+
+        4 arrow keys or WASD key : Move
+
+        CTRL key or mouse left button : Fire
+
+        You loses a life and restart a level when your HP goes to 0.
+
+        When you run out of lives, you can restart the level with 0 score.
+
+        The boss spawns when the timer hits 0
+
+        Player can go to the next level after defeating the boss.'
+      objectReference: {fileID: 0}
     - target: {fileID: 1869623684108037115, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -778,9 +807,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
-      propertyPath: sceneSettings.Array.size
-      value: 4
-      objectReference: {fileID: 0}
+      propertyPath: hpLabel
+      value: 
+      objectReference: {fileID: 784015535}
     - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
       propertyPath: livesLabel
@@ -813,6 +842,11 @@ PrefabInstance:
       objectReference: {fileID: 1801048783}
     - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
+      propertyPath: manualLabel
+      value: 
+      objectReference: {fileID: 1051496145}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
       propertyPath: StartLabel
       value: 
       objectReference: {fileID: 1369112506}
@@ -823,58 +857,24 @@ PrefabInstance:
       objectReference: {fileID: 1064657374}
     - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
-      propertyPath: _lives
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
-        type: 3}
-      propertyPath: bonusSCore
-      value: 5000
-      objectReference: {fileID: 0}
-    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
-        type: 3}
-      propertyPath: hpLabel
+      propertyPath: highScoreLabel
       value: 
-      objectReference: {fileID: 784015535}
+      objectReference: {fileID: 824684304}
     - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
-      propertyPath: sceneSettings.Array.data[0]
+      propertyPath: startButton
       value: 
-      objectReference: {fileID: 11400000, guid: 22a0f8b0a7fccee4e9a4a1ca3a16969a,
-        type: 2}
+      objectReference: {fileID: 1064657374}
     - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
-      propertyPath: sceneSettings.Array.data[1]
+      propertyPath: startLabel
       value: 
-      objectReference: {fileID: 11400000, guid: 68275a9c404170143ba21149c59dc32e,
-        type: 2}
+      objectReference: {fileID: 1369112506}
     - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
-      propertyPath: sceneSettings.Array.data[2]
+      propertyPath: endLabel
       value: 
-      objectReference: {fileID: 11400000, guid: 0eadd956b9036be49909ddeb9a171c94,
-        type: 2}
-    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
-        type: 3}
-      propertyPath: sceneSettings.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: fdfc8914ccb72f949b1f69c4795407a7,
-        type: 2}
-    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
-        type: 3}
-      propertyPath: ManualLabel
-      value: 
-      objectReference: {fileID: 1051496145}
-    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
-        type: 3}
-      propertyPath: stageTime
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
-        type: 3}
-      propertyPath: manualLabel
-      value: 
-      objectReference: {fileID: 1051496145}
+      objectReference: {fileID: 1608161137}
     - target: {fileID: 177786579685343100, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
       propertyPath: m_LocalPosition.x

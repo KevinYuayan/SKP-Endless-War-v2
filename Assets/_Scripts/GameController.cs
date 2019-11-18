@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using System.Linq;
 
 public class GameController : MonoBehaviour
 {
-    private int startingLives = 1;
+    private int startingLives = 5;
 
     public bool gameOver;
     public bool restart;
@@ -15,12 +16,15 @@ public class GameController : MonoBehaviour
     public int numberOfEnemy1;
     public int numberOfEnemy2;
     public int numberOfEnemy3;
+    public int numberOfEnemy4;
     public GameObject enemy1;
     public GameObject enemy2;
     public GameObject enemy3;
+    public GameObject enemy4;
     public List<GameObject> enemy1s;
     public List<GameObject> enemy2s;
     public List<GameObject> enemy3s;
+    public List<GameObject> enemy4s;
     public float spawningDelay;
     [Header("BossEnemy")]
     public GameObject bossEnemy;
@@ -42,27 +46,32 @@ public class GameController : MonoBehaviour
     public Text hpLabel;
     public Text livesLabel;
     public Text scoreLabel;
-    public Text highscoreLabel;
+    public Text highScoreLabel;
     public Text timeLabel;
     public Text gameOverLabel;
     public Text restartLabel;
     public Text manualLabel;
+    public Text endLabel;
 
     [Header("Audio Sources")]
     public SoundClip activeSoundClip;
     public AudioSource[] audioSources;
 
     [Header("UI Control")]
-    public GameObject StartLabel;
-    public GameObject StartButton;
+    public GameObject startLabel;
+    public GameObject startButton;
 
     [Header("Bonus")]
     public int bonusSCore = 10000;
     private int bonusStack = 0;
     private bool gotBonus = false;
 
-    [Header("GameSetting")]
+    [Header("Game Setting")]
     public Storage storage;
+
+    [Header("Scene Settings")]
+    public SceneSettings activeSceneSettings;
+    public List<SceneSettings> sceneSettings;
 
     public int HP
     {
@@ -107,16 +116,56 @@ public class GameController : MonoBehaviour
             {
                 storage.highscore = _score;
             }
-
-            scoreLabel.text = "Score : " + _score.ToString();
+            if (SceneManager.GetActiveScene().name == "End")
+            {
+                endLabel.text += _score.ToString();
+            }
+            else
+            {
+                scoreLabel.text = "Score : " + _score.ToString();
+            }
+        
         }
     }
 
-    public
+
     // Start is called before the first frame update
     void Start()
     {
-        highscoreLabel.text = "High Score: " + storage.highscore;
+        highScoreLabel.text = "High Score: " + storage.highscore;
+
+        var query = from settings in sceneSettings
+                    where settings.scene == (Scene)Enum.Parse(typeof(Scene), SceneManager.GetActiveScene().name.ToUpper())
+                    select settings;
+
+        activeSceneSettings = query.ToList().First();
+
+        startLabel.SetActive(activeSceneSettings.startLabelEnabled);
+        manualLabel.enabled = activeSceneSettings.manualLabelEnabled;
+        highScoreLabel.enabled = activeSceneSettings.highScoreLabelEnabled;
+        scoreLabel.enabled = activeSceneSettings.scoreLabelEnabled;
+        livesLabel.enabled = activeSceneSettings.livesLabelEnabled;
+        timeLabel.enabled = activeSceneSettings.timeLabelEnabled;
+        hpLabel.enabled = activeSceneSettings.hpLabelEnabled;
+        endLabel.enabled = activeSceneSettings.endLabelEnabled;
+        startButton.SetActive(activeSceneSettings.StartButtonEnabled);
+
+        HP = 100;
+        if (SceneManager.GetActiveScene().name == "Start")
+        {
+            Lives = startingLives;
+            Score = 0;
+        }
+        else if (SceneManager.GetActiveScene().name == "End")
+        {
+            restart = true;
+            Score = storage.score;
+        }
+        else
+        {
+            Lives = storage.lives;
+            Score = storage.score;
+        }
 
         if ((activeSoundClip != SoundClip.NONE) && (activeSoundClip != SoundClip.NUM_OF_CLIPS))
         {
@@ -125,55 +174,6 @@ public class GameController : MonoBehaviour
             activeSoundSource.loop = true;
             activeSoundSource.volume = 0.5f;
             activeSoundSource.Play();
-        }
-
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "Start":
-                scoreLabel.enabled = false;
-                livesLabel.enabled = false;
-                timeLabel.enabled = false;
-                hpLabel.enabled = false;
-                manualLabel.enabled = true;
-                HP = 100;
-                Lives = startingLives;
-                Score = 0;
-                break;
-            case "Main":
-                StartLabel.SetActive(false);
-                StartButton.SetActive(false);
-                Lives = storage.lives;
-                Score = storage.score;
-                manualLabel.enabled = false;
-                
-                HP = 100;
-                break;
-            case "End":
-                scoreLabel.enabled = false;
-                livesLabel.enabled = false;
-                timeLabel.enabled = false;
-                StartLabel.SetActive(false);
-                StartButton.SetActive(false);
-                manualLabel.enabled = false;
-                break;
-            case "Level2":
-                StartLabel.SetActive(false);
-                StartButton.SetActive(false);
-                Lives = storage.lives;
-                Score = storage.score;
-                manualLabel.enabled = false;
-                HP = 100;
-                break;
-
-            case "Level3":
-                StartLabel.SetActive(false);
-                StartButton.SetActive(false);
-                Lives = storage.lives;
-                Score = storage.score;
-                manualLabel.enabled = false;
-                HP = 100;
-                break;
-
         }
     }
 
@@ -204,7 +204,8 @@ public class GameController : MonoBehaviour
         }
 
         if (seconds == stageTime && bossSpawned == false
-            && SceneManager.GetActiveScene().name != "Start")
+            && SceneManager.GetActiveScene().name != "Start"
+            &&SceneManager.GetActiveScene().name != "End")
         {
             BossSpawn();
         }
@@ -213,11 +214,18 @@ public class GameController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                HP = 100;
-                Lives = startingLives;
-                Score = 0;
-                restart = false;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                if (SceneManager.GetActiveScene().name == "End")
+                {
+                    SceneManager.LoadScene("Start");
+                }
+                else
+                {
+                    HP = 100;
+                    Lives = startingLives;
+                    Score = 0;
+                    restart = false;
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                }
             }
         }
         //Ading bonus life per a specific score value.
@@ -236,6 +244,7 @@ public class GameController : MonoBehaviour
         enemy1s = new List<GameObject>();
         enemy2s = new List<GameObject>();
         enemy3s = new List<GameObject>();
+        enemy4s = new List<GameObject>();
 
         for (int enemy1Num = 0;enemy1Num < numberOfEnemy1; enemy1Num++)
         {
@@ -250,6 +259,10 @@ public class GameController : MonoBehaviour
         for(int enemy3Num = 0; enemy3Num < numberOfEnemy3; enemy3Num++)
         {
             enemy3s.Add(Instantiate(enemy3));
+        }
+        for (int enemy4Num = 0; enemy4Num < numberOfEnemy4; enemy4Num++)
+        {
+            enemy3s.Add(Instantiate(enemy4));
         }
     }
     void addBonus()
@@ -308,5 +321,10 @@ public class GameController : MonoBehaviour
     public void Boss2Defeated()
     {
         SceneManager.LoadScene("Level3");
+    }
+
+    public void Boss3Defeated()
+    {
+        SceneManager.LoadScene("End");
     }
 }

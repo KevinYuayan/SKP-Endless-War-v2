@@ -61,27 +61,35 @@ MonoBehaviour:
   spawningDelay: 3
   bossEnemy: {fileID: 0}
   stageTime: 0
-  _lives: 5
+  _lives: 0
   _score: 0
   _HP: 0
   hpLabel: {fileID: 0}
   livesLabel: {fileID: 0}
   scoreLabel: {fileID: 0}
-  highscoreLabel: {fileID: 0}
+  highScoreLabel: {fileID: 0}
   timeLabel: {fileID: 0}
   gameOverLabel: {fileID: 0}
   restartLabel: {fileID: 0}
-  ManualLabel: {fileID: 0}
+  manualLabel: {fileID: 0}
+  endLabel: {fileID: 0}
   activeSoundClip: 0
   audioSources:
   - {fileID: 177786579685343097}
   - {fileID: 177786579685343096}
   - {fileID: 177786579685343103}
   - {fileID: 177786579685343102}
-  StartLabel: {fileID: 0}
-  StartButton: {fileID: 0}
+  startLabel: {fileID: 0}
+  startButton: {fileID: 0}
   bonusSCore: 5000
   storage: {fileID: 11400000, guid: d496f5ea2b345984a9e794466cf1fa9f, type: 2}
+  activeSceneSettings: {fileID: 0}
+  sceneSettings:
+  - {fileID: 11400000, guid: 2e02d1c159ba3fc4cad99da3a42ac6a0, type: 2}
+  - {fileID: 11400000, guid: 7f65003db4db7504bbc91ea72778f1df, type: 2}
+  - {fileID: 11400000, guid: 861927e5b86fd0540a27a25a77b6abb4, type: 2}
+  - {fileID: 11400000, guid: 7b2f871863955114dbcc1837896c7902, type: 2}
+  - {fileID: 11400000, guid: 7b2f871863955114dbcc1837896c7902, type: 2}
 --- !u!82 &177786579685343097
 AudioSource:
   m_ObjectHideFlags: 0
