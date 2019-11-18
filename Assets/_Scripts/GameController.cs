@@ -153,6 +153,11 @@ public class GameController : MonoBehaviour
             Lives = startingLives;
             Score = 0;
         }
+        else if (SceneManager.GetActiveScene().name == "End")
+        {
+            restart = true;
+            Score = storage.score;
+        }
         else
         {
             Lives = storage.lives;
@@ -206,11 +211,18 @@ public class GameController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                HP = 100;
-                Lives = startingLives;
-                Score = 0;
-                restart = false;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                if (SceneManager.GetActiveScene().name == "End")
+                {
+                    SceneManager.LoadScene("Start");
+                }
+                else
+                {
+                    HP = 100;
+                    Lives = startingLives;
+                    Score = 0;
+                    restart = false;
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                }
             }
         }
         //Ading bonus life per a specific score value.
