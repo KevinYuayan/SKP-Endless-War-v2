@@ -146,8 +146,8 @@ MonoBehaviour:
   bonusLife: {fileID: 1830573422138198335, guid: 417dc5ddf54aaef4db0c520b98a00327,
     type: 3}
   hpUp: {fileID: 7761874189034688760, guid: 4f4a32a4a650c6d45b741d0bebc925b7, type: 3}
-  bonusChancePercentage: 10
-  hpUpPercentage: 40
+  bonusChancePercentage: 5
+  hpUpPercentage: 15
 --- !u!50 &-5207256478286993604
 Rigidbody2D:
   serializedVersion: 4
