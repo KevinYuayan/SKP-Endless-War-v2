@@ -17,6 +17,7 @@ public class SceneSettings : ScriptableObject
     public bool livesLabelEnabled;
     public bool timeLabelEnabled;
     public bool hpLabelEnabled;
+    public bool endLabelEnabled;
     [Header("Buttons")]
     public bool StartButtonEnabled;
 
