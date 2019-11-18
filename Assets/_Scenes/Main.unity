@@ -851,6 +851,21 @@ PrefabInstance:
       propertyPath: manualLabel
       value: 
       objectReference: {fileID: 173227408}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: highScoreLabel
+      value: 
+      objectReference: {fileID: 1872811766}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: startButton
+      value: 
+      objectReference: {fileID: 173227407}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: startLabel
+      value: 
+      objectReference: {fileID: 261791155}
     - target: {fileID: 177786579685343100, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
       propertyPath: m_LocalPosition.x

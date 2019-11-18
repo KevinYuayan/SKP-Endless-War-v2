@@ -6,11 +6,20 @@ using UnityEngine;
 [System.Serializable]
 public class SceneSettings : ScriptableObject
 {
-    public bool StartLabelEnabled;
-    public bool StartButtonEnabled;
+    [Header("Scene Configuration")]
+    public Scene scene;
+
+    [Header("Labels")]
+    public bool startLabelEnabled;
+    public bool manualLabelEnabled;
+    public bool highScoreLabelEnabled;
     public bool scoreLabelEnabled;
     public bool livesLabelEnabled;
     public bool timeLabelEnabled;
     public bool hpLabelEnabled;
-    public bool manualLabelEnabled;
+    [Header("Buttons")]
+    public bool StartButtonEnabled;
+
+    //[Header("Enemies")]
+    //public bool Enemy1;
 }
