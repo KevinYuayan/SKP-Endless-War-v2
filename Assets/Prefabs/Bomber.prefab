@@ -149,8 +149,8 @@ MonoBehaviour:
   bonusLife: {fileID: 1830573422138198335, guid: 417dc5ddf54aaef4db0c520b98a00327,
     type: 3}
   hpUp: {fileID: 7761874189034688760, guid: 4f4a32a4a650c6d45b741d0bebc925b7, type: 3}
-  bonusChancePercentage: 10
-  hpUpPercentage: 100
+  bonusChancePercentage: 5
+  hpUpPercentage: 10
 --- !u!70 &5428006212805835287
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
