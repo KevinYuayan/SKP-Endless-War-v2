@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7379716281020024666}
   - component: {fileID: 7379716281020024667}
   - component: {fileID: 7379716281020024664}
-  - component: {fileID: 7379716281020024660}
   - component: {fileID: 7379716281020024661}
+  - component: {fileID: -132585438637970492}
   m_Layer: 0
   m_Name: PowerUp
   m_TagString: PowerUp
@@ -96,22 +96,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalSpeed: 0.05
---- !u!58 &7379716281020024660
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7379716281020024665}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.15647948, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.5312308
 --- !u!50 &7379716281020024661
 Rigidbody2D:
   serializedVersion: 4
@@ -133,3 +117,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &-132585438637970492
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7379716281020024665}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000010430813, y: -0.09014949}
+  m_Size: {x: 1.5879594, y: 3.0046096}
+  m_Direction: 0

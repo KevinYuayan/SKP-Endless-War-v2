@@ -12,6 +12,9 @@ TagManager:
   - PowerUp
   - Boss1
   - HPUP
+  - Bomber
+  - Boss2
+  - Boss3
   layers:
   - Default
   - TransparentFX
