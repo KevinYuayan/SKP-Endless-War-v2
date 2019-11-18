@@ -48,6 +48,7 @@ public class GameController : MonoBehaviour
     public Text gameOverLabel;
     public Text restartLabel;
     public Text manualLabel;
+    public Text endLabel;
 
     [Header("Audio Sources")]
     public SoundClip activeSoundClip;
@@ -112,8 +113,15 @@ public class GameController : MonoBehaviour
             {
                 storage.highscore = _score;
             }
-
-            scoreLabel.text = "Score : " + _score.ToString();
+            if (SceneManager.GetActiveScene().name == "End")
+            {
+                endLabel.text += _score.ToString();
+            }
+            else
+            {
+                scoreLabel.text = "Score : " + _score.ToString();
+            }
+        
         }
     }
 
@@ -136,6 +144,7 @@ public class GameController : MonoBehaviour
         livesLabel.enabled = activeSceneSettings.livesLabelEnabled;
         timeLabel.enabled = activeSceneSettings.timeLabelEnabled;
         hpLabel.enabled = activeSceneSettings.hpLabelEnabled;
+        endLabel.enabled = activeSceneSettings.endLabelEnabled;
         startButton.SetActive(activeSceneSettings.StartButtonEnabled);
 
         HP = 100;
@@ -187,7 +196,8 @@ public class GameController : MonoBehaviour
         }
 
         if (seconds == stageTime && bossSpawned == false
-            && SceneManager.GetActiveScene().name != "Start")
+            && SceneManager.GetActiveScene().name != "Start"
+            &&SceneManager.GetActiveScene().name != "End")
         {
             BossSpawn();
         }
@@ -291,5 +301,10 @@ public class GameController : MonoBehaviour
     public void Boss2Defeated()
     {
         SceneManager.LoadScene("Level3");
+    }
+
+    public void Boss3Defeated()
+    {
+        SceneManager.LoadScene("End");
     }
 }
