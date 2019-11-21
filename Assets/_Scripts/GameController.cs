@@ -188,7 +188,7 @@ public class GameController : MonoBehaviour
         {
             timeLabel.text = "Boss spawned!";
         }
-        //Setting delay of spawning enemy. time % nf means n 
+        //Setting delay of spawning enemy. 
         time += Time.deltaTime;
         timeCounter += Time.deltaTime;
         seconds = Convert.ToInt32(timeCounter);
@@ -196,10 +196,10 @@ public class GameController : MonoBehaviour
         {
             if (time >= spawningDelay && gameOver != true)
             {
-                time = time % 1f;
+                time = 0;
                 Spawn();
-                Debug.Log("Enemies spawned");
-                Debug.Log("Time Counter: " + seconds + "Second(s)");
+                //Debug.Log("Enemies spawned");
+                //Debug.Log("Time Counter: " + seconds + "Second(s)");
             }
         }
 
@@ -270,7 +270,7 @@ public class GameController : MonoBehaviour
         Lives += 1;
         gotBonus = true;
         bonusStack += 1;
-        Debug.Log("Got bonus by gathering score over bonus score condition.");
+        //Debug.Log("Got bonus by gathering score over bonus score condition.");
     }
 
     // Called when player's hp hits 0
@@ -280,7 +280,7 @@ public class GameController : MonoBehaviour
         {
             HP = 100;
             Lives -= 1;
-            Debug.Log("Player died");
+            //Debug.Log("Player died");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         if( _lives <= 1)
@@ -295,7 +295,7 @@ public class GameController : MonoBehaviour
     {
         Instantiate(bossEnemy);
         bossSpawned = true;
-        Debug.Log("Boss spawned");
+        //Debug.Log("Boss spawned");
     }
 
     // Called when player's lives hits 0

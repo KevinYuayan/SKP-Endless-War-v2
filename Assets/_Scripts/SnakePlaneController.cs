@@ -175,12 +175,12 @@ public class SnakePlaneController : CollidableObject
                 if (itemChance >= 0 && itemChance <= hpUpPercentage)
                 {
                     Instantiate(hpUp, position, Quaternion.identity);
-                    Debug.Log("Hp-Up spawned");
+                    //Debug.Log("Hp-Up spawned");
                 }
                 if (itemChance >= 0 && itemChance <= bonusChancePercentage)
                 {
                     Instantiate(bonusLife, position, Quaternion.identity);
-                    Debug.Log("Bonus spawned");
+                    //Debug.Log("Bonus spawned");
                 }
             }
         }

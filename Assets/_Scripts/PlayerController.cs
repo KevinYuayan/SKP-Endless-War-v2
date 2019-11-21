@@ -57,9 +57,9 @@ public class PlayerController : CollidableObject
     private IEnumerator ITime()
     {
         this.gameObject.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, _invincibleOpacity);
-        Debug.Log("Invincible");
+        //Debug.Log("Invincible");
         yield return new WaitForSeconds(_invincibilityTime);
-        Debug.Log("before Invincible turned off");
+        //Debug.Log("before Invincible turned off");
         HasCollided = false;
         this.gameObject.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
     }
@@ -74,19 +74,19 @@ public class PlayerController : CollidableObject
     void Move()
     {
         Vector2 newPosition = transform.position;
-        if (Input.GetAxis("Vertical") > 0.0f)
+        if (Input.GetAxisRaw("Vertical") > 0.0f)
         {
             newPosition += new Vector2(0.0f, speed.max);
         }
-        if(Input.GetAxis("Vertical") < 0.0f)
+        if(Input.GetAxisRaw("Vertical") < 0.0f)
         {
              newPosition += new Vector2(0.0f, speed.min);
         }
-        if(Input.GetAxis("Horizontal") > 0.0f)
+        if(Input.GetAxisRaw("Horizontal") > 0.0f)
         {
             newPosition += new Vector2(speed.max, 0.0f);
         }
-        if(Input.GetAxis("Horizontal") < 0.0f)
+        if(Input.GetAxisRaw("Horizontal") < 0.0f)
         {
             newPosition += new Vector2(speed.min, 0.0f);
         }
@@ -171,7 +171,7 @@ public class PlayerController : CollidableObject
     private void HitbyCollision()
     {
         gc.HP -= 10;
-        Debug.Log("Hit by collision: " + gc.HP);
+        //Debug.Log("Hit by collision: " + gc.HP);
         if (gc.HP <= 0)
         {
             Destroy(this.gameObject);
@@ -181,7 +181,7 @@ public class PlayerController : CollidableObject
     private void HitbyBullet()
     {
         gc.HP -= 20;
-        Debug.Log("Hit by bullet: " + gc.HP);
+        //Debug.Log("Hit by bullet: " + gc.HP);
         if (gc.HP <= 0)
         {
             Destroy(this.gameObject);

@@ -132,12 +132,12 @@ public class Enemy2Controller : CollidableObject
             if (itemChance >= 0 && itemChance <= powerUpChancePercentage)
             {
                 Instantiate(powerUp, position, Quaternion.identity);
-                Debug.Log("Power-Up spawned");
+                //Debug.Log("Power-Up spawned");
             }
             if (itemChance >= 0 && itemChance <= bonusChancePercentage)
             {
                 Instantiate(bonusLife, position, Quaternion.identity);
-                Debug.Log("Bonus spawned");
+                //Debug.Log("Bonus spawned");
             }
         }
     }

@@ -24,7 +24,7 @@ public class ItemController : MonoBehaviour
         gC = gCO.GetComponent<GameController>();
         GameObject pCO = GameObject.FindWithTag("Player");
         pC = pCO.GetComponent<PlayerController>();
-        Debug.Log("Power up level: " + pC.poweredUp);
+        //Debug.Log("Power up level: " + pC.poweredUp);
   
     }
     void Update()
