@@ -6,6 +6,7 @@ using UnityEngine;
 public enum Scene 
 {
     START,
+    TUTORIAL,
     MAIN,
     LEVEL2,
     LEVEL3,

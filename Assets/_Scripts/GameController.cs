@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
 
     public bool gameOver;
     public bool restart;
+    public bool tutorial = false;
     [Header("Enemies")]
     public int numberOfEnemy1;
     public int numberOfEnemy2;
@@ -112,7 +113,7 @@ public class GameController : MonoBehaviour
             _score = value;
             storage.score = _score;
 
-            if(storage.highscore < _score)
+            if(storage.highscore < _score && SceneManager.GetActiveScene().name != "Tutorial")
             {
                 storage.highscore = _score;
             }
@@ -151,6 +152,10 @@ public class GameController : MonoBehaviour
         startButton.SetActive(activeSceneSettings.StartButtonEnabled);
 
         HP = 100;
+        if(SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            tutorial = true;
+        }
         if (SceneManager.GetActiveScene().name == "Start")
         {
             Lives = startingLives;
@@ -182,7 +187,7 @@ public class GameController : MonoBehaviour
     {
         if (stageTime - seconds > 0)
         {
-            timeLabel.text = "Time: " + (stageTime - seconds);
+                timeLabel.text = "Time: " + (stageTime - seconds);
         }
         else if (stageTime - seconds <= 0)
         {
@@ -205,7 +210,8 @@ public class GameController : MonoBehaviour
 
         if (seconds == stageTime && bossSpawned == false
             && SceneManager.GetActiveScene().name != "Start"
-            &&SceneManager.GetActiveScene().name != "End")
+            &&SceneManager.GetActiveScene().name != "End"
+            && SceneManager.GetActiveScene().name != "Tutorial")
         {
             BossSpawn();
         }
@@ -236,6 +242,17 @@ public class GameController : MonoBehaviour
         if(_score > (bonusSCore * bonusStack) && gotBonus == true)
         {
             gotBonus = false;
+        }
+
+        //Allow user to skip tutorial
+        if(tutorial)
+        {
+            if (Input.GetKeyDown(KeyCode.K))
+               {
+                    Lives = startingLives;
+                    Score = 0;
+                    SceneManager.LoadScene("Main");
+               }
         }
     }
     // Spawns small enemies
@@ -312,7 +329,7 @@ public class GameController : MonoBehaviour
     }
     public void OnStartButtonClick()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Tutorial");
     }
     public void Boss1Defeated()
     {

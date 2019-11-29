@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c8d4dbff1482ce41b8f0db15d6bff2d, type: 3}
-  m_Name: EndSceneSetting
+  m_Name: TutorialSceneSetting
   m_EditorClassIdentifier: 
-  scene: 5
+  scene: 1
   startLabelEnabled: 0
   manualLabelEnabled: 0
-  highScoreLabelEnabled: 0
-  scoreLabelEnabled: 0
-  livesLabelEnabled: 0
-  timeLabelEnabled: 0
-  hpLabelEnabled: 0
-  endLabelEnabled: 1
+  highScoreLabelEnabled: 1
+  scoreLabelEnabled: 1
+  livesLabelEnabled: 1
+  timeLabelEnabled: 1
+  hpLabelEnabled: 1
+  endLabelEnabled: 0
   StartButtonEnabled: 0

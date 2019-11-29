@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8d4dbff1482ce41b8f0db15d6bff2d, type: 3}
   m_Name: Level3SceneSettings
   m_EditorClassIdentifier: 
-  scene: 3
+  scene: 4
   startLabelEnabled: 0
   manualLabelEnabled: 0
   highScoreLabelEnabled: 1
@@ -20,4 +20,5 @@ MonoBehaviour:
   livesLabelEnabled: 1
   timeLabelEnabled: 1
   hpLabelEnabled: 1
+  endLabelEnabled: 0
   StartButtonEnabled: 0

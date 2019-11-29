@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8d4dbff1482ce41b8f0db15d6bff2d, type: 3}
   m_Name: MainSceneSettings
   m_EditorClassIdentifier: 
-  scene: 1
+  scene: 2
   startLabelEnabled: 0
   manualLabelEnabled: 0
   highScoreLabelEnabled: 1
