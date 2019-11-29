@@ -110,9 +110,12 @@ public class GameController : MonoBehaviour
         }
         set
         {
-            _score = value;
-            storage.score = _score;
-
+            //Score restriction to prevent score farming after stage time is done
+            if(timeCounter<stageTime && bossSpawned == false)
+            {
+                _score = value;
+                storage.score = _score;
+            }
             if(storage.highscore < _score && SceneManager.GetActiveScene().name != "Tutorial")
             {
                 storage.highscore = _score;
@@ -189,16 +192,14 @@ public class GameController : MonoBehaviour
         {
                 timeLabel.text = "Time: " + (stageTime - seconds);
         }
-        else if (stageTime - seconds <= 0)
+        else if (stageTime - seconds <= 0 && bossSpawned == false)
         {
-            timeLabel.text = "Boss spawned!";
+            timeLabel.text = "Push space key to defat boss!";
         }
         //Setting delay of spawning enemy. 
         time += Time.deltaTime;
         timeCounter += Time.deltaTime;
         seconds = Convert.ToInt32(timeCounter);
-        if (timeCounter < stageTime)
-        {
             if (time >= spawningDelay && gameOver != true)
             {
                 time = 0;
@@ -206,14 +207,14 @@ public class GameController : MonoBehaviour
                 //Debug.Log("Enemies spawned");
                 //Debug.Log("Time Counter: " + seconds + "Second(s)");
             }
-        }
-
-        if (seconds == stageTime && bossSpawned == false
+        if (seconds > stageTime 
+            && bossSpawned == false
             && SceneManager.GetActiveScene().name != "Start"
             &&SceneManager.GetActiveScene().name != "End"
-            && SceneManager.GetActiveScene().name != "Tutorial")
+            && SceneManager.GetActiveScene().name != "Tutorial"
+            &&Input.GetKeyDown(KeyCode.Space))
         {
-            BossSpawn();
+                BossSpawn();
         }
 
         if (restart == true)
@@ -310,6 +311,7 @@ public class GameController : MonoBehaviour
     // Spawns boss when timer hits 0
     void BossSpawn()
     {
+        timeLabel.text = "Boss spawned!";
         Instantiate(bossEnemy);
         bossSpawned = true;
         //Debug.Log("Boss spawned");
