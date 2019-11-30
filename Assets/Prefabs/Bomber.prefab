@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 4633187095273960450}
   - component: {fileID: 4701207170265443677}
   - component: {fileID: 4919969481322744003}
-  - component: {fileID: 5428006212805835287}
+  - component: {fileID: 5674663024214646335}
   m_Layer: 0
   m_Name: Bomber
   m_TagString: Bomber
@@ -56,15 +56,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3165103455658131135}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 3.714, y: 1.835, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.977, y: 1.821, z: 0}
+  m_LocalScale: {x: 0.6073207, y: 0.67648, z: 1}
   m_Children:
   - {fileID: 3794174827199368416}
   - {fileID: 2047399608573676025}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4701207170265443677
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -103,8 +103,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -7038958211754138055, guid: 98591d4ae2b339e4a8e0fffd2a1bfd08,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 026020e58c098244a8c426b9c5cd40f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -153,8 +152,8 @@ MonoBehaviour:
   hpUpPercentage: 8
   bonusChancePercentage: 2
   powerUpChancePercentage: 8
---- !u!70 &5428006212805835287
-CapsuleCollider2D:
+--- !u!60 &5674663024214646335
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -163,12 +162,49 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -7.393683e-17, y: -0.008511244}
-  m_Size: {x: 0.93000007, y: 0.7129724}
-  m_Direction: 1
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.67, y: 0.52}
+    newSize: {x: 0.93, y: 0.72}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.515, y: -0.099999994}
+      - {x: 0.565, y: -0.04}
+      - {x: 0.565, y: 0.26}
+      - {x: 0.39499998, y: 0.26}
+      - {x: 0.295, y: 0.12}
+      - {x: 0.015, y: 0.11}
+      - {x: 0.024999999, y: 0.19}
+      - {x: -0.035, y: 0.21}
+      - {x: -0.295, y: 0.17999999}
+      - {x: -0.36499998, y: 0.13}
+      - {x: -0.66499996, y: 0.089999996}
+      - {x: -0.705, y: 0.06}
+      - {x: -0.705, y: -0.02}
+      - {x: -0.685, y: -0.07}
+      - {x: -0.60499996, y: -0.16}
+      - {x: -0.355, y: -0.26}
+      - {x: -0.285, y: -0.26}
+      - {x: -0.085, y: -0.14}
+      - {x: -0.005, y: -0.06}
+      - {x: 0.285, y: -0.06}
+    - - {x: -0.445, y: -0.049999997}
+      - {x: -0.435, y: -0.04}
+      - {x: -0.475, y: -0.04}
+      - {x: -0.465, y: -0.04}
+    - - {x: 0.445, y: 0.17999999}
+      - {x: 0.49499997, y: 0.19}
+      - {x: 0.49499997, y: 0.049999997}
+      - {x: 0.445, y: 0.049999997}
 --- !u!1 &4524444491270667487
 GameObject:
   m_ObjectHideFlags: 0
