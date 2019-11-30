@@ -4,6 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Util;
 
+/// <summary>
+/// File Name: Boss1Controller.cs
+/// Author: Kevin Yuayan
+/// Last Modified by: Kevin Yuayan
+/// Date Last Modified: Oct. 8, 2019
+/// Description: Controller of the first boss.
+/// Revision History:
+/// </summary>
 public class Boss1Controller : MonoBehaviour
 {
     [SerializeField]

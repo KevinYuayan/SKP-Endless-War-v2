@@ -5,9 +5,9 @@ using Util;
 
 /// <summary>
 /// File Name: PlayerController.cs
-/// Author: Philip Lee
-/// Last Modified by: Philip Lee
-/// Date Last Modified: Oct. 4, 2019
+/// Author: Hyungseok Philip Lee, Kevin Yuayan
+/// Last Modified by: Hyungseok Philip Lee
+/// Date Last Modified: Nov. 29, 2019
 /// Description: Controller for the Player prefab
 /// Revision History:
 /// </summary>
@@ -179,7 +179,7 @@ public class PlayerController : CollidableObject
     {
         gc.HP -= 10;
         hpBC.SetDamage(10.0f);
-        Debug.Log("Hit by collision: " + gc.HP);
+        //Debug.Log("Hit by collision: " + gc.HP);
         if (gc.HP <= 0)
         {
             Destroy(this.gameObject);
@@ -190,7 +190,7 @@ public class PlayerController : CollidableObject
     {
         gc.HP -= 20;
         hpBC.SetDamage(20.0f);
-        Debug.Log("Hit by bullet: " + gc.HP);
+        //Debug.Log("Hit by bullet: " + gc.HP);
         if (gc.HP <= 0)
         {
             Destroy(this.gameObject);

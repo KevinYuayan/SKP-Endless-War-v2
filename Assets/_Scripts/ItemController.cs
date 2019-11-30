@@ -8,9 +8,9 @@ public class ItemController : MonoBehaviour
     /// File Name: ItemController.cs
     /// Author: Hyungseok Lee
     /// Last Modified by: Hyungseok lee
-    /// Date Last Modified: Oct. 18, 2019
+    /// Date Last Modified: Nov. 29, 2019
     /// Description: Controller for Items
-    /// Revision History:
+    /// Revision History:Hp-Up Item added, hp bar controlling by getting hp-up item added.
     /// </summary>
 
     [Header("Speed Values")]
@@ -71,13 +71,13 @@ public class ItemController : MonoBehaviour
             {
                 gC.HP += 50;
                 hpBC.health += 0.5f;
-                Debug.Log("Hp 50% retored");
+                //Debug.Log("Hp 50% retored");
             }
             else if(gC.HP > 50)
             {
                 gC.HP = 100;
                 hpBC.health = 1.0f;
-                Debug.Log("Hp is full");
+                //Debug.Log("Hp is full");
             }
         }
     }

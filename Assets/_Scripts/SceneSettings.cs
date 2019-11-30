@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// File Name: SceneSettings.cs
+/// Author: Kevin Yuayan
+/// Last Modified by: KevinYuayan
+/// Date Last Modified: Nov. 5, 2019
+/// Description: Scene setting file 
+/// Revision History:
+/// </summary>
+
 [CreateAssetMenu(fileName = "SceneSettings", menuName = "Scene/Settings")]
 [System.Serializable]
 public class SceneSettings : ScriptableObject

@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// File Name: FireController.cs
+/// Author: Hyungseok Lee
+/// Last Modified by: Hyungseok lee
+/// Date Last Modified: Oct. 4, 2019
+/// Description: Controller of fire in game.
+/// Revision History:
+/// </summary>
 public class FireController : MonoBehaviour
 {
     private bool _isEnemyBullet;

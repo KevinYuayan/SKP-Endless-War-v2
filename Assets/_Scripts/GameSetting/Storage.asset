@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Storage
   m_EditorClassIdentifier: 
   hp: 100
-  lives: 1
+  lives: 5
   score: 0
-  highscore: 14400
+  highscore: 0

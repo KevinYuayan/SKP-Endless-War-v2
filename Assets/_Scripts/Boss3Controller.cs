@@ -6,6 +6,14 @@ using Util;
 
 public class Boss3Controller : MonoBehaviour
 {
+    /// <summary>
+    /// File Name: Boss3Controller.cs
+    /// Author: Seoyoung Kang
+    /// Last Modified by: Seoyoung Kang
+    /// Date Last Modified: Oct. 18, 2019
+    /// Description: Controller of third boss.
+    /// Revision History:
+    /// </summary>
     [SerializeField]
     private int bossHP;
 

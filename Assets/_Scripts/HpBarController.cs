@@ -5,6 +5,16 @@ using UnityEngine;
 [System.Serializable]
 public class HpBarController : MonoBehaviour
 {
+    /// <summary>
+    /// File Name: HpBarController.cs
+    /// Author: Philip Lee
+    /// Last Modified by: Philip Lee
+    /// Date Last Modified: Nov. 29, 2019
+    /// Reference: Tom Tsiliopoulos
+    /// Description: Hp Bar controller
+    /// Revision History:
+    /// </summary>
+    /// 
     public float health;
     public float damage = 0.0f;
     public float damageStep = 0.01f;

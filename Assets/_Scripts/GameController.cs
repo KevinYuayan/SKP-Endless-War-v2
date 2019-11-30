@@ -5,6 +5,16 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 using System.Linq;
+/// <summary>
+/// File Name: GameController.cs
+/// Author: Hyungseok Lee
+/// Last Modified by: Hyungseok lee
+/// Date Last Modified: Nov. 29, 2019
+/// Description: GameController for the entire game playing
+/// Reference: Tom Tsiliopoulos
+/// Revision History:Enemy spawning added, UI setting and sounds controlling added,HP system added,
+/// Changing scene by pushing key added, etc...
+/// </summary>
 
 public class GameController : MonoBehaviour
 {

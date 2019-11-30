@@ -4,8 +4,8 @@ using UnityEngine;
 
 /// <summary>
 /// File Name: BackgroundController.cs
-/// Author: Philip Lee
-/// Last Modified by: Philip Lee
+/// Author: Hyungseok Philip Lee
+/// Last Modified by: Hyungseok Philip Lee
 /// Date Last Modified: Oct. 4, 2019
 /// Description: Controller for the Background prefab
 /// Revision History:

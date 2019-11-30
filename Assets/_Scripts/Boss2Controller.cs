@@ -4,6 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Util;
 
+/// <summary>
+/// File Name: Boss2Contoller.cs
+/// Author: Kevin Yuayan
+/// Last Modified by: Kein Yuayan
+/// Date Last Modified: Oct. 18, 2019
+/// Description: Controller of the second boss
+/// Revision History:
+/// </summary>
+
 public class Boss2Controller : MonoBehaviour
 {
     [SerializeField]
