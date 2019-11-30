@@ -503,7 +503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1036848290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.8, y: 0, z: 0}
+  m_LocalPosition: {x: 15.8, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -522,8 +522,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalSpeed: 0.1
-  resetPostion: 14.8
-  resetPoint: -10.8
+  resetPostion: 15.8
+  resetPoint: -9.8
 --- !u!1001 &1340618121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1074,7 +1074,7 @@ PrefabInstance:
     - target: {fileID: 7422268988841677375, guid: 71dd1a278d3b7b042a695c0935e7aa63,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7422268988841677375, guid: 71dd1a278d3b7b042a695c0935e7aa63,
         type: 3}
@@ -1129,12 +1129,12 @@ PrefabInstance:
     - target: {fileID: 7422268988841677374, guid: 71dd1a278d3b7b042a695c0935e7aa63,
         type: 3}
       propertyPath: resetPostion
-      value: 14.8
+      value: 15.8
       objectReference: {fileID: 0}
     - target: {fileID: 7422268988841677374, guid: 71dd1a278d3b7b042a695c0935e7aa63,
         type: 3}
       propertyPath: resetPoint
-      value: -10.8
+      value: -9.8
       objectReference: {fileID: 0}
     - target: {fileID: 7422268988841677374, guid: 71dd1a278d3b7b042a695c0935e7aa63,
         type: 3}
