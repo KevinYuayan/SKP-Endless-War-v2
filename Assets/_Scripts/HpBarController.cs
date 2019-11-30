@@ -30,6 +30,7 @@ public class HpBarController : MonoBehaviour
             Mathf.Lerp(hpBarDmg.transform.localScale.x, hpBarFront.localScale.x, Time.deltaTime * 2);
 
         hpBarDmg.localScale = new Vector3(hpBarLerp, 1.0f, 1.0f);
+        hpBarFront.localScale = new Vector3(health, 1.0f, 1.0f);
     }
 
     public void SetDamage(float dmg)

@@ -31,7 +31,6 @@ public class PlayerController : CollidableObject
     private AudioSource fireSound;
 
     //HpBarController reference
-    [Header("HpStatus")]
     private HpBarController hpBC;
 
     // Properties

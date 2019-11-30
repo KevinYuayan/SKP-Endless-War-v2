@@ -18,14 +18,20 @@ public class ItemController : MonoBehaviour
     public float horizontalSpeed;
     private GameController gC;
     private PlayerController pC;
+    //HpBarController reference
+    private HpBarController hpBC;
     void Start()
     {
         GameObject gCO = GameObject.FindWithTag("GameController");
         gC = gCO.GetComponent<GameController>();
+
         GameObject pCO = GameObject.FindWithTag("Player");
         pC = pCO.GetComponent<PlayerController>();
+
+        GameObject hpBCO = GameObject.FindWithTag("HpStatus");
+        hpBC = hpBCO.GetComponent<HpBarController>();
         //Debug.Log("Power up level: " + pC.poweredUp);
-  
+
     }
     void Update()
     {
@@ -64,6 +70,7 @@ public class ItemController : MonoBehaviour
             if(gC.HP <= 50)
             {
                 gC.HP += 50;
+                hpBC.health += 0.5f;
             }
             if(gC.HP >= 50)
             {
