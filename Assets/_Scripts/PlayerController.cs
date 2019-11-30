@@ -178,8 +178,8 @@ public class PlayerController : CollidableObject
     private void HitbyCollision()
     {
         gc.HP -= 10;
-        hpBC.SetDamage(10);
-        //Debug.Log("Hit by collision: " + gc.HP);
+        hpBC.SetDamage(10.0f);
+        Debug.Log("Hit by collision: " + gc.HP);
         if (gc.HP <= 0)
         {
             Destroy(this.gameObject);
@@ -189,8 +189,8 @@ public class PlayerController : CollidableObject
     private void HitbyBullet()
     {
         gc.HP -= 20;
-        hpBC.SetDamage(20);
-        //Debug.Log("Hit by bullet: " + gc.HP);
+        hpBC.SetDamage(20.0f);
+        Debug.Log("Hit by bullet: " + gc.HP);
         if (gc.HP <= 0)
         {
             Destroy(this.gameObject);

@@ -35,12 +35,18 @@ public class SnakePlaneController : CollidableObject
     public GameObject fireSpawn;
 
     [Header("Itm spawning")]
-    private Vector3 position;
-    private int itemChance;
+
     public GameObject bonusLife;
+    public GameObject powerUp;
     public GameObject hpUp;
-    public int bonusChancePercentage;
+
+    private Vector3 position;
+
+    [Header("ItemSpawningChance")]
+    private int itemChance;
+    public int powerUpPercentage;
     public int hpUpPercentage;
+    public int bonusChancePercentage;
 
     private float directionTime = 0.0f;
     private float fireTime = 0.0f;
@@ -172,11 +178,19 @@ public class SnakePlaneController : CollidableObject
                 //item spawning by enemy dead
                 position = this.gameObject.transform.position;
                 itemChance = Random.Range(0, 100);
+
+                if (itemChance >= 0 && itemChance <= powerUpPercentage)
+                {
+                    Instantiate(powerUp, position, Quaternion.identity);
+                    //Debug.Log("Power-up spawned");
+                }
+
                 if (itemChance >= 0 && itemChance <= hpUpPercentage)
                 {
                     Instantiate(hpUp, position, Quaternion.identity);
                     //Debug.Log("Hp-Up spawned");
                 }
+
                 if (itemChance >= 0 && itemChance <= bonusChancePercentage)
                 {
                     Instantiate(bonusLife, position, Quaternion.identity);

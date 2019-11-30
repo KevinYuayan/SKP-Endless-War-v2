@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
     [Header("BossEnemy")]
     public GameObject bossEnemy;
     private bool bossSpawned = false;
+    private bool bossDefeated = false;
 
     [Header("Stage Time Setting")]
     private float time = 0f;
@@ -53,6 +54,7 @@ public class GameController : MonoBehaviour
     public Text restartLabel;
     public Text manualLabel;
     public Text endLabel;
+    public Text ClearLabel;
 
     [Header("Audio Sources")]
     public SoundClip activeSoundClip;
@@ -120,10 +122,12 @@ public class GameController : MonoBehaviour
             {
                 storage.highscore = _score;
             }
-            if (SceneManager.GetActiveScene().name == "End")
+
+            else if (SceneManager.GetActiveScene().name == "End")
             {
-                endLabel.text += _score.ToString();
+                endLabel.text += storage.score;
             }
+
             else
             {
                 scoreLabel.text = "Score : " + _score.ToString();
@@ -152,10 +156,13 @@ public class GameController : MonoBehaviour
         timeLabel.enabled = activeSceneSettings.timeLabelEnabled;
         hpLabel.enabled = activeSceneSettings.hpLabelEnabled;
         endLabel.enabled = activeSceneSettings.endLabelEnabled;
+        ClearLabel.enabled = activeSceneSettings.clearLabelEnabled;
+
         startButton.SetActive(activeSceneSettings.StartButtonEnabled);
 
         HP = 100;
-        if(SceneManager.GetActiveScene().name == "Tutorial")
+        bossDefeated = false;
+        if (SceneManager.GetActiveScene().name == "Tutorial")
         {
             tutorial = true;
         }
@@ -255,6 +262,21 @@ public class GameController : MonoBehaviour
                     SceneManager.LoadScene("Main");
                }
         }
+
+        //Allow user to go to the next level
+        if (Input.GetKeyDown(KeyCode.Space)
+            && SceneManager.GetActiveScene().name == "Main"
+            && bossDefeated == true)
+        {
+            SceneManager.LoadScene("Level2");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space)
+            && SceneManager.GetActiveScene().name == "Level2"
+            && bossDefeated == true)
+        {
+            SceneManager.LoadScene("Level3");
+        }
     }
     // Spawns small enemies
     void Spawn()
@@ -331,15 +353,22 @@ public class GameController : MonoBehaviour
     }
     public void OnStartButtonClick()
     {
+
         SceneManager.LoadScene("Tutorial");
     }
     public void Boss1Defeated()
     {
-        SceneManager.LoadScene("Level2");
+        ClearLabel.enabled = true;
+        bossDefeated = true;
     }
     public void Boss2Defeated()
     {
-        SceneManager.LoadScene("Level3");
+        ClearLabel.enabled = true;
+        bossDefeated = true;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("Level3");
+        }
     }
 
     public void Boss3Defeated()

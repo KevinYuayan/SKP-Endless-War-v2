@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
 public class HpBarController : MonoBehaviour
 {
-    public float health = 1.0f;
+    public float health;
     public float damage = 0.0f;
     public float damageStep = 0.01f;
 
@@ -12,7 +13,6 @@ public class HpBarController : MonoBehaviour
     public Transform hpBarDmg;
 
     public float hpBarLerp;
-
 
     // Update is called once per frame
     void FixedUpdate()

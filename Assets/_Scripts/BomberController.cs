@@ -36,14 +36,17 @@ public class BomberController : CollidableObject
     public float fireRate;
     private float myTime = 0.0f;
 
-    [Header("Itm spawning")]
+    [Header("Item spawning")]
     private Vector3 position;
     private int itemChance;
     public GameObject bonusLife;
+    public GameObject powerUP;
     public GameObject hpUp;
-    public int bonusChancePercentage;
-    public int hpUpPercentage;
 
+    [Header("Item spawning chance")]
+    public int hpUpPercentage;
+    public int bonusChancePercentage;
+    public int powerUpChancePercentage;
     // public properties
     public override bool HasCollided
     {
@@ -172,10 +175,17 @@ public class BomberController : CollidableObject
                     Instantiate(hpUp, position, Quaternion.identity);
                     //Debug.Log("Hp-Up spawned");
                 }
+
                 if (itemChance >= 0 && itemChance <= bonusChancePercentage)
                 {
                     Instantiate(bonusLife, position, Quaternion.identity);
                     //Debug.Log("Bonus spawned");
+                }
+
+                if (itemChance >= 0 && itemChance <= powerUpChancePercentage)
+                {
+                    Instantiate(powerUP, position, Quaternion.identity);
+                    //Debug.Log("Power-up spawned");
                 }
             }
         }

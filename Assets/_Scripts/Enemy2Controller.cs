@@ -17,12 +17,17 @@ public class Enemy2Controller : CollidableObject
     private AudioSource explosionSound;
 
     [SerializeField]
+    //Dropping items when the enemy dies
     public GameObject powerUp;
     public GameObject bonusLife;
+    public GameObject HPUP;
+
     private Vector3 position;
+    //Item drop chance when enemy dies
     private int itemChance;
     public int powerUpChancePercentage;
     public int bonusChancePercentage;
+    public int HPUPChancePercentage;
 
     public float verticalSpeed;
     public float horizontalSpeed;
@@ -134,10 +139,17 @@ public class Enemy2Controller : CollidableObject
                 Instantiate(powerUp, position, Quaternion.identity);
                 //Debug.Log("Power-Up spawned");
             }
+
             if (itemChance >= 0 && itemChance <= bonusChancePercentage)
             {
                 Instantiate(bonusLife, position, Quaternion.identity);
                 //Debug.Log("Bonus spawned");
+            }
+
+            if (itemChance >= 0 && itemChance <= HPUPChancePercentage)
+            {
+                Instantiate(HPUP, position, Quaternion.identity);
+                //Debug.Log("HPUP spawned");
             }
         }
     }

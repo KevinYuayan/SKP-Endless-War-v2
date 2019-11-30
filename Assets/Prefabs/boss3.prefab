@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98feaa6f6285de74a9f61c4b7a8b837d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossHP: 20
+  bossHP: 40
   boundary:
     Top: 2.3
     Right: 0

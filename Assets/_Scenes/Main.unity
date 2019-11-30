@@ -416,6 +416,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &648974104 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 357238674593146461, guid: b5589df82b4c44646bf7557837800f7d,
+    type: 3}
+  m_PrefabInstance: {fileID: 173227402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1036848290
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +746,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702d45d4d1f87494c9917f2b2d4c268d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1827824599 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+    type: 3}
+  m_PrefabInstance: {fileID: 177786578750712972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f792f45c0f8c94aa573e2d8d3349ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1872811766 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7352198655033733192, guid: b5589df82b4c44646bf7557837800f7d,
@@ -899,6 +923,11 @@ PrefabInstance:
       propertyPath: endLabel
       value: 
       objectReference: {fileID: 173227409}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: ClearLabel
+      value: 
+      objectReference: {fileID: 648974104}
     - target: {fileID: 177786579685343100, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1023,6 +1052,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7027017148221120288, guid: bfab62c3e30e9fb4aa3c979e344d42c4,
+        type: 3}
+      propertyPath: gC
+      value: 
+      objectReference: {fileID: 1827824599}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfab62c3e30e9fb4aa3c979e344d42c4, type: 3}
 --- !u!1001 &7422268989168298961

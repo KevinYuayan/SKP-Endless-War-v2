@@ -71,10 +71,13 @@ public class ItemController : MonoBehaviour
             {
                 gC.HP += 50;
                 hpBC.health += 0.5f;
+                Debug.Log("Hp 50% retored");
             }
-            if(gC.HP >= 50)
+            else if(gC.HP > 50)
             {
                 gC.HP = 100;
+                hpBC.health = 1.0f;
+                Debug.Log("Hp is full");
             }
         }
     }
