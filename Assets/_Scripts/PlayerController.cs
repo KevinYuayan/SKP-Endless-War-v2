@@ -30,6 +30,10 @@ public class PlayerController : CollidableObject
     private GameController gc;
     private AudioSource fireSound;
 
+    //HpBarController reference
+    [Header("HpStatus")]
+    private HpBarController hpBC;
+
     // Properties
     public override bool HasCollided
     {
@@ -50,7 +54,11 @@ public class PlayerController : CollidableObject
     void Start()
     {
         GameObject gco = GameObject.FindWithTag("GameController");
+        GameObject hpBCO = GameObject.FindWithTag("HpStatus");
+
         gc = gco.GetComponent<GameController>();
+        hpBC = hpBCO.GetComponent<HpBarController>();
+
         fireSound = gc.audioSources[(int)SoundClip.PLAYER_FIRE];
     }
     // Method called when player is hit and becomes invincible
@@ -171,6 +179,7 @@ public class PlayerController : CollidableObject
     private void HitbyCollision()
     {
         gc.HP -= 10;
+        hpBC.SetDamage(10);
         //Debug.Log("Hit by collision: " + gc.HP);
         if (gc.HP <= 0)
         {
@@ -181,6 +190,7 @@ public class PlayerController : CollidableObject
     private void HitbyBullet()
     {
         gc.HP -= 20;
+        hpBC.SetDamage(20);
         //Debug.Log("Hit by bullet: " + gc.HP);
         if (gc.HP <= 0)
         {

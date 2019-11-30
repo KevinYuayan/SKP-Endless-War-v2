@@ -85,7 +85,7 @@ public class GameController : MonoBehaviour
         {
             _HP = value;
             storage.hp = _HP;
-            hpLabel.text = "HP: " + _HP.ToString();
+            //hpLabel.text = "HP: " + _HP.ToString();
         }
     }
     public int Lives

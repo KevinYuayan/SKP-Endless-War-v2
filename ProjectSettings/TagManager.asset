@@ -15,6 +15,7 @@ TagManager:
   - Bomber
   - Boss2
   - Boss3
+  - HpStatus
   layers:
   - Default
   - TransparentFX
