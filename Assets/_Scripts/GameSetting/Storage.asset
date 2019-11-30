@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483066b55d8d5ab4782dac63d9f5e081, type: 3}
   m_Name: Storage
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 60
   lives: 5
-  score: 0
-  highscore: 0
+  score: 1050
+  highscore: 1050

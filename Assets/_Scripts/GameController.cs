@@ -123,11 +123,13 @@ public class GameController : MonoBehaviour
         set
         {
             //Score restriction to prevent score farming after stage time is done
-            if(timeCounter<stageTime && bossSpawned == false)
+
+            if(timeCounter < stageTime || bossSpawned == true)
             {
                 _score = value;
                 storage.score = _score;
             }
+
             if(storage.highscore < _score && SceneManager.GetActiveScene().name != "Tutorial")
             {
                 storage.highscore = _score;
@@ -137,11 +139,7 @@ public class GameController : MonoBehaviour
             {
                 endLabel.text += storage.score;
             }
-
-            else
-            {
                 scoreLabel.text = "Score : " + _score.ToString();
-            }
         
         }
     }
@@ -348,6 +346,7 @@ public class GameController : MonoBehaviour
         timeLabel.text = "Boss spawned!";
         Instantiate(bossEnemy);
         bossSpawned = true;
+        Debug.Log(bossSpawned);
         //Debug.Log("Boss spawned");
     }
 
