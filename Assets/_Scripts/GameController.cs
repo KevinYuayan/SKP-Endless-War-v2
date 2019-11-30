@@ -217,7 +217,9 @@ public class GameController : MonoBehaviour
         time += Time.deltaTime;
         timeCounter += Time.deltaTime;
         seconds = Convert.ToInt32(timeCounter);
-            if (time >= spawningDelay && gameOver != true)
+            if (time >= spawningDelay 
+            && gameOver != true
+            && bossDefeated != true)
             {
                 time = 0;
                 Spawn();
