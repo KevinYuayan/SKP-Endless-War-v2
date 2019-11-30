@@ -91,7 +91,7 @@ public class Enemy1Controller : CollidableObject
         Vector2 target = startPosition - new Vector2(horizontalSpeed, verticalSpeed);
         var direction = target - startPosition;
         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+        transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.back);
     }
 
     /// <summary>

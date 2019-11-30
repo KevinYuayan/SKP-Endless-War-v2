@@ -102,7 +102,7 @@ public class Enemy2Controller : CollidableObject
         // Rotates the enemy to look at the player's position
         var direction = target - startPosition;
         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+        transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.back);
     }
     /// <summary>
     /// This method checks if the enemy reaches the lower boundary and then it Resets it

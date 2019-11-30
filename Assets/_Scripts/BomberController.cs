@@ -141,7 +141,7 @@ public class BomberController : CollidableObject
         Vector2 target = startPosition - new Vector2(horizontalSpeed, 0);
         var direction = target - startPosition;
         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
+        transform.rotation = Quaternion.AngleAxis(angle + 90, Vector3.back);
     }
 
     /// <summary>
