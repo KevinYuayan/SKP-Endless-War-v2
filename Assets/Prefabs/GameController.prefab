@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOver: 0
   restart: 0
+  tutorial: 0
   numberOfEnemy1: 3
   numberOfEnemy2: 2
   numberOfEnemy3: 0
@@ -76,6 +77,7 @@ MonoBehaviour:
   restartLabel: {fileID: 0}
   manualLabel: {fileID: 0}
   endLabel: {fileID: 0}
+  ClearLabel: {fileID: 0}
   activeSoundClip: 0
   audioSources:
   - {fileID: 177786579685343097}
@@ -94,6 +96,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 861927e5b86fd0540a27a25a77b6abb4, type: 2}
   - {fileID: 11400000, guid: 7b2f871863955114dbcc1837896c7902, type: 2}
   - {fileID: 11400000, guid: 0897d1d01d002cc45b1491b05d75d7ae, type: 2}
+  pC: {fileID: 6772701842247943587, guid: ca2edc92006d24543b4e60f404bf9195, type: 3}
 --- !u!82 &177786579685343097
 AudioSource:
   m_ObjectHideFlags: 0

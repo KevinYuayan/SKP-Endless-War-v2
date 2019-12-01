@@ -137,7 +137,7 @@ MonoBehaviour:
   fireSpawn1: {fileID: 6999205165580571522}
   fireSpawn2: {fileID: 8072587447017289934}
   fireSpawn3: {fileID: 611419886790062441}
-  fire: {fileID: 444422195466221706, guid: c75f0cc6709e4c94ea68c4fa920a367e, type: 3}
+  fire: {fileID: 444422195466221706, guid: 36a72c94329202345a37102abbe8f8ad, type: 3}
   fireRate: 1
 --- !u!60 &-8510296740763995723
 PolygonCollider2D:

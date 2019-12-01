@@ -19,4 +19,5 @@ public class Storage : ScriptableObject
     public int lives;
     public int score;
     public int highscore;
+    public int poweredUp;
 }

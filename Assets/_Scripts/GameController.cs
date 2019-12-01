@@ -86,6 +86,9 @@ public class GameController : MonoBehaviour
     public SceneSettings activeSceneSettings;
     public List<SceneSettings> sceneSettings;
 
+    [Header("Cheat")]
+    public PlayerController pC;
+
     public int HP
     {
 
@@ -139,7 +142,7 @@ public class GameController : MonoBehaviour
             {
                 endLabel.text += storage.score;
             }
-                scoreLabel.text = "Score : " + _score.ToString();
+                scoreLabel.text = "Score : " + storage.score.ToString();
         
         }
     }
@@ -188,6 +191,8 @@ public class GameController : MonoBehaviour
         {
             Lives = storage.lives;
             Score = storage.score;
+            GameObject pCO = GameObject.FindWithTag("Player");
+            pC = pCO.GetComponent<PlayerController>();
         }
 
         if ((activeSoundClip != SoundClip.NONE) && (activeSoundClip != SoundClip.NUM_OF_CLIPS))
@@ -198,12 +203,13 @@ public class GameController : MonoBehaviour
             activeSoundSource.volume = 0.5f;
             activeSoundSource.Play();
         }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (stageTime - seconds > 0)
+        if (stageTime - seconds > 0 && !(tutorial))
         {
                 timeLabel.text = "Time: " + (stageTime - seconds);
         }
@@ -281,6 +287,19 @@ public class GameController : MonoBehaviour
             SceneManager.LoadScene("Level2");
         }
 
+        //CheatKey
+        if(Input.GetKeyDown(KeyCode.S)
+            && Input.GetKeyDown(KeyCode.K)
+            && Input.GetKey(KeyCode.P))
+        {
+            _HP += 99999;
+            storage.poweredUp = 2;
+            pC.fireRate = 0.1f;
+            BossSpawn();
+            Debug.Log("Cheatcode executed");
+            
+        }
+
         if (Input.GetKeyDown(KeyCode.Space)
             && SceneManager.GetActiveScene().name == "Level2"
             && bossDefeated == true)
@@ -330,6 +349,7 @@ public class GameController : MonoBehaviour
         {
             HP = 100;
             Lives -= 1;
+            storage.poweredUp = 0;
             //Debug.Log("Player died");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

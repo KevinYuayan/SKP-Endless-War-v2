@@ -141,7 +141,7 @@ MonoBehaviour:
     Right: 4.1
     Bottom: -2.25
     Left: -4.1
-  fire: {fileID: 444422195466221706, guid: c75f0cc6709e4c94ea68c4fa920a367e, type: 3}
+  fire: {fileID: 444422195466221706, guid: 5b48c9deee241d1448658ef297f39627, type: 3}
   fireSpawn: {fileID: 3925755453038488255}
   bonusLife: {fileID: 1830573422138198335, guid: 417dc5ddf54aaef4db0c520b98a00327,
     type: 3}

@@ -23,6 +23,8 @@ public class PlayerController : CollidableObject
     public float fireRate = 0.5f;
     private float myTime = 0.0f;
     public int poweredUp = 0;
+    [Header("Storage")]
+    public Storage storage;
 
     // private instance variables
     private int _invincibilityTime = 1;
@@ -59,6 +61,8 @@ public class PlayerController : CollidableObject
         hpBC = hpBCO.GetComponent<HpBarController>();
 
         fireSound = gc.audioSources[(int)SoundClip.PLAYER_FIRE];
+
+        poweredUp = storage.poweredUp;
     }
     // Method called when player is hit and becomes invincible
     private IEnumerator ITime()
@@ -69,6 +73,7 @@ public class PlayerController : CollidableObject
         //Debug.Log("before Invincible turned off");
         HasCollided = false;
         this.gameObject.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+
     }
 
     // Update is called once per frame

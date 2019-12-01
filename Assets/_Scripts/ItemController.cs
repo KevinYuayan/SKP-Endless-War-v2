@@ -16,6 +16,8 @@ public class ItemController : MonoBehaviour
     [Header("Speed Values")]
     [SerializeField]
     public float horizontalSpeed;
+    [Header("Storage")]
+    public Storage storage;
     private GameController gC;
     private PlayerController pC;
     //HpBarController reference
@@ -52,13 +54,13 @@ public class ItemController : MonoBehaviour
             Destroy(this.gameObject);
             gC.Lives += 1;
         }
-        if(col.gameObject.tag == "Player" && this.gameObject.tag =="PowerUp" && pC.poweredUp <= 1)
+        if(col.gameObject.tag == "Player" && this.gameObject.tag =="PowerUp" && storage.poweredUp <= 1)
         {
             Destroy(this.gameObject);
             pC.poweredUp += 1;
 
         }
-        if(col.gameObject.tag == "Player" && this.gameObject.tag == "PowerUp" && pC.poweredUp >= 2)
+        if(col.gameObject.tag == "Player" && this.gameObject.tag == "PowerUp" && storage.poweredUp >= 2)
         {
             Destroy(this.gameObject);
             gC.Score += 100;
