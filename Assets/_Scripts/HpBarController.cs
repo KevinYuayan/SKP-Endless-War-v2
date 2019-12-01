@@ -36,7 +36,7 @@ public class HpBarController : MonoBehaviour
             }
         }
 
-        hpBarLerp =
+        hpBarLerp = 
             Mathf.Lerp(hpBarDmg.transform.localScale.x, hpBarFront.localScale.x, Time.deltaTime * 2);
 
         hpBarDmg.localScale = new Vector3(hpBarLerp, 1.0f, 1.0f);

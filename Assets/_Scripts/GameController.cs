@@ -181,6 +181,7 @@ public class GameController : MonoBehaviour
         {
             Lives = startingLives;
             Score = 0;
+            storage.poweredUp = 0;
         }
         else if (SceneManager.GetActiveScene().name == "End")
         {
@@ -289,12 +290,12 @@ public class GameController : MonoBehaviour
 
         //CheatKey
         if(Input.GetKeyDown(KeyCode.S)
-            && Input.GetKeyDown(KeyCode.K)
-            && Input.GetKey(KeyCode.P))
+            && Input.GetKeyDown(KeyCode.K))
         {
             _HP += 99999;
+            pC.poweredUp = 2;
             storage.poweredUp = 2;
-            pC.fireRate = 0.1f;
+            pC.fireRate = 0.3f;
             BossSpawn();
             Debug.Log("Cheatcode executed");
             

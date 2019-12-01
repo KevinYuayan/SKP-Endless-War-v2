@@ -25,10 +25,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7027017148037873669}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.060508728, y: -0.05843401, z: 0.041711967}
+  m_LocalPosition: {x: 2.2724028, y: 2.3743503, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7027017148221120295}
+  m_Father: {fileID: 357251736435718716}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7027017148037877755
@@ -88,7 +88,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7027017148221120295}
+  - component: {fileID: 357251736435718716}
   - component: {fileID: 7027017148221120288}
   m_Layer: 0
   m_Name: HpStatus
@@ -97,7 +97,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7027017148221120295
+--- !u!4 &357251736435718716
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,10 +105,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7027017148221120289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.211894, y: 2.4327843, z: -0.041711967}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7027017149798287876}
+  - {fileID: 407712186442840359}
   - {fileID: 7027017148037873668}
   - {fileID: 7027017148881495497}
   m_Father: {fileID: 0}
@@ -129,7 +129,7 @@ MonoBehaviour:
   health: 1
   damage: 0
   damageStep: 0.01
-  hpBarFront: {fileID: 7027017149798287876}
+  hpBarFront: {fileID: 407712186442840359}
   hpBarDmg: {fileID: 7027017148881495497}
   hpBarLerp: 0
 --- !u!1 &7027017148881495498
@@ -157,10 +157,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7027017148881495498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.060508728, y: -0.05843401, z: 0.041711967}
+  m_LocalPosition: {x: 2.2724028, y: 2.3743503, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7027017148221120295}
+  m_Father: {fileID: 357251736435718716}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7027017148881495496
@@ -220,7 +220,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7027017149798287876}
+  - component: {fileID: 407712186442840359}
   - component: {fileID: 7027017149798287867}
   m_Layer: 0
   m_Name: HpBar
@@ -229,7 +229,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7027017149798287876
+--- !u!4 &407712186442840359
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,10 +237,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7027017149798287877}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.060508728, y: -0.05843401, z: 0.041711967}
+  m_LocalPosition: {x: 52.272404, y: 2.3743508, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7027017148221120295}
+  m_Father: {fileID: 357251736435718716}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7027017149798287867
