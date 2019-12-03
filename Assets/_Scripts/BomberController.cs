@@ -38,7 +38,9 @@ public class BomberController : CollidableObject
 
     [Header("Item spawning")]
     private Vector3 position;
-    private int itemChance;
+    private int itemChance1;
+    private int itemChance2;
+    private int itemChance3;
     public GameObject bonusLife;
     public GameObject powerUP;
     public GameObject hpUp;
@@ -169,23 +171,37 @@ public class BomberController : CollidableObject
 
                 //item spawning by enemy dead
                 position = this.gameObject.transform.position;
-                itemChance = Random.Range(0, 100);
-                if (itemChance >= 0 && itemChance <= hpUpPercentage)
+                if (col.gameObject.tag == "Bullet")
                 {
-                    Instantiate(hpUp, position, Quaternion.identity);
-                    //Debug.Log("Hp-Up spawned");
-                }
+                    position = this.gameObject.transform.position;
+                    Destroy(this.gameObject);
+                    Destroy(col.gameObject);
+                    gc.Score += 100;
+                    explosionSound.volume = 0.3f;
+                    explosionSound.Play();
+                    itemChance1 = Random.Range(0, 100);
+                    itemChance2 = Random.Range(0, 100);
+                    itemChance3 = Random.Range(0, 100);
+                    if (itemChance1 >= 0 && itemChance1 <= powerUpChancePercentage)
+                    {
+                        Instantiate(powerUP, position, Quaternion.identity);
+                        //Debug.Log("Power-Up spawned");
+                        //Debug.Log(itemChance1);
+                    }
 
-                if (itemChance >= 0 && itemChance <= bonusChancePercentage)
-                {
-                    Instantiate(bonusLife, position, Quaternion.identity);
-                    //Debug.Log("Bonus spawned");
-                }
+                    if (itemChance2 >= 0 && itemChance2 <= bonusChancePercentage)
+                    {
+                        Instantiate(bonusLife, position, Quaternion.identity);
+                        //Debug.Log("Bonus spawned");
+                        //Debug.Log(itemChance2);
+                    }
 
-                if (itemChance >= 0 && itemChance <= powerUpChancePercentage)
-                {
-                    Instantiate(powerUP, position, Quaternion.identity);
-                    //Debug.Log("Power-up spawned");
+                    if (itemChance3 >= 0 && itemChance3 <= hpUpPercentage)
+                    {
+                        Instantiate(hpUp, position, Quaternion.identity);
+                        //Debug.Log("HPUP spawned");
+                        //Debug.Log(itemChance3);
+                    }
                 }
             }
         }

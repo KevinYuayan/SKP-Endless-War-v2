@@ -43,7 +43,9 @@ public class SnakePlaneController : CollidableObject
     private Vector3 position;
 
     [Header("ItemSpawningChance")]
-    private int itemChance;
+    private int itemChance1;
+    private int itemChance2;
+    private int itemChance3;
     public int powerUpPercentage;
     public int hpUpPercentage;
     public int bonusChancePercentage;
@@ -177,24 +179,28 @@ public class SnakePlaneController : CollidableObject
 
                 //item spawning by enemy dead
                 position = this.gameObject.transform.position;
-                itemChance = Random.Range(0, 100);
-
-                if (itemChance >= 0 && itemChance <= powerUpPercentage)
+                itemChance1 = Random.Range(0, 100);
+                itemChance2 = Random.Range(0, 100);
+                itemChance3 = Random.Range(0, 100);
+                if (itemChance1 >= 0 && itemChance1 <= powerUpPercentage)
                 {
                     Instantiate(powerUp, position, Quaternion.identity);
-                    //Debug.Log("Power-up spawned");
+                    //Debug.Log("Power-Up spawned");
+                    //Debug.Log(itemChance1);
                 }
 
-                if (itemChance >= 0 && itemChance <= hpUpPercentage)
-                {
-                    Instantiate(hpUp, position, Quaternion.identity);
-                    //Debug.Log("Hp-Up spawned");
-                }
-
-                if (itemChance >= 0 && itemChance <= bonusChancePercentage)
+                if (itemChance2 >= 0 && itemChance2 <= bonusChancePercentage)
                 {
                     Instantiate(bonusLife, position, Quaternion.identity);
                     //Debug.Log("Bonus spawned");
+                    //Debug.Log(itemChance2);
+                }
+
+                if (itemChance3 >= 0 && itemChance3 <= hpUpPercentage)
+                {
+                    Instantiate(hpUp, position, Quaternion.identity);
+                    //Debug.Log("HPUP spawned");
+                    //Debug.Log(itemChance3);
                 }
             }
         }

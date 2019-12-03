@@ -57,7 +57,8 @@ public class ItemController : MonoBehaviour
         if(col.gameObject.tag == "Player" && this.gameObject.tag =="PowerUp" && storage.poweredUp <= 1)
         {
             Destroy(this.gameObject);
-            pC.poweredUp += 1;
+            storage.poweredUp += 1;
+            pC.poweredUp = storage.poweredUp;
 
         }
         if(col.gameObject.tag == "Player" && this.gameObject.tag == "PowerUp" && storage.poweredUp >= 2)

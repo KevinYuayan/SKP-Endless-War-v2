@@ -24,7 +24,9 @@ public class Enemy2Controller : CollidableObject
 
     private Vector3 position;
     //Item drop chance when enemy dies
-    private int itemChance;
+    private int itemChance1;
+    private int itemChance2;
+    private int itemChance3;
     public int powerUpChancePercentage;
     public int bonusChancePercentage;
     public int HPUPChancePercentage;
@@ -133,23 +135,28 @@ public class Enemy2Controller : CollidableObject
             gc.Score += 100;
             explosionSound.volume = 0.3f;
             explosionSound.Play();
-            itemChance = Random.Range(0, 100);
-            if (itemChance >= 0 && itemChance <= powerUpChancePercentage)
+            itemChance1 = Random.Range(0, 100);
+            itemChance2 = Random.Range(0, 100);
+            itemChance3 = Random.Range(0, 100);
+            if (itemChance1 >= 0 && itemChance1 <= powerUpChancePercentage)
             {
                 Instantiate(powerUp, position, Quaternion.identity);
                 //Debug.Log("Power-Up spawned");
+                //Debug.Log(itemChance1);
             }
 
-            if (itemChance >= 0 && itemChance <= bonusChancePercentage)
+            if (itemChance2 >= 0 && itemChance2 <= bonusChancePercentage)
             {
                 Instantiate(bonusLife, position, Quaternion.identity);
                 //Debug.Log("Bonus spawned");
+                //Debug.Log(itemChance2);
             }
 
-            if (itemChance >= 0 && itemChance <= HPUPChancePercentage)
+            if (itemChance3 >= 0 && itemChance3 <= HPUPChancePercentage)
             {
                 Instantiate(HPUP, position, Quaternion.identity);
                 //Debug.Log("HPUP spawned");
+                //Debug.Log(itemChance3);
             }
         }
     }
