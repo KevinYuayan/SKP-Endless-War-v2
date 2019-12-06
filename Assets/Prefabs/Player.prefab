@@ -118,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6772701842247943584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalPosition: {x: -3, y: 0, z: -19}
   m_LocalScale: {x: 0.4625, y: 0.6439, z: 1}
   m_Children:
   - {fileID: 5019077055738183963}
@@ -196,6 +196,8 @@ MonoBehaviour:
     Right: 3.2
     Bottom: -2.3
     Left: -3.2
+  spawningPoint: {fileID: 6334176156271767048, guid: ce5df82da5ff5ae4389d3163c2ca5c13,
+    type: 3}
   fire: {fileID: 444422195466221706, guid: c75f0cc6709e4c94ea68c4fa920a367e, type: 3}
   fireSpawn1: {fileID: 5019077055738183940}
   fireSpawn2: {fileID: 5033564544531669681}

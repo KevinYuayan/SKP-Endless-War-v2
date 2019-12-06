@@ -27,8 +27,11 @@ public class ItemController : MonoBehaviour
         GameObject gCO = GameObject.FindWithTag("GameController");
         gC = gCO.GetComponent<GameController>();
 
-        GameObject pCO = GameObject.FindWithTag("Player");
-        pC = pCO.GetComponent<PlayerController>();
+        if (GameObject.FindWithTag("Player") != null)
+            {
+                GameObject pCO = GameObject.FindWithTag("Player");
+                pC = pCO.GetComponent<PlayerController>();
+            }
 
         GameObject hpBCO = GameObject.FindWithTag("HpStatus");
         hpBC = hpBCO.GetComponent<HpBarController>();

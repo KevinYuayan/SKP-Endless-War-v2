@@ -18,11 +18,13 @@ using System.Linq;
 
 public class GameController : MonoBehaviour
 {
-    private int startingLives = 5;
+    private int startingLives = 2;
 
     public bool gameOver;
     public bool restart;
     public bool tutorial = false;
+    [Header("Player")]
+    public GameObject player;
     [Header("Enemies")]
     public int numberOfEnemy1;
     public int numberOfEnemy2;
@@ -173,25 +175,33 @@ public class GameController : MonoBehaviour
 
         HP = 100;
         bossDefeated = false;
+
         if (SceneManager.GetActiveScene().name == "Tutorial")
         {
             tutorial = true;
         }
+
         if (SceneManager.GetActiveScene().name == "Start")
         {
-            Lives = startingLives;
-            Score = 0;
+            storage.lives = startingLives;
+            storage.score = 0;
             storage.poweredUp = 0;
         }
-        else if (SceneManager.GetActiveScene().name == "End")
+
+        if (SceneManager.GetActiveScene().name == "End")
         {
             restart = true;
             Score = storage.score;
         }
-        else
+
+        else if(SceneManager.GetActiveScene().name =="Tutorial"
+            || SceneManager.GetActiveScene().name == "Main"
+            || SceneManager.GetActiveScene().name == "Level2"
+            || SceneManager.GetActiveScene().name == "Level3")
         {
             Lives = storage.lives;
             Score = storage.score;
+            Instantiate(player);
             GameObject pCO = GameObject.FindWithTag("Player");
             pC = pCO.GetComponent<PlayerController>();
         }
@@ -295,7 +305,6 @@ public class GameController : MonoBehaviour
             _HP += 99999;
             pC.poweredUp = 2;
             storage.poweredUp = 2;
-            pC.fireRate = 0.3f;
             BossSpawn();
             Debug.Log("Cheatcode executed");
             
@@ -346,15 +355,15 @@ public class GameController : MonoBehaviour
     // Called when player's hp hits 0
     public void PlayerDied()
     {
-        if (_lives > 1)
+        if (_lives >= 1)
         {
             HP = 100;
             Lives -= 1;
             storage.poweredUp = 0;
             //Debug.Log("Player died");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Instantiate(player);
         }
-        if( _lives <= 1)
+        if( _lives <= 0)
         {
             HP = 100;
             GameOver();

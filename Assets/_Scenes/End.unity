@@ -671,28 +671,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
-      propertyPath: m_Text
-      value: 'Thank you for playing!
-
-
-        Press ''R''key to go back to the start screen
-
-
-        Your final score is '
-      objectReference: {fileID: 0}
     - target: {fileID: 1869623684108037115, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -803,11 +781,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 5327974860192383770, guid: b5589df82b4c44646bf7557837800f7d,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1031669198}
     - target: {fileID: 1869623684052477860, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -845,6 +818,33 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 29.100037
       objectReference: {fileID: 0}
+    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
+      propertyPath: m_Text
+      value: 'Thank you for playing!
+
+
+        Press ''R''key to go back to the start screen
+
+
+        Your final score is '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327974860192383770, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1031669198}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
 --- !u!1001 &3122459322233585381

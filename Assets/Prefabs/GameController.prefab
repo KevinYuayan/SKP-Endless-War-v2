@@ -50,6 +50,9 @@ MonoBehaviour:
   gameOver: 0
   restart: 0
   tutorial: 0
+  player: {fileID: 6772701842247943584, guid: ca2edc92006d24543b4e60f404bf9195, type: 3}
+  spawningPoint: {fileID: 6334176156271767048, guid: ce5df82da5ff5ae4389d3163c2ca5c13,
+    type: 3}
   numberOfEnemy1: 3
   numberOfEnemy2: 2
   numberOfEnemy3: 0
@@ -86,7 +89,7 @@ MonoBehaviour:
   - {fileID: 177786579685343102}
   startLabel: {fileID: 0}
   startButton: {fileID: 0}
-  bonusSCore: 5000
+  bonusSCore: 30000
   storage: {fileID: 11400000, guid: d496f5ea2b345984a9e794466cf1fa9f, type: 2}
   activeSceneSettings: {fileID: 0}
   sceneSettings:

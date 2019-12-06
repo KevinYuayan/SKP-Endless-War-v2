@@ -15,6 +15,8 @@ public class PlayerController : CollidableObject
 {
     public Speed speed;
     public Boundary boundary;
+    [Header("Spawning Point")]
+    public Transform spawningPoint;
     [Header("Attack Settings")]
     public GameObject fire;
     public GameObject fireSpawn1;
@@ -54,6 +56,7 @@ public class PlayerController : CollidableObject
     // Start is called before the first frame update
     void Start()
     {
+        transform.position = spawningPoint.position;
         GameObject gco = GameObject.FindWithTag("GameController");
         GameObject hpBCO = GameObject.FindWithTag("HpStatus");
 
@@ -63,6 +66,7 @@ public class PlayerController : CollidableObject
         fireSound = gc.audioSources[(int)SoundClip.PLAYER_FIRE];
 
         poweredUp = storage.poweredUp;
+        hpBC.health = 1f;
     }
     // Method called when player is hit and becomes invincible
     private IEnumerator ITime()
