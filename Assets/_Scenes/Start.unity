@@ -740,6 +740,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2189820957192455367, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_Text
+      value: 'you will be a Canadian rookie pilot in WW2
+
+        Destroy German nazi invaders! Good luck!'
+      objectReference: {fileID: 0}
     - target: {fileID: 1869623684108037115, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -873,13 +880,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 126.100006
       objectReference: {fileID: 0}
-    - target: {fileID: 2189820957192455367, guid: b5589df82b4c44646bf7557837800f7d,
-        type: 3}
-      propertyPath: m_Text
-      value: 'you will be a Canadian rookie pilot in WW2
-
-        Destroy German nazi invaders! Good luck!'
-      objectReference: {fileID: 0}
     - target: {fileID: 3069434059962934954, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -904,6 +904,27 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1031669198}
+    - target: {fileID: 1064512920, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 777738245551650071, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927319996, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1028034673, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 577336307, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
 --- !u!1001 &3122459322233585381
