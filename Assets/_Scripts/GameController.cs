@@ -355,19 +355,25 @@ public class GameController : MonoBehaviour
     // Called when player's hp hits 0
     public void PlayerDied()
     {
-        if (_lives >= 1)
+        if (_lives >= 0)
         {
             HP = 100;
             Lives -= 1;
             storage.poweredUp = 0;
             //Debug.Log("Player died");
-            Instantiate(player);
+            StartCoroutine(RespawnPlayer());
         }
-        if( _lives <= 0)
+        if( _lives < 0)
         {
             HP = 100;
             GameOver();
         }
+    }
+
+    private IEnumerator RespawnPlayer()
+    {
+        yield return new WaitForSeconds(2);
+        Instantiate(player);
     }
 
     // Spawns boss when timer hits 0
