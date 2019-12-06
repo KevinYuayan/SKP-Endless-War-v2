@@ -66,7 +66,7 @@ public class PlayerController : CollidableObject
         fireSound = gc.audioSources[(int)SoundClip.PLAYER_FIRE];
 
         poweredUp = storage.poweredUp;
-        hpBC.health = 1f;
+        hpBC.health = gc.HP / 100;
     }
     // Method called when player is hit and becomes invincible
     private IEnumerator ITime()

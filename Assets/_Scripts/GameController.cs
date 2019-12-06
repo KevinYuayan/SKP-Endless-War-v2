@@ -67,6 +67,7 @@ public class GameController : MonoBehaviour
     public Text manualLabel;
     public Text endLabel;
     public Text ClearLabel;
+    public Text respawnLabel;
 
     [Header("Audio Sources")]
     public SoundClip activeSoundClip;
@@ -90,6 +91,7 @@ public class GameController : MonoBehaviour
 
     [Header("Cheat")]
     public PlayerController pC;
+    private bool cheatCode = false;
 
     public int HP
     {
@@ -178,6 +180,7 @@ public class GameController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Tutorial")
         {
+            HP = 9999;
             tutorial = true;
         }
 
@@ -204,6 +207,7 @@ public class GameController : MonoBehaviour
             Instantiate(player);
             GameObject pCO = GameObject.FindWithTag("Player");
             pC = pCO.GetComponent<PlayerController>();
+            cheatCode = true;
         }
 
         if ((activeSoundClip != SoundClip.NONE) && (activeSoundClip != SoundClip.NUM_OF_CLIPS))
@@ -300,7 +304,8 @@ public class GameController : MonoBehaviour
 
         //CheatKey
         if(Input.GetKeyDown(KeyCode.S)
-            && Input.GetKeyDown(KeyCode.K))
+            && Input.GetKeyDown(KeyCode.K)
+            && cheatCode == true)
         {
             _HP += 99999;
             pC.poweredUp = 2;
@@ -355,15 +360,16 @@ public class GameController : MonoBehaviour
     // Called when player's hp hits 0
     public void PlayerDied()
     {
-        if (_lives >= 0)
+        if (_lives > 0)
         {
             HP = 100;
             Lives -= 1;
             storage.poweredUp = 0;
             //Debug.Log("Player died");
+            respawnLabel.enabled = true;
             StartCoroutine(RespawnPlayer());
         }
-        if( _lives < 0)
+        else if( _lives <= 0)
         {
             HP = 100;
             GameOver();
@@ -373,6 +379,7 @@ public class GameController : MonoBehaviour
     private IEnumerator RespawnPlayer()
     {
         yield return new WaitForSeconds(2);
+        respawnLabel.enabled = false;
         Instantiate(player);
     }
 
