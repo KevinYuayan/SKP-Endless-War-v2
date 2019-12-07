@@ -184,6 +184,10 @@ public class PlayerController : CollidableObject
                 {
                     if (!HasCollided)
                     {
+                        var explosion = PoolManager.GetInstance().GetObject("Explosion");
+                        var xPos = (col.transform.position.x + transform.position.x) / 2;
+                        var yPos = (col.transform.position.y + transform.position.y) / 2;
+                        explosion.transform.position = new Vector3(xPos, yPos, 0);
                         Destroy(col.gameObject);
                         HitbyBullet();
                         HasCollided = true;

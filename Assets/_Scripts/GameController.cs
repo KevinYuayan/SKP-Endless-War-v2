@@ -338,18 +338,38 @@ public class GameController : MonoBehaviour
         }
 
         //CheatKey
-        if(Input.GetKeyDown(KeyCode.S)
-            && Input.GetKeyDown(KeyCode.K)
-            && cheatCode == true)
+        if(cheatCode == true)
         {
-            GameObject hpO = GameObject.FindWithTag("HpStatus");
-            hpBarController = hpO.GetComponent<HpBarController>();
-            _HP += 99999;
-            hpBarController.health = _HP / 100;
-            pC.poweredUp = 2;
-            storage.poweredUp = 2;
-            BossSpawn();
-            //Debug.Log("Cheatcode executed");
+            if(Input.GetKeyDown(KeyCode.S)
+                && Input.GetKeyDown(KeyCode.K))
+            {
+                GameObject hpO = GameObject.FindWithTag("HpStatus");
+                hpBarController = hpO.GetComponent<HpBarController>();
+                _HP += 99999;
+                hpBarController.health = _HP / 100;
+                pC.poweredUp = 2;
+                storage.poweredUp = 2;
+                BossSpawn();
+                //Debug.Log("Cheatcode executed");
+            }
+
+            if(Input.GetKeyDown(KeyCode.K) &&
+                Input.GetKeyDown(KeyCode.P))
+            {
+                if(SceneManager.GetActiveScene().name == "Main")
+                {
+                    SceneManager.LoadScene("Level2");
+                }
+                else if(SceneManager.GetActiveScene().name == "Level2")
+                {
+                    SceneManager.LoadScene("Level3");
+                }
+
+                else if(SceneManager.GetActiveScene().name == "Level3")
+                {
+                    SceneManager.LoadScene("End");
+                }
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Space)
