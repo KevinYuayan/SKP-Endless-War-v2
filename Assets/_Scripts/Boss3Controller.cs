@@ -90,7 +90,7 @@ public class Boss3Controller : MonoBehaviour
             if (!bulletController.IsEnemyBullet && !bulletController.HasCollided)
             {
                 bulletController.HasCollided = true;
-                var explosion = PoolManager.GetInstance().GetExplosion();
+                var explosion = PoolManager.GetInstance().GetObject("Explosion");
                 explosion.transform.position = col.transform.position;
                 Destroy(col.gameObject);
                 //explosionSound.volume = 0.3f;

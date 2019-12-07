@@ -21,4 +21,9 @@ MonoBehaviour:
   timeLabelEnabled: 1
   hpLabelEnabled: 1
   endLabelEnabled: 0
+  clearLabelEnabled: 0
   StartButtonEnabled: 0
+  numOfEnemy1: 10
+  numOfEnemy2: 6
+  numOfBomber: 3
+  numOfSnakePlane: 0

@@ -61,9 +61,13 @@ public class BomberController : CollidableObject
             _hasCollided = value;
             if (HasCollided)
             {
-                Reset();
+                PoolManager.GetInstance().QueueObject(gameObject);
             }
         }
+    }
+    private void OnEnable()
+    {
+        Reset();
     }
     // Start is called before the first frame update
     void Start()
@@ -71,8 +75,6 @@ public class BomberController : CollidableObject
         _isTopBomber = (Random.Range(0, 10) < 5);
         GameObject gco = GameObject.FindWithTag("GameController");
         gc = gco.GetComponent<GameController>();
-        explosionSound = gc.audioSources[(int)SoundClip.EXPLOSION];
-        Reset();
     }
 
     // Update is called once per frame
@@ -153,7 +155,7 @@ public class BomberController : CollidableObject
     {
         if (transform.position.x <= topBoundary.Left)
         {
-            Reset();
+            PoolManager.GetInstance().QueueObject(gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D col)
@@ -166,7 +168,7 @@ public class BomberController : CollidableObject
             {
                 bulletController.HasCollided = true;
                 hp -= 1;
-                var explosion = PoolManager.GetInstance().GetExplosion();
+                var explosion = PoolManager.GetInstance().GetObject("Explosion");
                 explosion.transform.position = col.transform.position;
                 //explosionSound.volume = 0.3f;
                 //explosionSound.Play();
@@ -174,7 +176,7 @@ public class BomberController : CollidableObject
                 if (hp <= 0)
                 {
                     position = this.gameObject.transform.position;
-                    Destroy(this.gameObject);
+                    PoolManager.GetInstance().QueueObject(gameObject);
                     gc.Score += 300;
                     //item spawning by enemy dead
                     itemChance1 = Random.Range(0, 1000);

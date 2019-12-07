@@ -52,26 +52,16 @@ MonoBehaviour:
   gameOver: 0
   restart: 0
   tutorial: 0
-  explosion: {fileID: 798231134482312771, guid: f46ecd09aca918749914d0360485828e,
-    type: 3}
   explosions:
   - {fileID: 798231134482312771, guid: f46ecd09aca918749914d0360485828e, type: 3}
   - {fileID: 2919790156995005689, guid: 022f5997f25868d4b8817afd08c69801, type: 3}
   - {fileID: 2927435484588985366, guid: f3fddd72e8644394697f9218908d3a03, type: 3}
   - {fileID: 8581208409224291295, guid: cb5075d59fda8d040a5dbc8b786df543, type: 3}
   player: {fileID: 6772701842247943584, guid: ca2edc92006d24543b4e60f404bf9195, type: 3}
-  numberOfEnemy1: 0
-  numberOfEnemy2: 0
-  numberOfEnemy3: 0
-  numberOfEnemy4: 0
-  enemy1: {fileID: 0}
-  enemy2: {fileID: 0}
-  enemy3: {fileID: 0}
-  enemy4: {fileID: 0}
-  enemy1s: []
-  enemy2s: []
-  enemy3s: []
-  enemy4s: []
+  enemy1: {fileID: 279471036071834219, guid: d2280f1c2d0222e49a908caafb494b88, type: 3}
+  enemy2: {fileID: 6359590337577874136, guid: 1a9eed1092df46d469cb8a7fe0d8f510, type: 3}
+  enemy3: {fileID: 3165103455658131135, guid: e438e368d85991742bc27d72141764bf, type: 3}
+  enemy4: {fileID: 6610957315949629047, guid: 88db31085d9caf445ac6f215a4339935, type: 3}
   spawningDelay: 3
   bossEnemy: {fileID: 0}
   stageTime: 0
@@ -505,6 +495,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef934e282c79034b94e7e4af2af20d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pools:
+  - tag: Explosion
+    prefab: {fileID: 0}
+    size: 20
+  - tag: Enemy1
+    prefab: {fileID: 279471036071834219, guid: d2280f1c2d0222e49a908caafb494b88, type: 3}
+    size: 40
+  - tag: Enemy2
+    prefab: {fileID: 6359590337577874136, guid: 1a9eed1092df46d469cb8a7fe0d8f510,
+      type: 3}
+    size: 20
+  - tag: Bomber
+    prefab: {fileID: 3165103455658131135, guid: e438e368d85991742bc27d72141764bf,
+      type: 3}
+    size: 20
+  - tag: SnakePlane
+    prefab: {fileID: 6610957315949629047, guid: 88db31085d9caf445ac6f215a4339935,
+      type: 3}
+    size: 20
   numOfObjects: 20
   container: {fileID: 0}
 --- !u!114 &-8089849194968259917
