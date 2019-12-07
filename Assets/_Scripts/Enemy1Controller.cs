@@ -41,17 +41,20 @@ public class Enemy1Controller : CollidableObject
             _hasCollided = value;
             if (HasCollided)
             {
-                Reset();
+                PoolManager.GetInstance().QueueObject(gameObject);
             }
         }
+    }
+
+    private void OnEnable()
+    {
+        Reset();
     }
     // Start is called before the first frame update
     void Start()
     {
         GameObject gco = GameObject.FindWithTag("GameController");
         gc = gco.GetComponent<GameController>();
-        explosionSound = gc.audioSources[(int)SoundClip.EXPLOSION];
-        Reset();
     }
 
     // Update is called once per frame
@@ -101,7 +104,7 @@ public class Enemy1Controller : CollidableObject
     {
         if (transform.position.x <= boundary.Left)
         {
-            Reset();
+            PoolManager.GetInstance().QueueObject(gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D col)
@@ -113,9 +116,9 @@ public class Enemy1Controller : CollidableObject
             if (!bulletController.IsEnemyBullet && !bulletController.HasCollided)
             {
                 bulletController.HasCollided = true;
-                var explosion = PoolManager.GetInstance().GetExplosion();
+                var explosion = PoolManager.GetInstance().GetObject("Explosion");
                 explosion.transform.position = col.transform.position;
-                Destroy(this.gameObject);
+                PoolManager.GetInstance().QueueObject(gameObject);
                 Destroy(col.gameObject);
                 gc.Score += 50;
                 //explosionSound.volume = 0.3f;

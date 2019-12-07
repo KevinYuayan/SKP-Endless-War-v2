@@ -19,7 +19,7 @@ public class FinishedExploding : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateinfo, int layerindex)
     {
-        PoolManager.GetInstance().ResetExplosion(animator.gameObject);
+        PoolManager.GetInstance().QueueObject(animator.gameObject);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

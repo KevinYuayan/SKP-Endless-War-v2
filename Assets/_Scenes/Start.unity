@@ -120,6 +120,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &16194410
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8089031228588401394, guid: bf6e2362d64fda3488e6d422ae7f40e6,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemiesContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089031228588401395, guid: bf6e2362d64fda3488e6d422ae7f40e6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089031228588401395, guid: bf6e2362d64fda3488e6d422ae7f40e6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089031228588401395, guid: bf6e2362d64fda3488e6d422ae7f40e6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089031228588401395, guid: bf6e2362d64fda3488e6d422ae7f40e6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089031228588401395, guid: bf6e2362d64fda3488e6d422ae7f40e6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089031228588401395, guid: bf6e2362d64fda3488e6d422ae7f40e6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089031228588401395, guid: bf6e2362d64fda3488e6d422ae7f40e6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089031228588401395, guid: bf6e2362d64fda3488e6d422ae7f40e6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089031228588401395, guid: bf6e2362d64fda3488e6d422ae7f40e6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089031228588401395, guid: bf6e2362d64fda3488e6d422ae7f40e6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089031228588401395, guid: bf6e2362d64fda3488e6d422ae7f40e6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bf6e2362d64fda3488e6d422ae7f40e6, type: 3}
 --- !u!1 &46188809
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,13 +839,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2189820957192455367, guid: b5589df82b4c44646bf7557837800f7d,
-        type: 3}
-      propertyPath: m_Text
-      value: 'you will be a Canadian rookie pilot in WW2
-
-        Destroy German nazi invaders! Good luck!'
-      objectReference: {fileID: 0}
     - target: {fileID: 1869623684108037115, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -945,6 +1007,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -9.25
       objectReference: {fileID: 0}
+    - target: {fileID: 1869623683420342766, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 269.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869623683420342766, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 199
+      objectReference: {fileID: 0}
     - target: {fileID: 3069434059962934954, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -998,6 +1070,13 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -15
       objectReference: {fileID: 0}
+    - target: {fileID: 2189820957192455367, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_Text
+      value: 'you will be a Canadian rookie pilot in WW2
+
+        Destroy German nazi invaders! Good luck!'
+      objectReference: {fileID: 0}
     - target: {fileID: 1064512920, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1024,16 +1103,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1031669198}
-    - target: {fileID: 1869623683420342766, guid: b5589df82b4c44646bf7557837800f7d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 269.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1869623683420342766, guid: b5589df82b4c44646bf7557837800f7d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 199
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
 --- !u!114 &1869623683949556036 stripped

@@ -30,6 +30,11 @@ public class SceneSettings : ScriptableObject
     public bool clearLabelEnabled;
     [Header("Buttons")]
     public bool StartButtonEnabled;
+    [Header("Number of Enemies / 10 seconds")]
+    public int numOfEnemy1;
+    public int numOfEnemy2;
+    public int numOfBomber;
+    public int numOfSnakePlane;
 
     //[Header("Enemies")]
     //public bool Enemy1;

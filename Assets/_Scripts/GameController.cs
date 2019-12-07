@@ -24,31 +24,34 @@ public class GameController : MonoBehaviour
     public bool restart;
     public bool tutorial = false;
     [Header("Animations")]
-    public GameObject explosion;
     public GameObject[] explosions;
     [Header("Player")]
     public GameObject player;
     [Header("Enemies")]
-    public int numberOfEnemy1;
-    public int numberOfEnemy2;
-    public int numberOfEnemy3;
-    public int numberOfEnemy4;
-    public GameObject enemy1;
-    public GameObject enemy2;
-    public GameObject enemy3;
-    public GameObject enemy4;
-    public List<GameObject> enemy1s;
-    public List<GameObject> enemy2s;
-    public List<GameObject> enemy3s;
-    public List<GameObject> enemy4s;
-    public float spawningDelay;
+    private float enemy1SpawnDelay;
+    private float enemy2SpawnDelay;
+    private float bomberSpawnDelay;
+    private float snakePlaneSpawnDelay;
+
+    private float enemy1SpawnTimer;
+    private float enemy2SpawnTimer;
+    private float bomberSpawnTimer;
+    private float snakePlaneSpawnTimer;
+
+    private bool spawnEnemy1;
+    private bool spawnEnemy2;
+    private bool spawnBomber;
+    private bool spawnSnakePlane;
+
+    public int spawnRateIncreaser = 5;
+    private int intSpawnChecker;
     [Header("BossEnemy")]
     public GameObject bossEnemy;
     private bool bossSpawned = false;
     private bool bossDefeated = false;
 
     [Header("Stage Time Setting")]
-    private float time = 0f;
+    //private float time = 0f;
     private float timeCounter;
     public float stageTime;
     private int seconds;
@@ -135,7 +138,6 @@ public class GameController : MonoBehaviour
         set
         {
             //Score restriction to prevent score farming after stage time is done
-
             if(timeCounter < stageTime || bossSpawned == true)
             {
                 _score = value;
@@ -152,7 +154,6 @@ public class GameController : MonoBehaviour
                 endScoreLabel.text += storage.score;
             }
             scoreLabel.text = "Score : " + storage.score.ToString();
-        
         }
     }
 
@@ -223,9 +224,41 @@ public class GameController : MonoBehaviour
             activeSoundSource.volume = 0.3f;
             activeSoundSource.Play();
         }
-
+        // Sets the initial spawndelay for each enemy
+        if(activeSceneSettings.numOfEnemy1 > 0)
+        {
+            spawnEnemy1 = true;
+            enemy1SpawnDelay = 10f / activeSceneSettings.numOfEnemy1;
+        }
+        if (activeSceneSettings.numOfEnemy2 > 0)
+        {
+            spawnEnemy2 = true;
+            enemy2SpawnDelay = 10f / activeSceneSettings.numOfEnemy2;
+        }
+        if (activeSceneSettings.numOfBomber > 0)
+        {
+            spawnBomber = true;
+            bomberSpawnDelay = 10f / activeSceneSettings.numOfBomber;
+        }
+        if (activeSceneSettings.numOfSnakePlane > 0)
+        {
+            spawnSnakePlane = true;
+            snakePlaneSpawnDelay = 10f / activeSceneSettings.numOfSnakePlane;
+        }
+        intSpawnChecker = spawnRateIncreaser;
     }
-
+    // Increases Spawn Rate of enemies every 5 seconds(spawnRateIncreaser default)
+    private void IncreaseSpawnRate()
+    {
+        if(seconds >= intSpawnChecker)
+        {
+            intSpawnChecker += spawnRateIncreaser;
+            enemy1SpawnDelay *= 0.9f;
+            enemy2SpawnDelay *= 0.9f;
+            bomberSpawnDelay *= 0.9f;
+            snakePlaneSpawnDelay *= 0.9f;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -237,19 +270,13 @@ public class GameController : MonoBehaviour
         {
             timeLabel.text = "Push space key to defat boss!";
         }
-        //Setting delay of spawning enemy. 
-        time += Time.deltaTime;
+
         timeCounter += Time.deltaTime;
         seconds = Convert.ToInt32(timeCounter);
-            if (time >= spawningDelay 
-            && gameOver != true
-            && bossDefeated != true)
-            {
-                time = 0;
-                Spawn();
-                //Debug.Log("Enemies spawned");
-                //Debug.Log("Time Counter: " + seconds + "Second(s)");
-            }
+
+        Spawn();
+        IncreaseSpawnRate();
+
         if (seconds > stageTime 
             && bossSpawned == false
             && SceneManager.GetActiveScene().name != "Start"
@@ -335,29 +362,34 @@ public class GameController : MonoBehaviour
     // Spawns small enemies
     void Spawn()
     {
-        enemy1s = new List<GameObject>();
-        enemy2s = new List<GameObject>();
-        enemy3s = new List<GameObject>();
-        enemy4s = new List<GameObject>();
+        if(!gameOver && !bossDefeated)
+        {
+            enemy1SpawnTimer += Time.deltaTime;
+            enemy2SpawnTimer += Time.deltaTime;
+            bomberSpawnTimer += Time.deltaTime;
+            snakePlaneSpawnTimer += Time.deltaTime;
 
-        for (int enemy1Num = 0;enemy1Num < numberOfEnemy1; enemy1Num++)
-        {
-            enemy1s.Add(Instantiate(enemy1));
-        }
-
-        for (int enemy2Num = 0; enemy2Num < numberOfEnemy2; enemy2Num++)
-        {
-            enemy2s.Add(Instantiate(enemy2));
-        }
-
-        for(int enemy3Num = 0; enemy3Num < numberOfEnemy3; enemy3Num++)
-        {
-            enemy3s.Add(Instantiate(enemy3));
-        }
-        for (int enemy4Num = 0; enemy4Num < numberOfEnemy4; enemy4Num++)
-        {
-            enemy3s.Add(Instantiate(enemy4));
-        }
+            if (spawnEnemy1 && enemy1SpawnTimer >= enemy1SpawnDelay)
+            {
+                var enemy = PoolManager.GetInstance().GetObject("Enemy1");
+                enemy1SpawnTimer = 0;
+            }
+            if (spawnEnemy2 && enemy2SpawnTimer >= enemy2SpawnDelay)
+            {
+                var enemy = PoolManager.GetInstance().GetObject("Enemy2");
+                enemy2SpawnTimer = 0;
+            }
+            if (spawnBomber && bomberSpawnTimer >= bomberSpawnDelay)
+            {
+                var enemy = PoolManager.GetInstance().GetObject("Bomber");
+                bomberSpawnTimer = 0;
+            }
+            if (spawnSnakePlane && snakePlaneSpawnTimer >= snakePlaneSpawnDelay)
+            {
+                var enemy = PoolManager.GetInstance().GetObject("SnakePlane");
+                snakePlaneSpawnTimer = 0;
+            }
+        }        
     }
     void addBonus()
     {
@@ -417,7 +449,6 @@ public class GameController : MonoBehaviour
     }
     public void OnStartButtonClick()
     {
-
         SceneManager.LoadScene("Tutorial");
     }
     public void Boss1Defeated()

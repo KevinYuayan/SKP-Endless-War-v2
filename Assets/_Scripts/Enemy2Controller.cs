@@ -53,18 +53,20 @@ public class Enemy2Controller : CollidableObject
             _hasCollided = value;
             if (HasCollided)
             {
-                Reset();
+                PoolManager.GetInstance().QueueObject(gameObject);
             }
         }
     }
 
+    private void OnEnable()
+    {
+        Reset();
+    }
     // Start is called before the first frame update
     void Start()
     {
         GameObject gco = GameObject.FindWithTag("GameController");
         gc = gco.GetComponent<GameController>();
-        explosionSound = gc.audioSources[(int)SoundClip.EXPLOSION];
-        Reset();
     }
 
     // Update is called once per frame
@@ -117,15 +119,15 @@ public class Enemy2Controller : CollidableObject
     {
         if (transform.position.y >= boundary.Top)
         {
-            Reset();
+            PoolManager.GetInstance().QueueObject(gameObject);
         }
         if (transform.position.y <= boundary.Bottom)
         {
-            Reset();
+            PoolManager.GetInstance().QueueObject(gameObject);
         }
         if (transform.position.x <= boundary.Left)
         {
-            Reset();
+            PoolManager.GetInstance().QueueObject(gameObject);
         }
     }
 
@@ -142,9 +144,9 @@ public class Enemy2Controller : CollidableObject
                 if (hp <= 0 && !col.GetComponent<FireController>().IsEnemyBullet)
                 {
                     position = this.gameObject.transform.position;
-                    var explosion = PoolManager.GetInstance().GetExplosion();
+                    var explosion = PoolManager.GetInstance().GetObject("Explosion");
                     explosion.transform.position = col.transform.position;
-                    Destroy(this.gameObject);
+                    PoolManager.GetInstance().QueueObject(gameObject);
                     Destroy(col.gameObject);
                     gc.Score += 100;
                     //explosionSound.volume = 0.3f;
