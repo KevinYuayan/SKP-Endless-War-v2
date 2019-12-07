@@ -57,6 +57,7 @@ public class GameController : MonoBehaviour
     private int _score;
     [SerializeField]
     private int _HP;
+    [Header("UI")]
     public Text hpLabel;
     public Text livesLabel;
     public Text scoreLabel;
@@ -65,7 +66,7 @@ public class GameController : MonoBehaviour
     public Text gameOverLabel;
     public Text restartLabel;
     public Text manualLabel;
-    public Text endLabel;
+    public Text endScoreLabel;
     public Text ClearLabel;
     public Text respawnLabel;
 
@@ -145,9 +146,9 @@ public class GameController : MonoBehaviour
 
             else if (SceneManager.GetActiveScene().name == "End")
             {
-                endLabel.text += storage.score;
+                endScoreLabel.text += storage.score;
             }
-                scoreLabel.text = "Score : " + storage.score.ToString();
+            scoreLabel.text = "Score : " + storage.score.ToString();
         
         }
     }
@@ -171,7 +172,7 @@ public class GameController : MonoBehaviour
         livesLabel.enabled = activeSceneSettings.livesLabelEnabled;
         timeLabel.enabled = activeSceneSettings.timeLabelEnabled;
         hpLabel.enabled = activeSceneSettings.hpLabelEnabled;
-        endLabel.enabled = activeSceneSettings.endLabelEnabled;
+        endScoreLabel.enabled = activeSceneSettings.endLabelEnabled;
         ClearLabel.enabled = activeSceneSettings.clearLabelEnabled;
 
         startButton.SetActive(activeSceneSettings.StartButtonEnabled);
@@ -216,7 +217,7 @@ public class GameController : MonoBehaviour
             AudioSource activeSoundSource = audioSources[(int)activeSoundClip];
             activeSoundSource.playOnAwake = true;
             activeSoundSource.loop = true;
-            activeSoundSource.volume = 0.5f;
+            activeSoundSource.volume = 0.1f;
             activeSoundSource.Play();
         }
 
@@ -227,7 +228,7 @@ public class GameController : MonoBehaviour
     {
         if (stageTime - seconds > 0 && !(tutorial))
         {
-                timeLabel.text = "Time: " + (stageTime - seconds);
+            timeLabel.text = "Time: " + (stageTime - seconds);
         }
         else if (stageTime - seconds <= 0 && bossSpawned == false)
         {
@@ -253,7 +254,7 @@ public class GameController : MonoBehaviour
             && SceneManager.GetActiveScene().name != "Tutorial"
             &&Input.GetKeyDown(KeyCode.Space))
         {
-                BossSpawn();
+            BossSpawn();
         }
 
         if (restart == true)
@@ -316,8 +317,7 @@ public class GameController : MonoBehaviour
             pC.poweredUp = 2;
             storage.poweredUp = 2;
             BossSpawn();
-            Debug.Log("Cheatcode executed");
-            
+            //Debug.Log("Cheatcode executed");
         }
 
         if (Input.GetKeyDown(KeyCode.Space)
@@ -394,7 +394,7 @@ public class GameController : MonoBehaviour
         timeLabel.text = "Boss spawned!";
         Instantiate(bossEnemy);
         bossSpawned = true;
-        Debug.Log(bossSpawned);
+        //Debug.Log(bossSpawned);
         //Debug.Log("Boss spawned");
     }
 

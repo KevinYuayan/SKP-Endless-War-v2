@@ -68,7 +68,7 @@ public class BomberController : CollidableObject
     // Start is called before the first frame update
     void Start()
     {
-        _isTopBomber = (Random.Range(0, 1) < 0.5);
+        _isTopBomber = (Random.Range(0, 10) < 5);
         GameObject gco = GameObject.FindWithTag("GameController");
         gc = gco.GetComponent<GameController>();
         explosionSound = gc.audioSources[(int)SoundClip.EXPLOSION];

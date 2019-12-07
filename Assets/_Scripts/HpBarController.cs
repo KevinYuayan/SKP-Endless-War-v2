@@ -56,7 +56,7 @@ public class HpBarController : MonoBehaviour
     //Coroutine
     private IEnumerator TakeDamage()
     {
-        for (; damage > 0.0f; damage -= damageStep)
+        for (; damage > 0.01f; damage -= damageStep)
         {
             health -= damageStep;
             if (health < 0.0f)
