@@ -76,6 +76,7 @@ public class GameController : MonoBehaviour
     [Header("UI Control")]
     public GameObject startLabel;
     public GameObject startButton;
+    public HpBarController hpBarController;
 
     [Header("Bonus")]
     public int bonusSCore = 10000;
@@ -180,7 +181,7 @@ public class GameController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Tutorial")
         {
-            HP = 9999;
+            HP = 99999;
             tutorial = true;
         }
 
@@ -307,7 +308,10 @@ public class GameController : MonoBehaviour
             && Input.GetKeyDown(KeyCode.K)
             && cheatCode == true)
         {
+            GameObject hpO = GameObject.FindWithTag("HpStatus");
+            hpBarController = hpO.GetComponent<HpBarController>();
             _HP += 99999;
+            hpBarController.health = _HP / 100;
             pC.poweredUp = 2;
             storage.poweredUp = 2;
             BossSpawn();
