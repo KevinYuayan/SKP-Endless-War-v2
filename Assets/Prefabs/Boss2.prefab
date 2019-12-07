@@ -136,7 +136,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: d57bacc0315281c4391e11d17ef2c7eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -254,12 +254,13 @@ MonoBehaviour:
     Bottom: -2.3
     Left: 0
   speed: 0.02
-  fireSpawn1: {fileID: 4098598131146234778}
-  fireSpawn2: {fileID: 8343368017975187464}
-  fireSpawn3: {fileID: 3853307357898851003}
-  fireSpawn4: {fileID: 6966055902626120320}
-  fireSpawn5: {fileID: 8637890756749022908}
-  fireSpawn6: {fileID: 7016129619893519585}
+  fireSpawns:
+  - {fileID: 6379052894279952183}
+  - {fileID: 9037085550328552828}
+  - {fileID: 7084550448222942382}
+  - {fileID: 7063243612588303715}
+  - {fileID: 6850521972433765160}
+  - {fileID: 7743511736772533776}
   fire: {fileID: 4759595260306027593, guid: bbe8f9c082b07a84e844619e56d750cc, type: 3}
   fireRate: 1
 --- !u!1 &6966055902626120320

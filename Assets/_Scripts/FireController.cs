@@ -10,7 +10,7 @@ using UnityEngine;
 /// Description: Controller of fire in game.
 /// Revision History:
 /// </summary>
-public class FireController : MonoBehaviour
+public class FireController : CollidableObject
 {
     private bool _isEnemyBullet;
     private Rigidbody2D rBody;

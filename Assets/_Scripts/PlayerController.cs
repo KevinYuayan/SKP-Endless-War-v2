@@ -198,6 +198,10 @@ public class PlayerController : CollidableObject
             case "Boss3":
                 if(!HasCollided)
                 {
+                    var explosion = PoolManager.GetInstance().GetExplosion();
+                    var xPos = (col.transform.position.x + transform.position.x) / 2;
+                    var yPos = (col.transform.position.y + transform.position.y) / 2;
+                    explosion.transform.position = new Vector3(xPos, yPos, 0);
                     HitbyCollision();
                     HasCollided = true;
                 }

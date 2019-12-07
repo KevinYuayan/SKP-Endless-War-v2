@@ -108,14 +108,18 @@ public class Enemy1Controller : CollidableObject
     {
         if (col.gameObject.tag == "Bullet")
         {
+            FireController bulletController = col.GetComponent<FireController>();
             // Checks if bullet is from player
-            if (!col.GetComponent<FireController>().IsEnemyBullet)
+            if (!bulletController.IsEnemyBullet && !bulletController.HasCollided)
             {
+                bulletController.HasCollided = true;
+                var explosion = PoolManager.GetInstance().GetExplosion();
+                explosion.transform.position = col.transform.position;
                 Destroy(this.gameObject);
                 Destroy(col.gameObject);
                 gc.Score += 50;
-                explosionSound.volume = 0.3f;
-                explosionSound.Play();
+                //explosionSound.volume = 0.3f;
+                //explosionSound.Play();
             }
         }
     }

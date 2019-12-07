@@ -52,40 +52,43 @@ public class ItemController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "Player" && this.gameObject.tag == "BonusLife")
+        if(col.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject);
-            gC.Lives += 1;
-        }
-        if(col.gameObject.tag == "Player" && this.gameObject.tag =="PowerUp" && storage.poweredUp <= 1)
-        {
-            Destroy(this.gameObject);
-            storage.poweredUp += 1;
-            pC.poweredUp = storage.poweredUp;
-
-        }
-        if(col.gameObject.tag == "Player" && this.gameObject.tag == "PowerUp" && storage.poweredUp >= 2)
-        {
-            Destroy(this.gameObject);
-            gC.Score += 100;
-        }
-
-        if(col.gameObject.tag == "Player" && this.gameObject.tag == "HPUP")
-        {
-            Destroy(this.gameObject);
-            if(gC.HP <= 50)
+            if (this.gameObject.tag == "BonusLife")
             {
-                gC.HP += 50;
-                hpBC.health += 0.5f;
-                //Debug.Log("Hp 50% retored");
+                Destroy(this.gameObject);
+                gC.Lives += 1;
             }
-            else if(gC.HP > 50)
+            if (this.gameObject.tag == "PowerUp" && storage.poweredUp <= 1)
             {
-                gC.HP = 100;
-                hpBC.health = 1.0f;
-                //Debug.Log("Hp is full");
+                Destroy(this.gameObject);
+                storage.poweredUp += 1;
+                pC.poweredUp = storage.poweredUp;
+
             }
-        }
+            if (this.gameObject.tag == "PowerUp" && storage.poweredUp >= 2)
+            {
+                Destroy(this.gameObject);
+                gC.Score += 100;
+            }
+
+            if (this.gameObject.tag == "HPUP")
+            {
+                Destroy(this.gameObject);
+                if (gC.HP <= 50)
+                {
+                    gC.HP += 50;
+                    hpBC.health += 0.5f;
+                    //Debug.Log("Hp 50% retored");
+                }
+                else if (gC.HP > 50)
+                {
+                    gC.HP = 100;
+                    hpBC.health = 1.0f;
+                    //Debug.Log("Hp is full");
+                }
+            }
+        }       
     }
 }
 

@@ -481,6 +481,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1869623683949556035}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1253003559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1253003560}
+  m_Layer: 0
+  m_Name: ExplosionContainer
+  m_TagString: ExplosionContainer
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1253003560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253003559}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.41636595, y: -0.12903751, z: -0.54589844}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1369112506 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2058280702, guid: b5589df82b4c44646bf7557837800f7d,
@@ -671,28 +701,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
-      propertyPath: m_Text
-      value: 'Thank you for playing!
-
-
-        Press ''R''key to go back to the start screen
-
-
-        Your final score is '
-      objectReference: {fileID: 0}
     - target: {fileID: 1869623684108037115, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -806,12 +814,12 @@ PrefabInstance:
     - target: {fileID: 1869623684052477860, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -230.09998
+      value: -230.09999
       objectReference: {fileID: 0}
     - target: {fileID: 1869623684860457017, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -122.599976
+      value: -122.59999
       objectReference: {fileID: 0}
     - target: {fileID: 1869623684860457017, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
@@ -820,7 +828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2058280703, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -20.200012
+      value: -20.200027
       objectReference: {fileID: 0}
     - target: {fileID: 2058280703, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -834,23 +842,67 @@ PrefabInstance:
     - target: {fileID: 2702577144296084617, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -184
+      value: -184.00002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931322751270041195, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -47.89003
       objectReference: {fileID: 0}
     - target: {fileID: 1064512921, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -8.400024
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086035499590599, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -47.89003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064512922, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
+      propertyPath: m_Text
+      value: 'Thank you for playing!
+
+
+        Press ''R''key to go back to the start screen
+
+
+        Your final score is '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1064512920, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5327974860192383770, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1031669198}
-    - target: {fileID: 1064512920, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
+--- !u!114 &1869623683949556036 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1403280199740736347, guid: b5589df82b4c44646bf7557837800f7d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1869623683949556035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3122459322233585381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -959,6 +1011,16 @@ PrefabInstance:
       propertyPath: numberOfEnemy2
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: endScoreLabel
+      value: 
+      objectReference: {fileID: 547599360}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: respawnLabel
+      value: 
+      objectReference: {fileID: 1869623683949556036}
     - target: {fileID: 177786579685343100, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
       propertyPath: m_LocalPosition.x

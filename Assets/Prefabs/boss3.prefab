@@ -350,7 +350,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: bbdbd970b91d2ca44a225e2657eee688, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -381,17 +381,18 @@ MonoBehaviour:
     Bottom: -2.3
     Left: 0
   speed: 0.04
-  fireSpawn1: {fileID: 7380468267439020228}
-  fireSpawn2: {fileID: 1698146664196722424}
-  fireSpawn3: {fileID: 6764684683170475788}
-  fireSpawn4: {fileID: 598966602323551112}
-  fireSpawn5: {fileID: 63954548619226531}
-  fireSpawn6: {fileID: 24980618198224135}
-  fireSpawn7: {fileID: 3832639679778667474}
-  fireSpawn8: {fileID: 3623351704565348997}
-  fireSpawn9: {fileID: 2213979182927425720}
-  fireSpawn10: {fileID: 4305549296553059584}
   fire: {fileID: 8181660143467829384, guid: 9bfc758e9ccdfc64bba0f55cbc74caa0, type: 3}
+  fireSpawns:
+  - {fileID: 6038678860102635589}
+  - {fileID: 8243962798310709484}
+  - {fileID: 8597279792081679461}
+  - {fileID: 9196373730384781685}
+  - {fileID: 3321743239795706890}
+  - {fileID: 3903926894203142551}
+  - {fileID: 7340046542662002382}
+  - {fileID: 341385468642532567}
+  - {fileID: 6363513145454282943}
+  - {fileID: 6441738368448547928}
   fireRate: 1
 --- !u!60 &299021939
 PolygonCollider2D:
