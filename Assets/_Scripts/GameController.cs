@@ -292,6 +292,8 @@ public class GameController : MonoBehaviour
                {
                     Lives = startingLives;
                     Score = 0;
+                    storage.poweredUp = 0;
+                    pC.poweredUp = 0;
                     SceneManager.LoadScene("Main");
                }
         }
