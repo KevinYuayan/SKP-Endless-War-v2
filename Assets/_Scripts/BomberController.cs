@@ -72,7 +72,6 @@ public class BomberController : CollidableObject
     // Start is called before the first frame update
     void Start()
     {
-        _isTopBomber = (Random.Range(0, 10) < 5);
         GameObject gco = GameObject.FindWithTag("GameController");
         gc = gco.GetComponent<GameController>();
     }
@@ -125,7 +124,7 @@ public class BomberController : CollidableObject
     public override void Reset()
     {
         base.Reset();
-        _isTopBomber = !_isTopBomber;
+        _isTopBomber = (Random.Range(0, 10) < 5);
         horizontalSpeed = Random.Range(horizontalSpeedRange.min, horizontalSpeedRange.max);
         Vector2 startPosition = new Vector2();
         if (_isTopBomber)
