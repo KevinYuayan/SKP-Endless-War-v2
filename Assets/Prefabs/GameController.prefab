@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 177786579685343096}
   - component: {fileID: 177786579685343103}
   - component: {fileID: 177786579685343102}
+  - component: {fileID: 3038812818279209982}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -50,6 +51,8 @@ MonoBehaviour:
   gameOver: 0
   restart: 0
   tutorial: 0
+  explosion: {fileID: 798231134482312771, guid: f46ecd09aca918749914d0360485828e,
+    type: 3}
   player: {fileID: 6772701842247943584, guid: ca2edc92006d24543b4e60f404bf9195, type: 3}
   numberOfEnemy1: 0
   numberOfEnemy2: 0
@@ -484,3 +487,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3038812818279209982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177786579685343075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ef934e282c79034b94e7e4af2af20d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numOfObjects: 20
+  container: {fileID: 0}

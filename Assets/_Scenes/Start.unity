@@ -120,6 +120,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &46188809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 46188810}
+  m_Layer: 0
+  m_Name: ExplosionContainer
+  m_TagString: ExplosionContainer
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &46188810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46188809}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &394786765
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +228,7 @@ Transform:
   m_LocalScale: {x: 0.26823008, y: 0.15667059, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &422500773
 PrefabInstance:
@@ -250,7 +280,7 @@ PrefabInstance:
     - target: {fileID: 6334176156271767048, guid: ce5df82da5ff5ae4389d3163c2ca5c13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6334176156271767048, guid: ce5df82da5ff5ae4389d3163c2ca5c13,
         type: 3}
@@ -491,7 +521,7 @@ Transform:
   m_LocalScale: {x: 4, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1036848293
 MonoBehaviour:
@@ -690,7 +720,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1627059792
 MonoBehaviour:
@@ -778,7 +808,7 @@ PrefabInstance:
     - target: {fileID: 1869623684108037115, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1869623684108037115, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
@@ -858,37 +888,60 @@ PrefabInstance:
     - target: {fileID: 1869623684860457017, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -122.59999
+      value: -122.60011
       objectReference: {fileID: 0}
     - target: {fileID: 1869623684860457017, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 31.700012
+      value: 31.700195
       objectReference: {fileID: 0}
     - target: {fileID: 2058280703, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -20.200027
+      value: -20.20021
       objectReference: {fileID: 0}
     - target: {fileID: 2058280703, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 126.100006
+      value: 126.1001
       objectReference: {fileID: 0}
     - target: {fileID: 2125625114906740495, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 37.690002
+      value: 37.68994
       objectReference: {fileID: 0}
-    - target: {fileID: 2189820957192455367, guid: b5589df82b4c44646bf7557837800f7d,
+    - target: {fileID: 2125625114906740495, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
-      propertyPath: m_Text
-      value: 'you will be a Canadian rookie pilot in WW2
-
-        Destroy German nazi invaders! Good luck!'
+      propertyPath: m_AnchoredPosition.y
+      value: 230.04004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2707493763181907792, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 237.7998
+      objectReference: {fileID: 0}
+    - target: {fileID: 2707493763181907792, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 228.30005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869623684681154673, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.2998047
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869623684681154673, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -9.300049
       objectReference: {fileID: 0}
     - target: {fileID: 3069434059962934954, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 29.100037
+      value: 29.100098
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069434059962934954, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 205.1001
       objectReference: {fileID: 0}
     - target: {fileID: 2702577144296084617, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
@@ -898,16 +951,43 @@ PrefabInstance:
     - target: {fileID: 1931322751270041195, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -47.89003
+      value: -47.890152
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931322751270041195, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -14.975098
       objectReference: {fileID: 0}
     - target: {fileID: 1064512921, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -8.400024
+      value: -8.4001465
+      objectReference: {fileID: 0}
+    - target: {fileID: 818099386525835628, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.7001953
+      objectReference: {fileID: 0}
+    - target: {fileID: 818099386525835628, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.3100586
       objectReference: {fileID: 0}
     - target: {fileID: 702086035499590599, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -47.89003
+      value: -47.890152
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086035499590599, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -14.975098
+      objectReference: {fileID: 0}
+    - target: {fileID: 2189820957192455367, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_Text
+      value: 'you will be a Canadian rookie pilot in WW2
+
+        Destroy German nazi invaders! Good luck!'
       objectReference: {fileID: 0}
     - target: {fileID: 1064512920, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
       propertyPath: m_IsActive
@@ -1026,6 +1106,16 @@ PrefabInstance:
       propertyPath: respawnLabel
       value: 
       objectReference: {fileID: 1869623683949556036}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: numberOfEnemy1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: numberOfEnemy2
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 177786579685343100, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1064,7 +1154,7 @@ PrefabInstance:
     - target: {fileID: 177786579685343100, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 177786579685343100, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}

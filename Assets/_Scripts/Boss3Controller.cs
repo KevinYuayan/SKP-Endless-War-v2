@@ -24,17 +24,8 @@ public class Boss3Controller : MonoBehaviour
     private GameController gc;
     private AudioSource explosionSound;
 
-    public GameObject fireSpawn1;
-    public GameObject fireSpawn2;
-    public GameObject fireSpawn3;
-    public GameObject fireSpawn4;
-    public GameObject fireSpawn5;
-    public GameObject fireSpawn6;
-    public GameObject fireSpawn7;
-    public GameObject fireSpawn8;
-    public GameObject fireSpawn9;
-    public GameObject fireSpawn10;
     public GameObject fire;
+    public Transform[] fireSpawns;
     public float fireRate;
     private float myTime = 0.0f;
 
@@ -76,26 +67,11 @@ public class Boss3Controller : MonoBehaviour
         if (myTime > fireRate)
         {
             GameObject fireObj;
-            fireObj = Instantiate(fire, fireSpawn1.transform.position, fireSpawn1.transform.rotation);
-            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
-            fireObj = Instantiate(fire, fireSpawn2.transform.position, fireSpawn2.transform.rotation);
-            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
-            fireObj = Instantiate(fire, fireSpawn3.transform.position, fireSpawn3.transform.rotation);
-            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
-            fireObj = Instantiate(fire, fireSpawn4.transform.position, fireSpawn4.transform.rotation);
-            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
-            fireObj = Instantiate(fire, fireSpawn5.transform.position, fireSpawn5.transform.rotation);
-            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
-            fireObj = Instantiate(fire, fireSpawn6.transform.position, fireSpawn6.transform.rotation);
-            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
-            fireObj = Instantiate(fire, fireSpawn7.transform.position, fireSpawn7.transform.rotation);
-            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
-            fireObj = Instantiate(fire, fireSpawn8.transform.position, fireSpawn8.transform.rotation);
-            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
-            fireObj = Instantiate(fire, fireSpawn9.transform.position, fireSpawn9.transform.rotation);
-            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
-            fireObj = Instantiate(fire, fireSpawn10.transform.position, fireSpawn10.transform.rotation);
-            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
+            foreach (Transform fireSpawn in fireSpawns)
+            {
+                fireObj = Instantiate(fire, fireSpawn.position, fireSpawn.rotation);
+                fireObj.GetComponent<FireController>().IsEnemyBullet = true;
+            }
             myTime = 0.0f;
             //fireSound.volume = 0.3f;
             //fireSound.Play();
@@ -109,12 +85,16 @@ public class Boss3Controller : MonoBehaviour
     {
         if (col.gameObject.tag == "Bullet")
         {
+            FireController bulletController = col.GetComponent<FireController>();
             // Checks if bullet is from player
-            if (!col.GetComponent<FireController>().IsEnemyBullet)
+            if (!bulletController.IsEnemyBullet && !bulletController.HasCollided)
             {
+                bulletController.HasCollided = true;
+                var explosion = PoolManager.GetInstance().GetExplosion();
+                explosion.transform.position = col.transform.position;
                 Destroy(col.gameObject);
-                explosionSound.volume = 0.3f;
-                explosionSound.Play();
+                //explosionSound.volume = 0.3f;
+                //explosionSound.Play();
                 bossHP -= 1;
                 if (bossHP <= 0)
                 {

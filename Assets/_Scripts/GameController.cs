@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour
     public bool gameOver;
     public bool restart;
     public bool tutorial = false;
+    [Header("Animations")]
+    public GameObject explosion;
     [Header("Player")]
     public GameObject player;
     [Header("Enemies")]
@@ -217,7 +219,7 @@ public class GameController : MonoBehaviour
             AudioSource activeSoundSource = audioSources[(int)activeSoundClip];
             activeSoundSource.playOnAwake = true;
             activeSoundSource.loop = true;
-            activeSoundSource.volume = 0.1f;
+            activeSoundSource.volume = 0.3f;
             activeSoundSource.Play();
         }
 
@@ -369,7 +371,7 @@ public class GameController : MonoBehaviour
         {
             HP = 100;
             Lives -= 1;
-            storage.poweredUp = 0;
+            //storage.poweredUp = 0;
             //Debug.Log("Player died");
             respawnLabel.enabled = true;
             StartCoroutine(RespawnPlayer());

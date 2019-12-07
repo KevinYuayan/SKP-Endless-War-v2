@@ -24,9 +24,7 @@ public class Boss1Controller : MonoBehaviour
     private GameController gc;
     private AudioSource explosionSound;
 
-    public GameObject fireSpawn1;
-    public GameObject fireSpawn2;
-    public GameObject fireSpawn3;
+    public Transform[] fireSpawns;
     public GameObject fire;
     public float fireRate;
     private float myTime = 0.0f;
@@ -69,12 +67,11 @@ public class Boss1Controller : MonoBehaviour
         if (myTime > fireRate)
         {
             GameObject fireObj;
-            fireObj = Instantiate(fire, fireSpawn1.transform.position, fireSpawn1.transform.rotation);
-            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
-            fireObj = Instantiate(fire, fireSpawn2.transform.position, fireSpawn2.transform.rotation);
-            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
-            fireObj = Instantiate(fire, fireSpawn3.transform.position, fireSpawn3.transform.rotation);
-            fireObj.GetComponent<FireController>().IsEnemyBullet = true;
+            foreach (Transform fireSpawn in fireSpawns)
+            {
+                fireObj = Instantiate(fire, fireSpawn.position, fireSpawn.rotation);
+                fireObj.GetComponent<FireController>().IsEnemyBullet = true;
+            }
             myTime = 0.0f;
             //fireSound.volume = 0.3f;
             //fireSound.Play();
@@ -88,12 +85,16 @@ public class Boss1Controller : MonoBehaviour
     {
         if (col.gameObject.tag == "Bullet")
         {
+            FireController bulletController = col.GetComponent<FireController>();
             // Checks if bullet is from player
-            if (!col.GetComponent<FireController>().IsEnemyBullet)
+            if (!bulletController.IsEnemyBullet && !bulletController.HasCollided)
             {
+                bulletController.HasCollided = true;
+                var explosion = PoolManager.GetInstance().GetExplosion();
+                explosion.transform.position = col.transform.position;
                 Destroy(col.gameObject);
-                explosionSound.volume = 0.3f;
-                explosionSound.Play();
+                //explosionSound.volume = 0.3f;
+                //explosionSound.Play();
                 bossHP -= 1;
                 if (bossHP <= 0)
                 {

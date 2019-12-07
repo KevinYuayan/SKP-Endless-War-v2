@@ -167,24 +167,26 @@ public class SnakePlaneController : CollidableObject
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Bullet"&& !col.GetComponent<FireController>().IsEnemyBullet)
+        if (col.gameObject.tag == "Bullet")
         {
-            hp -= 1;
-            Destroy(col.gameObject);
-            explosionSound.volume = 0.3f;
-            explosionSound.Play();
-            if (hp <= 0)
+            FireController bulletController = col.GetComponent<FireController>();
+            // Checks if bullet is from player
+            if (!bulletController.IsEnemyBullet && !bulletController.HasCollided)
             {
-                // Checks if bullet is from player
-                if (!col.GetComponent<FireController>().IsEnemyBullet)
+                bulletController.HasCollided = true;
+                hp -= 1;
+                var explosion = PoolManager.GetInstance().GetExplosion();
+                explosion.transform.position = col.transform.position;
+                Destroy(col.gameObject);
+                //explosionSound.volume = 0.3f;
+                //explosionSound.Play();
+                if (hp <= 0)
                 {
+                    position = this.gameObject.transform.position;
                     Destroy(this.gameObject);
-                    Destroy(col.gameObject);
                     gc.Score += 300;
-                    explosionSound.Play();
 
                     //item spawning by enemy dead
-                    position = this.gameObject.transform.position;
                     itemChance1 = Random.Range(0, 1000);
                     itemChance2 = Random.Range(0, 1000);
                     itemChance3 = Random.Range(0, 1000);
@@ -208,6 +210,7 @@ public class SnakePlaneController : CollidableObject
                         //Debug.Log("HPUP spawned");
                         //Debug.Log(itemChance3);
                     }
+
                 }
             }
         }

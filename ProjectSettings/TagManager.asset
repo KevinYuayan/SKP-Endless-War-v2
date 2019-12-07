@@ -16,6 +16,7 @@ TagManager:
   - Boss2
   - Boss3
   - HpStatus
+  - ExplosionContainer
   layers:
   - Default
   - TransparentFX

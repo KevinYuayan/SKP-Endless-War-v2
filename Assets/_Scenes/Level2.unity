@@ -272,6 +272,16 @@ PrefabInstance:
       propertyPath: endScoreLabel
       value: 
       objectReference: {fileID: 762074394}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: numberOfEnemy1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 177786579685343101, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: numberOfEnemy2
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 177786579685343100, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -695,6 +705,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 7027017148221120288, guid: bfab62c3e30e9fb4aa3c979e344d42c4,
+        type: 3}
+      propertyPath: gC
+      value: 
+      objectReference: {fileID: 1233266395}
     - target: {fileID: 7027017148221120295, guid: bfab62c3e30e9fb4aa3c979e344d42c4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -750,11 +765,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7027017148221120288, guid: bfab62c3e30e9fb4aa3c979e344d42c4,
-        type: 3}
-      propertyPath: gC
-      value: 
-      objectReference: {fileID: 1233266395}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfab62c3e30e9fb4aa3c979e344d42c4, type: 3}
 --- !u!114 &836365661 stripped
@@ -1094,6 +1104,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702d45d4d1f87494c9917f2b2d4c268d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1817459391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1817459392}
+  m_Layer: 0
+  m_Name: ExplosionContainer
+  m_TagString: ExplosionContainer
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1817459392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817459391}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.41636595, y: -0.12903751, z: -0.54589844}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1849082194 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1869623683420342764, guid: b5589df82b4c44646bf7557837800f7d,
