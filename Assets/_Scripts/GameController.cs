@@ -396,7 +396,7 @@ public class GameController : MonoBehaviour
         timeLabel.text = "Boss spawned!";
         Instantiate(bossEnemy);
         bossSpawned = true;
-        Debug.Log(bossSpawned);
+        //Debug.Log(bossSpawned);
         //Debug.Log("Boss spawned");
     }
 

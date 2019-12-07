@@ -7,7 +7,7 @@ using Util;
 /// File Name: PlayerController.cs
 /// Author: Hyungseok Philip Lee, Kevin Yuayan
 /// Last Modified by: Hyungseok Philip Lee
-/// Date Last Modified: Nov. 29, 2019
+/// Date Last Modified: Dec. 7, 2019
 /// Description: Controller for the Player prefab
 /// Revision History:
 /// </summary>
@@ -86,8 +86,15 @@ public class PlayerController : CollidableObject
         Move();
         CheckBounds();
         Fire();
+        //Enhance player fire size and fire rate by power-up level.
         switch(poweredUp)
         {
+            case 0:
+                {
+                    fireRate = 0.5f;
+                    fire.gameObject.GetComponent<Transform>().localScale = new Vector3(1f, 1f, 1);
+                }
+                break;
             case 1:
                 {
                     fireRate = 0.45f;
