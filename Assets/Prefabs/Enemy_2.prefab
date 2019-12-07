@@ -99,9 +99,9 @@ MonoBehaviour:
   bonusLife: {fileID: 1830573422138198335, guid: 417dc5ddf54aaef4db0c520b98a00327,
     type: 3}
   HPUP: {fileID: 7761874189034688760, guid: 4f4a32a4a650c6d45b741d0bebc925b7, type: 3}
-  powerUpChancePercentage: 7
-  bonusChancePercentage: 1
-  HPUPChancePercentage: 7
+  powerUpChancePercentage: 70
+  bonusChancePercentage: 10
+  HPUPChancePercentage: 30
   verticalSpeed: 0
   horizontalSpeed: 0
   boundary:

@@ -14,6 +14,7 @@ public class SnakePlaneController : CollidableObject
 {
     private GameController gc;
     private AudioSource explosionSound;
+    private int hp = 2;
 
     [Header("Speed Values")]
     [SerializeField]
@@ -166,41 +167,47 @@ public class SnakePlaneController : CollidableObject
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Bullet")
+        if (col.gameObject.tag == "Bullet"&& !col.GetComponent<FireController>().IsEnemyBullet)
         {
-            // Checks if bullet is from player
-            if (!col.GetComponent<FireController>().IsEnemyBullet)
+            hp -= 1;
+            Destroy(col.gameObject);
+            explosionSound.volume = 0.3f;
+            explosionSound.Play();
+            if (hp <= 0)
             {
-                Destroy(this.gameObject);
-                Destroy(col.gameObject);
-                gc.Score += 100;
-                explosionSound.volume = 0.3f;
-                explosionSound.Play();
-
-                //item spawning by enemy dead
-                position = this.gameObject.transform.position;
-                itemChance1 = Random.Range(0, 100);
-                itemChance2 = Random.Range(0, 100);
-                itemChance3 = Random.Range(0, 100);
-                if (itemChance1 >= 0 && itemChance1 <= powerUpPercentage)
+                // Checks if bullet is from player
+                if (!col.GetComponent<FireController>().IsEnemyBullet)
                 {
-                    Instantiate(powerUp, position, Quaternion.identity);
-                    //Debug.Log("Power-Up spawned");
-                    //Debug.Log(itemChance1);
-                }
+                    Destroy(this.gameObject);
+                    Destroy(col.gameObject);
+                    gc.Score += 100;
+                    explosionSound.Play();
 
-                if (itemChance2 >= 0 && itemChance2 <= bonusChancePercentage)
-                {
-                    Instantiate(bonusLife, position, Quaternion.identity);
-                    //Debug.Log("Bonus spawned");
-                    //Debug.Log(itemChance2);
-                }
+                    //item spawning by enemy dead
+                    position = this.gameObject.transform.position;
+                    itemChance1 = Random.Range(0, 1000);
+                    itemChance2 = Random.Range(0, 1000);
+                    itemChance3 = Random.Range(0, 1000);
+                    if (itemChance1 >= 0 && itemChance1 <= powerUpPercentage)
+                    {
+                        Instantiate(powerUp, position, Quaternion.identity);
+                        //Debug.Log("Power-Up spawned");
+                        //Debug.Log(itemChance1);
+                    }
 
-                if (itemChance3 >= 0 && itemChance3 <= hpUpPercentage)
-                {
-                    Instantiate(hpUp, position, Quaternion.identity);
-                    //Debug.Log("HPUP spawned");
-                    //Debug.Log(itemChance3);
+                    if (itemChance2 >= 0 && itemChance2 <= bonusChancePercentage)
+                    {
+                        Instantiate(bonusLife, position, Quaternion.identity);
+                        //Debug.Log("Bonus spawned");
+                        //Debug.Log(itemChance2);
+                    }
+
+                    if (itemChance3 >= 0 && itemChance3 <= hpUpPercentage)
+                    {
+                        Instantiate(hpUp, position, Quaternion.identity);
+                        //Debug.Log("HPUP spawned");
+                        //Debug.Log(itemChance3);
+                    }
                 }
             }
         }

@@ -30,7 +30,8 @@ public class Enemy2Controller : CollidableObject
     public int powerUpChancePercentage;
     public int bonusChancePercentage;
     public int HPUPChancePercentage;
-
+    [Header("Enemy Status")]
+    private int hp = 1;
     public float verticalSpeed;
     public float horizontalSpeed;
 
@@ -100,8 +101,8 @@ public class Enemy2Controller : CollidableObject
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             target = GameObject.FindGameObjectWithTag("Player").transform.position;
-            horizontalSpeed = (transform.position.x - target.x) / 70;
-            verticalSpeed = (transform.position.y - target.y) / 70;
+            horizontalSpeed = (transform.position.x - target.x) / 100;
+            verticalSpeed = (transform.position.y - target.y) / 100;
         }
 
         // Rotates the enemy to look at the player's position
@@ -132,35 +133,40 @@ public class Enemy2Controller : CollidableObject
     {
         if (col.gameObject.tag == "Bullet")
         {
-            position = this.gameObject.transform.position;
-            Destroy(this.gameObject);
-            Destroy(col.gameObject);
-            gc.Score += 100;
-            explosionSound.volume = 0.3f;
-            explosionSound.Play();
-            itemChance1 = Random.Range(0, 100);
-            itemChance2 = Random.Range(0, 100);
-            itemChance3 = Random.Range(0, 100);
-            if (itemChance1 >= 0 && itemChance1 <= powerUpChancePercentage)
+            hp -= 1;
+            if(hp <= 0)
             {
-                Instantiate(powerUp, position, Quaternion.identity);
-                //Debug.Log("Power-Up spawned");
-                //Debug.Log(itemChance1);
-            }
+                position = this.gameObject.transform.position;
+                Destroy(this.gameObject);
+                Destroy(col.gameObject);
+                gc.Score += 100;
+                explosionSound.volume = 0.3f;
+                explosionSound.Play();
+                itemChance1 = Random.Range(0, 1000);
+                itemChance2 = Random.Range(0, 1000);
+                itemChance3 = Random.Range(0, 1000);
+                if (itemChance1 >= 0 && itemChance1 <= powerUpChancePercentage)
+                {
+                    Instantiate(powerUp, position, Quaternion.identity);
+                    //Debug.Log("Power-Up spawned");
+                    //Debug.Log(itemChance1);
+                }
 
-            if (itemChance2 >= 0 && itemChance2 <= bonusChancePercentage)
-            {
-                Instantiate(bonusLife, position, Quaternion.identity);
-                //Debug.Log("Bonus spawned");
-                //Debug.Log(itemChance2);
-            }
+                if (itemChance2 >= 0 && itemChance2 <= bonusChancePercentage)
+                {
+                    Instantiate(bonusLife, position, Quaternion.identity);
+                    //Debug.Log("Bonus spawned");
+                    //Debug.Log(itemChance2);
+                }
 
-            if (itemChance3 >= 0 && itemChance3 <= HPUPChancePercentage)
-            {
-                Instantiate(HPUP, position, Quaternion.identity);
-                //Debug.Log("HPUP spawned");
-                //Debug.Log(itemChance3);
+                if (itemChance3 >= 0 && itemChance3 <= HPUPChancePercentage)
+                {
+                    Instantiate(HPUP, position, Quaternion.identity);
+                    //Debug.Log("HPUP spawned");
+                    //Debug.Log(itemChance3);
+                }
             }
+            
         }
     }
 }

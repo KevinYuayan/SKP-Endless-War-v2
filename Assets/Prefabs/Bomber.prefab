@@ -149,9 +149,9 @@ MonoBehaviour:
     type: 3}
   powerUP: {fileID: 7379716281020024665, guid: 08b5c63c88183b34c982d760b1d9b6fa, type: 3}
   hpUp: {fileID: 7761874189034688760, guid: 4f4a32a4a650c6d45b741d0bebc925b7, type: 3}
-  hpUpPercentage: 8
-  bonusChancePercentage: 2
-  powerUpChancePercentage: 8
+  hpUpPercentage: 30
+  bonusChancePercentage: 15
+  powerUpChancePercentage: 70
 --- !u!60 &5674663024214646335
 PolygonCollider2D:
   m_ObjectHideFlags: 0

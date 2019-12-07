@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalSpeedRange:
-    min: 0.02
-    max: 0.04
+    min: 0.01
+    max: 0.02
   verticalSpeedRange:
     min: 0.01
     max: 0.02
@@ -147,9 +147,9 @@ MonoBehaviour:
     type: 3}
   powerUp: {fileID: 7379716281020024665, guid: 08b5c63c88183b34c982d760b1d9b6fa, type: 3}
   hpUp: {fileID: 7761874189034688760, guid: 4f4a32a4a650c6d45b741d0bebc925b7, type: 3}
-  powerUpPercentage: 10
-  hpUpPercentage: 10
-  bonusChancePercentage: 3
+  powerUpPercentage: 100
+  hpUpPercentage: 50
+  bonusChancePercentage: 15
 --- !u!50 &-5207256478286993604
 Rigidbody2D:
   serializedVersion: 4

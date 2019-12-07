@@ -269,6 +269,7 @@ public class GameController : MonoBehaviour
                     HP = 100;
                     Lives = startingLives;
                     Score = 0;
+                    storage.poweredUp = 0;
                     restart = false;
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483066b55d8d5ab4782dac63d9f5e081, type: 3}
   m_Name: Storage
   m_EditorClassIdentifier: 
-  hp: 60
-  lives: 0
-  score: 3300
-  highscore: 43600
-  poweredUp: 0
+  hp: 100
+  lives: 2
+  score: 21600
+  highscore: 86450
+  poweredUp: 2

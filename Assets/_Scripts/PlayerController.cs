@@ -86,6 +86,20 @@ public class PlayerController : CollidableObject
         Move();
         CheckBounds();
         Fire();
+        switch(poweredUp)
+        {
+            case 1:
+                {
+                    fireRate = 0.48f;
+                }
+                break;
+            case 2:
+                {
+                    fireRate = 0.46f;
+                }
+                break;
+        }
+        
     }
     void Move()
     {
@@ -146,7 +160,7 @@ public class PlayerController : CollidableObject
                 Instantiate(fire, fireSpawn3.transform.position, fireSpawn3.transform.rotation);
             }
             myTime = 0.0f;
-            fireSound.volume = 0.3f;
+            fireSound.volume = 0.2f;
             fireSound.Play();
         }
     }
