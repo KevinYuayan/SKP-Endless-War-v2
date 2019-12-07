@@ -75,6 +75,7 @@ public class GameController : MonoBehaviour
     public Text endScoreLabel;
     public Text ClearLabel;
     public Text respawnLabel;
+    public Text bossSpawningLabel;
 
     [Header("Audio Sources")]
     public SoundClip activeSoundClip;
@@ -268,7 +269,7 @@ public class GameController : MonoBehaviour
         }
         else if (stageTime - seconds <= 0 && bossSpawned == false)
         {
-            timeLabel.text = "Push space key to defat boss!";
+            timeLabel.text = "Push 'G' key to defat boss!";
         }
 
         timeCounter += Time.deltaTime;
@@ -282,9 +283,10 @@ public class GameController : MonoBehaviour
             && SceneManager.GetActiveScene().name != "Start"
             &&SceneManager.GetActiveScene().name != "End"
             && SceneManager.GetActiveScene().name != "Tutorial"
-            &&Input.GetKeyDown(KeyCode.Space))
+            &&Input.GetKeyDown(KeyCode.G))
         {
-            BossSpawn();
+            bossSpawningLabel.enabled = true;
+            StartCoroutine(BossSpawner());
         }
 
         if (restart == true)
@@ -445,9 +447,17 @@ public class GameController : MonoBehaviour
         Instantiate(player);
     }
 
+    private IEnumerator BossSpawner()
+    {
+        yield return new WaitForSeconds(2);
+        bossSpawningLabel.enabled = false;
+        BossSpawn();
+    }
+
     // Spawns boss when timer hits 0
     void BossSpawn()
     {
+        bossSpawningLabel.enabled = false;
         timeLabel.text = "Boss spawned!";
         Instantiate(bossEnemy);
         bossSpawned = true;

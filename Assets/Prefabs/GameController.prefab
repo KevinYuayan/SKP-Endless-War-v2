@@ -58,11 +58,7 @@ MonoBehaviour:
   - {fileID: 2927435484588985366, guid: f3fddd72e8644394697f9218908d3a03, type: 3}
   - {fileID: 8581208409224291295, guid: cb5075d59fda8d040a5dbc8b786df543, type: 3}
   player: {fileID: 6772701842247943584, guid: ca2edc92006d24543b4e60f404bf9195, type: 3}
-  enemy1: {fileID: 279471036071834219, guid: d2280f1c2d0222e49a908caafb494b88, type: 3}
-  enemy2: {fileID: 6359590337577874136, guid: 1a9eed1092df46d469cb8a7fe0d8f510, type: 3}
-  enemy3: {fileID: 3165103455658131135, guid: e438e368d85991742bc27d72141764bf, type: 3}
-  enemy4: {fileID: 6610957315949629047, guid: 88db31085d9caf445ac6f215a4339935, type: 3}
-  spawningDelay: 3
+  spawnRateIncreaser: 5
   bossEnemy: {fileID: 0}
   stageTime: 0
   _lives: 0
@@ -79,6 +75,7 @@ MonoBehaviour:
   endScoreLabel: {fileID: 0}
   ClearLabel: {fileID: 0}
   respawnLabel: {fileID: 0}
+  bossSpawningLabel: {fileID: 0}
   activeSoundClip: 0
   audioSources:
   - {fileID: 177786579685343097}
@@ -109,7 +106,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1d9c8b9289171a64e9e74564c7977caa, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1bd0e9f834a7dbd41b62fed9e625aeea, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -514,7 +511,6 @@ MonoBehaviour:
     prefab: {fileID: 6610957315949629047, guid: 88db31085d9caf445ac6f215a4339935,
       type: 3}
     size: 20
-  numOfObjects: 20
   container: {fileID: 0}
 --- !u!114 &-8089849194968259917
 MonoBehaviour:
