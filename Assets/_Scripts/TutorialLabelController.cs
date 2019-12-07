@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// File Name: PlayerController.cs
+/// Author: Hyungseok Philip Lee
+/// Last Modified by: Hyungseok Philip Lee
+/// Date Last Modified: Dec 06, 2019
+/// Description: Controller for the Player prefab
+/// Revision History:
+/// </summary>
 
 public class TutorialLabelController : MonoBehaviour
 {
@@ -17,7 +25,9 @@ public class TutorialLabelController : MonoBehaviour
     public Text timeTutorialLabel;
     public SpriteRenderer timeArrow;
     public Text hpTutorialLabel;
+    public SpriteRenderer hpTutorialArrow;
     public Text scoreTutorialLabel;
+    public SpriteRenderer scoreTutorialArrow;
 
     private float time = 0f;
 
@@ -55,11 +65,13 @@ public class TutorialLabelController : MonoBehaviour
             fireKey1.enabled = false;
             fireKey2.enabled = false;
             scoreTutorialLabel.enabled = true;
+            scoreTutorialArrow.enabled = true;
         }
 
          if(time>= 10f)
         {
             scoreTutorialLabel.enabled = false;
+            scoreTutorialArrow.enabled = false;
             timeArrow.enabled = true;
             timeTutorialLabel.enabled = true;
         }
@@ -69,11 +81,13 @@ public class TutorialLabelController : MonoBehaviour
             timeArrow.enabled = false;
             timeTutorialLabel.enabled = false;
             hpTutorialLabel.enabled = true;
+            hpTutorialArrow.enabled = true;
         }
 
         if(time >= 20f)
         {
             hpTutorialLabel.enabled = false;
+            hpTutorialArrow.enabled = false;
             spawningArrow.enabled = true;
             enemieSpawnTutorialLabel.enabled = true;
         }
