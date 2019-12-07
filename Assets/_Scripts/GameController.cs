@@ -374,7 +374,7 @@ public class GameController : MonoBehaviour
         {
             HP = 100;
             Lives -= 1;
-            //storage.poweredUp = 0;
+            storage.poweredUp = 0;
             //Debug.Log("Player died");
             respawnLabel.enabled = true;
             StartCoroutine(RespawnPlayer());

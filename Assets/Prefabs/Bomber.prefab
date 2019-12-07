@@ -144,7 +144,7 @@ MonoBehaviour:
   fireSpawnBottom: {fileID: 3014666077761991857}
   fireSpawnTop: {fileID: 4524444491270667487}
   fire: {fileID: 444422195466221706, guid: 589244f145cd28643b77d83a55e55256, type: 3}
-  fireRate: 0.8
+  fireRate: 1
   bonusLife: {fileID: 1830573422138198335, guid: 417dc5ddf54aaef4db0c520b98a00327,
     type: 3}
   powerUP: {fileID: 7379716281020024665, guid: 08b5c63c88183b34c982d760b1d9b6fa, type: 3}
