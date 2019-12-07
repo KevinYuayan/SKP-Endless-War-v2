@@ -337,6 +337,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 177786579685343097, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e06b1e2e30386fa4180278756749cb4e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56efd8aab2aef5e4993082b771b7f126, type: 3}
 --- !u!1 &519420028
@@ -786,11 +791,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2594044189766506429, guid: ce5df82da5ff5ae4389d3163c2ca5c13,
-        type: 3}
-      propertyPath: m_Name
-      value: SpawningPoint
-      objectReference: {fileID: 0}
     - target: {fileID: 6334176156271767048, guid: ce5df82da5ff5ae4389d3163c2ca5c13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -845,6 +845,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2594044189766506429, guid: ce5df82da5ff5ae4389d3163c2ca5c13,
+        type: 3}
+      propertyPath: m_Name
+      value: SpawningPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce5df82da5ff5ae4389d3163c2ca5c13, type: 3}

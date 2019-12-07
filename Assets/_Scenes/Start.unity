@@ -987,15 +987,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 230
       objectReference: {fileID: 0}
-    - target: {fileID: 2707493763181907792, guid: b5589df82b4c44646bf7557837800f7d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 237.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707493763181907792, guid: b5589df82b4c44646bf7557837800f7d,
+    - target: {fileID: 2702577144296084617, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 228.25
+      value: -184.00002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931322751270041195, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -48.000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 1931322751270041195, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086035499590599, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -48.000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 702086035499590599, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 1869623684681154673, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
@@ -1027,20 +1042,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 205
       objectReference: {fileID: 0}
-    - target: {fileID: 2702577144296084617, guid: b5589df82b4c44646bf7557837800f7d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -184.00002
-      objectReference: {fileID: 0}
-    - target: {fileID: 1931322751270041195, guid: b5589df82b4c44646bf7557837800f7d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -48.000015
-      objectReference: {fileID: 0}
-    - target: {fileID: 1931322751270041195, guid: b5589df82b4c44646bf7557837800f7d,
+    - target: {fileID: 2707493763181907792, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -15
+      value: 237.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2707493763181907792, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 228.25
       objectReference: {fileID: 0}
     - target: {fileID: 1064512921, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1060,15 +1070,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -1.25
       objectReference: {fileID: 0}
-    - target: {fileID: 702086035499590599, guid: b5589df82b4c44646bf7557837800f7d,
+    - target: {fileID: 2189820957192455367, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -48.000015
+      propertyPath: m_Text
+      value: 'you will be a Canadian rookie pilot in WW2
+
+        Destroy German nazi invaders! Good luck!'
       objectReference: {fileID: 0}
-    - target: {fileID: 702086035499590599, guid: b5589df82b4c44646bf7557837800f7d,
+    - target: {fileID: 1869623683420342766, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -15
+      value: 269.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869623683420342766, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 199
       objectReference: {fileID: 0}
     - target: {fileID: 2189820957192455367, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
@@ -1258,6 +1275,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 177786579685343097, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5adef3e018ab5424ea8af79cb27cb9be, type: 3}
+    - target: {fileID: 177786579685343097, guid: 56efd8aab2aef5e4993082b771b7f126,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56efd8aab2aef5e4993082b771b7f126, type: 3}
