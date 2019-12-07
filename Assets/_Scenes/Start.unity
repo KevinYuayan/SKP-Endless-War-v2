@@ -1022,16 +1022,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -9.25
       objectReference: {fileID: 0}
-    - target: {fileID: 1869623683420342766, guid: b5589df82b4c44646bf7557837800f7d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 269.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1869623683420342766, guid: b5589df82b4c44646bf7557837800f7d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 199
-      objectReference: {fileID: 0}
     - target: {fileID: 3069434059962934954, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1077,6 +1067,13 @@ PrefabInstance:
 
         Destroy German nazi invaders! Good luck!'
       objectReference: {fileID: 0}
+    - target: {fileID: 2189820957192455367, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_Text
+      value: 'you will be a Canadian rookie pilot in WW2
+
+        Destroy German nazi invaders! Good luck!'
+      objectReference: {fileID: 0}
     - target: {fileID: 1869623683420342766, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1087,12 +1084,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 199
       objectReference: {fileID: 0}
-    - target: {fileID: 2189820957192455367, guid: b5589df82b4c44646bf7557837800f7d,
+    - target: {fileID: 1869623683420342766, guid: b5589df82b4c44646bf7557837800f7d,
         type: 3}
-      propertyPath: m_Text
-      value: 'you will be a Canadian rookie pilot in WW2
-
-        Destroy German nazi invaders! Good luck!'
+      propertyPath: m_AnchoredPosition.x
+      value: 269.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869623683420342766, guid: b5589df82b4c44646bf7557837800f7d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 199
       objectReference: {fileID: 0}
     - target: {fileID: 1064512920, guid: b5589df82b4c44646bf7557837800f7d, type: 3}
       propertyPath: m_IsActive
@@ -1280,7 +1280,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 5adef3e018ab5424ea8af79cb27cb9be, type: 3}
+      objectReference: {fileID: 8300000, guid: 1bd0e9f834a7dbd41b62fed9e625aeea, type: 3}
     - target: {fileID: 177786579685343097, guid: 56efd8aab2aef5e4993082b771b7f126,
         type: 3}
       propertyPath: m_Volume
