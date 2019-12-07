@@ -17,6 +17,12 @@ TagManager:
   - Boss3
   - HpStatus
   - ExplosionContainer
+  - Enemy1Container
+  - Enemy2Container
+  - BomberContainer
+  - SnakePlaneContainer
+  - SnakePlane
+  - Explosion
   layers:
   - Default
   - TransparentFX
