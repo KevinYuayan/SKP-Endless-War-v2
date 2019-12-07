@@ -91,11 +91,15 @@ public class PlayerController : CollidableObject
             case 1:
                 {
                     fireRate = 0.45f;
+                    fire.gameObject.GetComponent<Transform>().localScale = new Vector3(1.25f, 1.25f, 1);
+
+
                 }
                 break;
             case 2:
                 {
                     fireRate = 0.40f;
+                    fire.gameObject.GetComponent<Transform>().localScale = new Vector3(1.5f, 1.5f, 1);
                 }
                 break;
         }
