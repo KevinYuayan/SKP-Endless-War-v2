@@ -180,7 +180,7 @@ public class SnakePlaneController : CollidableObject
                 {
                     Destroy(this.gameObject);
                     Destroy(col.gameObject);
-                    gc.Score += 100;
+                    gc.Score += 300;
                     explosionSound.Play();
 
                     //item spawning by enemy dead

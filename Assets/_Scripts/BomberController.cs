@@ -181,7 +181,7 @@ public class BomberController : CollidableObject
                         position = this.gameObject.transform.position;
                         Destroy(this.gameObject);
                         Destroy(col.gameObject);
-                        gc.Score += 100;
+                        gc.Score += 200;
                         explosionSound.Play();
                         itemChance1 = Random.Range(0, 1000);
                         itemChance2 = Random.Range(0, 1000);

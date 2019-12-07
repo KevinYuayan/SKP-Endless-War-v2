@@ -131,10 +131,10 @@ public class Enemy2Controller : CollidableObject
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Bullet")
+        if (col.gameObject.tag == "Bullet"&& !col.GetComponent<FireController>().IsEnemyBullet)
         {
             hp -= 1;
-            if(hp <= 0)
+            if(hp <= 0 && !col.GetComponent<FireController>().IsEnemyBullet)
             {
                 position = this.gameObject.transform.position;
                 Destroy(this.gameObject);
