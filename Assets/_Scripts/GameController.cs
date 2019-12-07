@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
     public bool tutorial = false;
     [Header("Animations")]
     public GameObject explosion;
+    public GameObject[] explosions;
     [Header("Player")]
     public GameObject player;
     [Header("Enemies")]

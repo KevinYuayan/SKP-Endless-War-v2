@@ -36,8 +36,7 @@ public class PoolManager : MonoBehaviour
 
         for (int i = 0; i < numOfObjects; i++)
         {
-            var newExplosion = Instantiate(objectToPool);
-            newExplosion.SetActive(false);
+            var newExplosion = ExplosionFactory.GetInstance().createRandomExplosion();
             newExplosion.transform.parent = container.transform;
             objectQueue.Enqueue(newExplosion);
         }
