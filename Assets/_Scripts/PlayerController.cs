@@ -90,12 +90,12 @@ public class PlayerController : CollidableObject
         {
             case 1:
                 {
-                    fireRate = 0.48f;
+                    fireRate = 0.45f;
                 }
                 break;
             case 2:
                 {
-                    fireRate = 0.46f;
+                    fireRate = 0.40f;
                 }
                 break;
         }
