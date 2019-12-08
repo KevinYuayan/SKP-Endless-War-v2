@@ -332,7 +332,7 @@ public class GameController : MonoBehaviour
         }
 
         //Allow user to go to the next level
-        if (Input.GetKeyDown(KeyCode.Space)
+        if (Input.GetKeyDown(KeyCode.G)
             && SceneManager.GetActiveScene().name == "Main"
             && bossDefeated == true)
         {
@@ -428,7 +428,7 @@ public class GameController : MonoBehaviour
         {
             HP = 100;
             Lives -= 1;
-            storage.poweredUp = 0;
+            //storage.poweredUp = 0;
             //Debug.Log("Player died");
             respawnLabel.enabled = true;
             StartCoroutine(RespawnPlayer());
@@ -490,7 +490,7 @@ public class GameController : MonoBehaviour
     {
         ClearLabel.enabled = true;
         bossDefeated = true;
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             SceneManager.LoadScene("Level3");
         }

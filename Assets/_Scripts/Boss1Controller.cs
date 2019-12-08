@@ -99,7 +99,7 @@ public class Boss1Controller : MonoBehaviour
                 if (bossHP <= 0)
                 {
                     Destroy(this.gameObject);
-                    gc.Score += 1000;
+                    gc.Score += 2000;
                     gc.Boss1Defeated();
                 }
             }
