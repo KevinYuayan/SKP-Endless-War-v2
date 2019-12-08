@@ -374,7 +374,7 @@ public class GameController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)
+        if (Input.GetKeyDown(KeyCode.G)
             && SceneManager.GetActiveScene().name == "Level2"
             && bossDefeated == true)
         {
