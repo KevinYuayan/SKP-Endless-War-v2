@@ -27,7 +27,7 @@ public class HpBarController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (damage <= Mathf.Epsilon)
+        if (health <= Mathf.Epsilon)
         {
             StopCoroutine(TakeDamage());
             if (Mathf.Approximately(health, 0.0f))
