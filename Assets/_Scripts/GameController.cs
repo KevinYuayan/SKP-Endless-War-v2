@@ -302,6 +302,7 @@ public class GameController : MonoBehaviour
             && SceneManager.GetActiveScene().name != "Tutorial"
             &&Input.GetKeyDown(KeyCode.G))
         {
+            bossSpawned = true;
             bossSpawningLabel.enabled = true;
             StartCoroutine(BossSpawner());
         }
