@@ -197,6 +197,7 @@ public class PlayerController : CollidableObject
             case "Enemy1":
             case "Enemy2":
             case "Bomber":
+            case "SnakePlane":
             case "Boss1":
             case "Boss2":
             case "Boss3":
