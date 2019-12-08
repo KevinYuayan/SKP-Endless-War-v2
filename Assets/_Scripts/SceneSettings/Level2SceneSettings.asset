@@ -23,7 +23,7 @@ MonoBehaviour:
   endLabelEnabled: 0
   clearLabelEnabled: 0
   StartButtonEnabled: 0
-  numOfEnemy1: 10
-  numOfEnemy2: 6
-  numOfBomber: 3
+  numOfEnemy1: 8
+  numOfEnemy2: 5
+  numOfBomber: 4
   numOfSnakePlane: 0

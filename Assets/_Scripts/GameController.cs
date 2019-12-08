@@ -251,13 +251,30 @@ public class GameController : MonoBehaviour
     // Increases Spawn Rate of enemies every 5 seconds(spawnRateIncreaser default)
     private void IncreaseSpawnRate()
     {
-        if(seconds >= intSpawnChecker)
+        if (seconds >= intSpawnChecker)
         {
             intSpawnChecker += spawnRateIncreaser;
-            enemy1SpawnDelay *= 0.9f;
-            enemy2SpawnDelay *= 0.9f;
-            bomberSpawnDelay *= 0.9f;
-            snakePlaneSpawnDelay *= 0.9f;
+            // Max Spawn Rate check
+            // Enemy1 is 20 planes / 10 sec
+            if (enemy1SpawnDelay > 0.5f)
+            {
+                enemy1SpawnDelay *= 0.9f;
+            }
+            // Enemy 2 is about 14 plane / 10 sec
+            if (enemy2SpawnDelay > 0.7f)
+            {
+                enemy2SpawnDelay *= 0.9f;
+            }
+            // Bomber is about 7 planes / 10 sec
+            if (bomberSpawnDelay > 1.5f)
+            {
+                bomberSpawnDelay *= 0.9f;
+            }
+            // SnakePlane is about 7 planes / 10 sec
+            if (snakePlaneSpawnDelay > 1.5f)
+            {
+                snakePlaneSpawnDelay *= 0.9f;
+            }
         }
     }
     // Update is called once per frame
